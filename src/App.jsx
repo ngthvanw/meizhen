@@ -114,7 +114,7 @@ const STORY_TIMELINE = [
     boy: {
       scene: "room",
       pose: "texting",
-      talk: "bà gọi tui hả? 👀",
+      talk: "Bà đang làm gì đó? 👀",
       phone: true,
     },
 
@@ -142,7 +142,7 @@ const STORY_TIMELINE = [
     girl: {
       scene: "room",
       pose: "hungry-text",
-      talk: "tui thèm mỳ cay quá 🍜🥹",
+      talk: "tui thèm mỳ cay Tâm Giao quá 🍜🥹",
       phone: true,
       thoughtNoodles: true,
     },
@@ -221,7 +221,7 @@ const STORY_TIMELINE = [
     boy: {
       scene: "road",
       pose: "run",
-      talk: "xa dữ trời...",
+      talk: "đúng rồi á",
     },
 
     girl: {
@@ -242,7 +242,7 @@ const STORY_TIMELINE = [
     boy: {
       scene: "shop",
       pose: "order",
-      talk: "cho tui một phần mỳ cay ngon nhất nha!",
+      talk: "cho một phần mỳ cay thập cẩm cấp 2 không lấy chả cho thêm nhiều sốt chấm nha!",
     },
 
     girl: {
@@ -262,14 +262,14 @@ const STORY_TIMELINE = [
     boy: {
       scene: "shop",
       pose: "reading-text",
-      talk: "bà ăn cay cấp mấy ta... 🤔",
+      talk: "giờ tui chạy xuống đưa cho bà nha",
       phone: true,
     },
 
     girl: {
       scene: "wait",
       pose: "texting",
-      talk: "cấp 2 thôi ông, tui còn muốn sống 😭",
+      talk: "đã vá",
       phone: true,
     },
   },
@@ -328,7 +328,7 @@ const STORY_TIMELINE = [
     boy: {
       scene: "ship",
       pose: "run",
-      talk: "bà này khó chiều thiệt 😭",
+      talk: "sắp tới rồi",
       carryFood: true,
     },
 
@@ -2077,19 +2077,13 @@ export default function App() {
                 <SpicyNoodleBowl />
               </div>
 
-              <small>
-                ÔNG × BÀ
-              </small>
+              
 
               <h1>
                 Mỳ Cay
               </h1>
 
-              <p>
-                bà nhắn tin nói thèm mỳ cay
-                <br />
-                ông đi một quãng đường xa mua cho bà ♡
-              </p>
+              
 
               <button
                 type="button"
