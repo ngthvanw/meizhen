@@ -1,0 +1,3826 @@
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+
+  background: #05060b;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #202333,
+      #05060a 73%
+    );
+}
+
+/* =========================================================
+   PHONE
+========================================================= */
+
+.phone-frame {
+  position: relative;
+
+  width: min(
+    100vw,
+    460px
+  );
+
+  height: min(
+    100vh,
+    818px
+  );
+
+  overflow: hidden;
+
+  background: #080910;
+
+  box-shadow:
+    0 30px 100px
+    rgba(
+      0,
+      0,
+      0,
+      0.9
+    );
+}
+
+/* =========================================================
+   HIDDEN VIDEO
+
+   Không display:none.
+   File này phát nhạc.
+========================================================= */
+
+.video-source {
+  position: absolute;
+
+  z-index: -100;
+
+  left: -10px;
+  top: -10px;
+
+  width: 2px;
+  height: 2px;
+
+  opacity: 0.001;
+
+  pointer-events: none;
+}
+
+/* =========================================================
+   START SCREEN
+========================================================= */
+
+.start-screen {
+  position: absolute;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 24%,
+      #30436e,
+      #11162d 48%,
+      #070812 100%
+    );
+}
+
+.start-glow {
+  position: absolute;
+
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        255,
+        126,
+        160,
+        0.16
+      ),
+      transparent 70%
+    );
+}
+
+.start-content {
+  position: relative;
+
+  z-index: 30;
+
+  width: 90%;
+
+  text-align: center;
+
+  color: white;
+}
+
+.start-noodles {
+  height: 115px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom:
+    17px;
+
+  transform:
+    scale(1.38);
+}
+
+.start-content
+small {
+  color: #989db6;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 5px;
+}
+
+.start-content
+h1 {
+  margin:
+    10px
+    0
+    9px;
+
+  color:
+    #ffd5df;
+
+  font-family:
+    Georgia,
+    serif;
+
+  font-size: 54px;
+
+  font-style: italic;
+
+  font-weight: 400;
+
+  text-shadow:
+    0 0 18px
+    rgba(
+      255,
+      150,
+      180,
+      0.35
+    );
+}
+
+.start-content
+p {
+  margin:
+    0
+    0
+    28px;
+
+  color: #999daf;
+
+  font-size: 11px;
+
+  line-height: 1.8;
+}
+
+/* =========================================================
+   BIG PLAY
+========================================================= */
+
+.main-play-button {
+  min-width: 145px;
+
+  padding:
+    14px
+    25px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.3
+    );
+
+  border-radius:
+    40px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff7b9f,
+      #876eff
+    );
+
+  box-shadow:
+    0 10px 35px
+    rgba(
+      255,
+      91,
+      148,
+      0.23
+    );
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.main-play-button
+span {
+  display: inline-block;
+
+  margin-right: 9px;
+}
+
+.main-play-button:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 14px 40px
+    rgba(
+      255,
+      91,
+      148,
+      0.34
+    );
+}
+
+.main-play-button:active {
+  transform:
+    scale(0.96);
+}
+
+/* =========================================================
+   STORY
+========================================================= */
+
+.story-stage {
+  position: absolute;
+
+  z-index: 20;
+
+  left: 0;
+  right: 0;
+  top: 0;
+
+  height: 52%;
+
+  overflow: hidden;
+}
+
+.stage-background {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #090c1d,
+      #141a34 55%,
+      #29233f
+    );
+}
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.stars {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+.stars
+span {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background:
+    white;
+
+  animation:
+    starBlink
+    1.8s
+    infinite
+    alternate;
+}
+
+@keyframes starBlink {
+  from {
+    opacity: 0.15;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   SPLIT
+========================================================= */
+
+.split-layout {
+  position: absolute;
+
+  z-index: 15;
+
+  inset: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1fr;
+
+  gap: 8px;
+
+  padding: 9px;
+
+  animation:
+    splitAppear
+    0.35s
+    ease-out;
+}
+
+@keyframes splitAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      scale(0.97);
+  }
+}
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.story-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+
+  border-radius:
+    20px;
+
+  box-shadow:
+    inset
+    0 0 0 1px
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+}
+
+.left-panel {
+  background:
+    linear-gradient(
+      to bottom,
+      #101a36,
+      #242744
+    );
+}
+
+.right-panel {
+  background:
+    linear-gradient(
+      to bottom,
+      #261834,
+      #3d2948
+    );
+}
+
+/* =========================================================
+   PANEL NAME
+========================================================= */
+
+.panel-name {
+  position: absolute;
+
+  z-index: 80;
+
+  left: 10px;
+  top: 9px;
+
+  padding:
+    4px
+    8px;
+
+  border-radius:
+    20px;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  font-size: 7px;
+
+  font-weight: bold;
+
+  letter-spacing: 2px;
+}
+
+/* =========================================================
+   PANEL
+========================================================= */
+
+.panel-decor {
+  position: absolute;
+
+  inset: 0;
+}
+
+/* =========================================================
+   MOON
+========================================================= */
+
+.panel-moon {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 30px;
+  right: 15px;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius:
+    50%;
+
+  background:
+    #fff0c6;
+
+  box-shadow:
+    0 0 18px
+    rgba(
+      255,
+      235,
+      190,
+      0.25
+    );
+}
+
+.panel-moon
+> span {
+  position: absolute;
+
+  left: -8px;
+  top: -4px;
+
+  width: 37px;
+  height: 37px;
+
+  border-radius:
+    50%;
+
+  background:
+    #1a2037;
+}
+
+.right-panel
+.panel-moon
+> span {
+  background:
+    #261834;
+}
+
+/* =========================================================
+   WINDOW
+========================================================= */
+
+.window-box {
+  position: absolute;
+
+  z-index: 6;
+
+  left: 13px;
+  top: 48px;
+
+  width: 60px;
+  height: 51px;
+
+  border:
+    4px solid
+    #594c5d;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #182443,
+      #443450
+    );
+}
+
+.window-line {
+  position: absolute;
+
+  background:
+    #594c5d;
+}
+
+.window-vertical {
+  left: 50%;
+  top: 0;
+
+  width: 3px;
+  height: 100%;
+
+  transform:
+    translateX(-50%);
+}
+
+.window-horizontal {
+  left: 0;
+  top: 50%;
+
+  width: 100%;
+  height: 3px;
+
+  transform:
+    translateY(-50%);
+}
+
+/* =========================================================
+   ROOM FLOOR
+========================================================= */
+
+.room-floor {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 70px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(
+        0,
+        0,
+        0,
+        0.05
+      ),
+      #0b0c14
+    );
+}
+
+/* =========================================================
+   BOY ROOM
+========================================================= */
+
+.boy-desk {
+  position: absolute;
+
+  z-index: 8;
+
+  left: 17px;
+  bottom: 51px;
+
+  width: 86px;
+  height: 12px;
+
+  border-radius:
+    4px;
+
+  background:
+    #6c4c3f;
+}
+
+.desk-leg {
+  position: absolute;
+
+  top: 11px;
+
+  width: 7px;
+  height: 28px;
+
+  background:
+    #50362f;
+}
+
+.desk-left {
+  left: 10px;
+}
+
+.desk-right {
+  right: 10px;
+}
+
+.laptop {
+  position: absolute;
+
+  z-index: 10;
+
+  left: 48px;
+  bottom: 62px;
+
+  width: 32px;
+  height: 20px;
+
+  border:
+    3px solid
+    #29314a;
+
+  border-radius: 4px;
+
+  background:
+    #9dbcf2;
+}
+
+.laptop
+> span {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 4px;
+  height: 4px;
+
+  transform:
+    translate(
+      -50%,
+      -50%
+    );
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+}
+
+/* =========================================================
+   GIRL ROOM
+========================================================= */
+
+.girl-sofa {
+  position: absolute;
+
+  z-index: 8;
+
+  left: 20px;
+  bottom: 47px;
+
+  width: 92px;
+  height: 36px;
+
+  border-radius:
+    13px
+    13px
+    5px
+    5px;
+
+  background:
+    #d98da9;
+}
+
+.girl-sofa
+> span {
+  position: absolute;
+
+  left: 10px;
+  top: 8px;
+
+  width: 27px;
+  height: 14px;
+
+  border-radius:
+    8px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.2
+    );
+}
+
+.plant {
+  position: absolute;
+
+  z-index: 8;
+
+  right: 13px;
+  bottom: 50px;
+
+  width: 17px;
+  height: 29px;
+
+  border-radius: 4px;
+
+  background:
+    #68515b;
+}
+
+.plant
+> span {
+  position: absolute;
+
+  left: -7px;
+  top: -13px;
+
+  width: 31px;
+  height: 21px;
+
+  border-radius:
+    50%;
+
+  background:
+    #68ba88;
+}
+
+/* =========================================================
+   THOUGHT NOODLES
+========================================================= */
+
+.thought-noodles {
+  position: absolute;
+
+  z-index: 30;
+
+  right: 9px;
+  top: 88px;
+}
+
+.thought-dot {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.92
+    );
+}
+
+.thought-dot-one {
+  left: -8px;
+  bottom: -7px;
+
+  width: 7px;
+  height: 7px;
+}
+
+.thought-dot-two {
+  left: -17px;
+  bottom: -15px;
+
+  width: 4px;
+  height: 4px;
+}
+
+.thought-cloud {
+  width: 76px;
+  height: 60px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius:
+    20px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.94
+    );
+
+  box-shadow:
+    0 4px 15px
+    rgba(
+      0,
+      0,
+      0,
+      0.12
+    );
+}
+
+/* =========================================================
+   CITY
+========================================================= */
+
+.mini-city {
+  position: absolute;
+
+  z-index: 7;
+
+  left: 0;
+  right: 0;
+  bottom: 59px;
+
+  height: 70px;
+
+  display: flex;
+
+  align-items:
+    flex-end;
+
+  gap: 3px;
+
+  padding:
+    0 3px;
+}
+
+.mini-city
+> span {
+  flex: 1;
+
+  min-width: 8px;
+
+  background:
+    #080b13;
+
+  border-top:
+    1px solid
+    #1d2232;
+}
+
+/* =========================================================
+   ROAD
+========================================================= */
+
+.mini-road {
+  position: absolute;
+
+  z-index: 10;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 62px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #252934,
+      #11131a
+    );
+}
+
+.mini-road
+> span {
+  position: absolute;
+
+  bottom: 23px;
+
+  width: 34px;
+  height: 3px;
+
+  background:
+    #d8bf73;
+}
+
+.mini-road
+> span:nth-child(1) {
+  left: 12px;
+}
+
+.mini-road
+> span:nth-child(2) {
+  left: 73px;
+}
+
+.mini-road
+> span:nth-child(3) {
+  right: 12px;
+}
+
+/* =========================================================
+   LAMP
+========================================================= */
+
+.street-lamp {
+  position: absolute;
+
+  z-index: 12;
+
+  left: 20px;
+  bottom: 51px;
+
+  width: 4px;
+  height: 80px;
+
+  background:
+    #282c3a;
+}
+
+.street-lamp
+> span {
+  position: absolute;
+
+  left: -10px;
+  top: -2px;
+
+  width: 24px;
+  height: 9px;
+
+  border-radius:
+    50%;
+
+  background:
+    #f0d18c;
+
+  box-shadow:
+    0 0 19px
+    rgba(
+      255,
+      218,
+      140,
+      0.35
+    );
+}
+
+/* =========================================================
+   SHOP
+========================================================= */
+
+.shop {
+  position: absolute;
+
+  z-index: 9;
+
+  left: 10px;
+  right: 10px;
+  bottom: 29px;
+
+  height: 170px;
+
+  border-radius:
+    12px
+    12px
+    5px
+    5px;
+
+  background:
+    #b87660;
+
+  box-shadow:
+    5px
+    6px 0
+    rgba(
+      0,
+      0,
+      0,
+      0.15
+    );
+}
+
+.shop-roof {
+  position: absolute;
+
+  left: -5px;
+  right: -5px;
+  top: -18px;
+
+  height: 26px;
+
+  border-radius:
+    7px
+    7px
+    0
+    0;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #f7d0b4 0,
+      #f7d0b4 19px,
+      #df756d 19px,
+      #df756d 38px
+    );
+}
+
+.shop-title {
+  position: absolute;
+
+  left: 50%;
+  top: 13px;
+
+  transform:
+    translateX(-50%);
+
+  color:
+    #ffe9b9;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  letter-spacing:
+    2px;
+}
+
+.shop-subtitle {
+  position: absolute;
+
+  left: 50%;
+  top: 36px;
+
+  transform:
+    translateX(-50%);
+
+  color:
+    rgba(
+      255,
+      240,
+      210,
+      0.7
+    );
+
+  font-size: 6px;
+
+  white-space:
+    nowrap;
+}
+
+.shop-food-window {
+  position: absolute;
+
+  left: 13px;
+  top: 58px;
+
+  width: 88px;
+  height: 66px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border:
+    5px solid
+    #674949;
+
+  background:
+    #f7d9a3;
+}
+
+.shop-counter {
+  position: absolute;
+
+  left: 8px;
+  right: 8px;
+  bottom: 0;
+
+  height: 32px;
+
+  background:
+    #674a49;
+}
+
+.shop-door {
+  position: absolute;
+
+  right: 15px;
+  bottom: 0;
+
+  width: 34px;
+  height: 81px;
+
+  background:
+    #50424a;
+}
+
+/* =========================================================
+   SHIP
+========================================================= */
+
+.shipping-road {
+  height: 65px;
+}
+
+.ship-badge {
+  position: absolute;
+
+  z-index: 20;
+
+  top: 25px;
+  right: 10px;
+
+  padding:
+    5px
+    8px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      220,
+      135,
+      0.35
+    );
+
+  border-radius:
+    13px;
+
+  color:
+    #ffdb8c;
+
+  background:
+    rgba(
+      255,
+      209,
+      110,
+      0.1
+    );
+
+  font-size: 8px;
+
+  font-weight: bold;
+
+  letter-spacing:
+    1px;
+}
+
+.ship-badge
+small {
+  display: block;
+
+  margin-top: 2px;
+
+  font-size: 5px;
+}
+
+/* =========================================================
+   TOGETHER
+========================================================= */
+
+.together-scene {
+  position: absolute;
+
+  z-index: 15;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  animation:
+    mergeScene
+    0.65s
+    ease-out;
+}
+
+@keyframes mergeScene {
+  from {
+    opacity: 0;
+
+    transform:
+      scaleX(0.82);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scaleX(1);
+  }
+}
+
+.shared-decor {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #11162c,
+      #24203c 65%,
+      #332438
+    );
+}
+
+.shared-moon {
+  position: absolute;
+
+  z-index: 4;
+
+  top: 32px;
+  right: 42px;
+
+  width: 61px;
+  height: 61px;
+
+  border-radius:
+    50%;
+
+  background:
+    #fff0c8;
+
+  box-shadow:
+    0 0 35px
+    rgba(
+      255,
+      236,
+      195,
+      0.24
+    );
+}
+
+.shared-moon
+> span {
+  position: absolute;
+
+  left: -14px;
+  top: -8px;
+
+  width: 62px;
+  height: 62px;
+
+  border-radius:
+    50%;
+
+  background:
+    #15172e;
+}
+
+.shared-window {
+  position: absolute;
+
+  z-index: 7;
+
+  left: 20px;
+  top: 65px;
+
+  width: 91px;
+  height: 80px;
+
+  border:
+    5px solid
+    #594b5a;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #18223f,
+      #463653
+    );
+}
+
+.shared-lamp {
+  position: absolute;
+
+  z-index: 8;
+
+  right: 31px;
+  top: 133px;
+
+  width: 8px;
+  height: 78px;
+
+  background:
+    #423a47;
+}
+
+.shared-lamp::before {
+  content: "";
+
+  position: absolute;
+
+  left: -23px;
+  top: -23px;
+
+  width: 54px;
+  height: 30px;
+
+  clip-path:
+    polygon(
+      25% 0,
+      75% 0,
+      100% 100%,
+      0 100%
+    );
+
+  background:
+    #f2bd74;
+}
+
+.shared-lamp-light {
+  position: absolute;
+
+  left: -72px;
+  top: -35px;
+
+  width: 155px;
+  height: 130px;
+
+  border-radius:
+    50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        255,
+        211,
+        132,
+        0.18
+      ),
+      transparent 70%
+    );
+}
+
+.shared-floor {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 70px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(
+        0,
+        0,
+        0,
+        0.05
+      ),
+      #080910
+    );
+}
+
+.shared-table {
+  position: absolute;
+
+  z-index: 15;
+
+  left: 50%;
+  bottom: 44px;
+
+  width: 170px;
+  height: 18px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius:
+    5px
+    5px
+    2px
+    2px;
+
+  background:
+    #69463a;
+}
+
+.table-leg {
+  position: absolute;
+
+  top: 16px;
+
+  width: 8px;
+  height: 45px;
+
+  background:
+    #4d342d;
+}
+
+.table-leg-left {
+  left: 18px;
+}
+
+.table-leg-right {
+  right: 18px;
+}
+
+.shared-noodles {
+  position: absolute;
+
+  z-index: 25;
+
+  left: 50%;
+  bottom: 56px;
+
+  transform:
+    translateX(-50%);
+}
+
+/* =========================================================
+   MỲ CAY
+========================================================= */
+
+.spicy-bowl {
+  position: relative;
+
+  width: 86px;
+  height: 42px;
+
+  border:
+    4px solid
+    #762e26;
+
+  border-radius:
+    11px
+    11px
+    23px
+    23px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #e96b55,
+      #b94334
+    );
+
+  box-shadow:
+    inset
+    0 -5px 0
+    rgba(
+      92,
+      24,
+      21,
+      0.17
+    );
+}
+
+.spicy-bowl::before,
+.spicy-bowl::after {
+  content: "";
+
+  position: absolute;
+
+  top: 11px;
+
+  width: 14px;
+  height: 11px;
+
+  border:
+    3px solid
+    #762e26;
+
+  border-radius:
+    10px;
+}
+
+.spicy-bowl::before {
+  left: -13px;
+}
+
+.spicy-bowl::after {
+  right: -13px;
+}
+
+.noodle-surface {
+  position: absolute;
+
+  left: 6px;
+  right: 6px;
+  top: 4px;
+
+  height: 16px;
+
+  overflow: hidden;
+
+  border-radius:
+    50%;
+
+  background:
+    #cf4d32;
+}
+
+.noodle {
+  position: absolute;
+
+  width: 35px;
+  height: 7px;
+
+  border-top:
+    2px solid
+    #ffd47c;
+
+  border-radius:
+    50%;
+}
+
+.noodle-one {
+  left: 7px;
+  top: 6px;
+}
+
+.noodle-two {
+  right: 6px;
+  top: 8px;
+
+  transform:
+    rotate(-10deg);
+}
+
+.egg {
+  position: absolute;
+
+  left: 28px;
+  top: 1px;
+
+  width: 17px;
+  height: 13px;
+
+  border-radius:
+    50%;
+
+  background:
+    #fff6df;
+}
+
+.egg
+> i {
+  position: absolute;
+
+  left: 6px;
+  top: 4px;
+
+  width: 6px;
+  height: 6px;
+
+  border-radius:
+    50%;
+
+  background:
+    #ffbd3f;
+}
+
+.chili {
+  position: absolute;
+
+  font-size: 8px;
+}
+
+.chili-one {
+  left: 8px;
+  top: 1px;
+}
+
+.chili-two {
+  right: 6px;
+  top: 2px;
+
+  transform:
+    rotate(-20deg);
+}
+
+.green-onion {
+  position: absolute;
+
+  width: 5px;
+  height: 3px;
+
+  border-radius:
+    3px;
+
+  background:
+    #64b55c;
+}
+
+.green-one {
+  left: 21px;
+  top: 4px;
+
+  transform:
+    rotate(22deg);
+}
+
+.green-two {
+  right: 22px;
+  top: 9px;
+
+  transform:
+    rotate(-18deg);
+}
+
+.spicy-label {
+  position: absolute;
+
+  left: 50%;
+  bottom: 4px;
+
+  transform:
+    translateX(-50%);
+
+  color:
+    #ffe6b1;
+
+  font-size: 8px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  white-space:
+    nowrap;
+}
+
+.spicy-label
+small {
+  display: block;
+
+  margin-top: 1px;
+
+  font-size: 5px;
+}
+
+.small-spicy-bowl {
+  width: 48px;
+  height: 25px;
+
+  border-width:
+    3px;
+
+  transform:
+    scale(0.9);
+}
+
+.small-spicy-bowl
+.spicy-label {
+  font-size: 5px;
+}
+
+.small-spicy-bowl
+.spicy-label
+small {
+  display: none;
+}
+
+.small-spicy-bowl
+.noodle-surface {
+  left: 4px;
+  right: 4px;
+  top: 3px;
+
+  height: 10px;
+}
+
+.small-spicy-bowl
+.egg {
+  left: 15px;
+  top: 0;
+
+  width: 12px;
+  height: 9px;
+}
+
+.small-spicy-bowl
+.egg
+> i {
+  left: 4px;
+  top: 3px;
+
+  width: 4px;
+  height: 4px;
+}
+
+.small-spicy-bowl
+.noodle {
+  width: 20px;
+}
+
+/* =========================================================
+   BOWL STEAM
+========================================================= */
+
+.bowl-steam {
+  position: absolute;
+
+  z-index: 9;
+
+  top: -24px;
+
+  width: 7px;
+  height: 21px;
+
+  border-left:
+    2px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.72
+    );
+
+  border-radius: 50%;
+
+  animation:
+    bowlSteam
+    1.25s
+    infinite
+    ease-in-out;
+}
+
+.steam-one {
+  left: 19px;
+}
+
+.steam-two {
+  left: 39px;
+
+  animation-delay:
+    0.2s;
+}
+
+.steam-three {
+  right: 17px;
+
+  animation-delay:
+    0.4s;
+}
+
+@keyframes bowlSteam {
+  from {
+    opacity: 0.2;
+
+    transform:
+      translateY(7px)
+      rotate(-4deg);
+  }
+
+  to {
+    opacity: 0.8;
+
+    transform:
+      translateY(-6px)
+      rotate(5deg);
+  }
+}
+
+/* =========================================================
+   CHIBI
+========================================================= */
+
+.chibi {
+  position: absolute;
+
+  z-index: 50;
+
+  bottom: 53px;
+
+  width: 68px;
+  height: 92px;
+
+  transform-origin:
+    center bottom;
+
+  transition:
+    left 0.35s ease,
+    transform 0.35s ease;
+}
+
+.panel-character {
+  left: 50%;
+
+  margin-left:
+    -34px;
+}
+
+.together-boy {
+  left:
+    calc(
+      50% - 89px
+    );
+
+  bottom: 48px;
+}
+
+.together-girl {
+  left:
+    calc(
+      50% + 21px
+    );
+
+  bottom: 48px;
+}
+
+.chibi-shadow {
+  position: absolute;
+
+  left: 8px;
+  bottom: -4px;
+
+  width: 51px;
+  height: 8px;
+
+  border-radius:
+    50%;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.35
+    );
+
+  filter:
+    blur(3px);
+}
+
+/* backpack */
+
+.backpack {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 4px;
+  top: 53px;
+
+  width: 18px;
+  height: 29px;
+
+  border-radius:
+    7px 4px 4px 7px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #5d6890,
+      #3e4669
+    );
+}
+
+/* helmet */
+
+.helmet {
+  position: absolute;
+
+  z-index: 12;
+
+  left: 17px;
+  top: 1px;
+
+  width: 35px;
+  height: 17px;
+
+  border:
+    2px solid
+    #7d641e;
+
+  border-radius:
+    18px 18px 6px 6px;
+
+  background:
+    #ffd867;
+}
+
+.helmet
+> span {
+  position: absolute;
+
+  right: -5px;
+  bottom: -3px;
+
+  width: 15px;
+  height: 4px;
+
+  border-radius: 4px;
+
+  background:
+    #8e7428;
+}
+
+/* hair */
+
+.chibi-hair {
+  position: absolute;
+
+  z-index: 8;
+
+  top: 7px;
+  left: 7px;
+
+  width: 52px;
+  height: 28px;
+
+  border-radius:
+    20px 20px 8px 8px;
+}
+
+.boy-hair {
+  background:
+    #302d3e;
+}
+
+.girl-hair {
+  height: 42px;
+
+  background:
+    #49333f;
+}
+
+.chibi-hair
+> span:nth-child(1) {
+  position: absolute;
+
+  left: 4px;
+  bottom: -9px;
+
+  width: 11px;
+  height: 18px;
+
+  border-radius:
+    7px;
+
+  background:
+    inherit;
+}
+
+.chibi-hair
+> span:nth-child(2) {
+  position: absolute;
+
+  right: 4px;
+  bottom: -9px;
+
+  width: 11px;
+  height: 18px;
+
+  border-radius:
+    7px;
+
+  background:
+    inherit;
+}
+
+/* head */
+
+.chibi-head {
+  position: absolute;
+
+  z-index: 7;
+
+  left: 12px;
+  top: 16px;
+
+  width: 44px;
+  height: 42px;
+
+  border-radius:
+    16px 16px 14px 14px;
+
+  background:
+    #ffd2bc;
+}
+
+/* eyes */
+
+.chibi-eye {
+  position: absolute;
+
+  top: 17px;
+
+  width: 6px;
+  height: 7px;
+
+  border-radius:
+    4px;
+
+  background:
+    #34303a;
+}
+
+.chibi-eye
+> i {
+  position: absolute;
+
+  left: 1px;
+  top: 1px;
+
+  width: 2px;
+  height: 2px;
+
+  border-radius: 50%;
+
+  background:
+    white;
+}
+
+.eye-left {
+  left: 9px;
+}
+
+.eye-right {
+  right: 9px;
+}
+
+/* blush */
+
+.chibi-blush {
+  position: absolute;
+
+  top: 28px;
+
+  width: 8px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  opacity: 0;
+
+  background:
+    #f99caf;
+}
+
+.blush-left {
+  left: 2px;
+}
+
+.blush-right {
+  right: 2px;
+}
+
+/* mouth */
+
+.chibi-mouth {
+  position: absolute;
+
+  left: 19px;
+  top: 30px;
+
+  width: 7px;
+  height: 4px;
+
+  border-bottom:
+    2px solid
+    #9b5361;
+
+  border-radius:
+    50%;
+}
+
+/* body */
+
+.chibi-body {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 16px;
+  top: 54px;
+
+  width: 36px;
+  height: 29px;
+
+  border-radius:
+    9px 9px 4px 4px;
+}
+
+.boy-body {
+  background:
+    linear-gradient(
+      135deg,
+      #7589e8,
+      #5162b6
+    );
+}
+
+.girl-body {
+  background:
+    linear-gradient(
+      135deg,
+      #f39cbd,
+      #bd7197
+    );
+}
+
+/* strings */
+
+.hood-string {
+  position: absolute;
+
+  top: 4px;
+
+  width: 2px;
+  height: 8px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.55
+    );
+}
+
+.hood-left {
+  left: 13px;
+}
+
+.hood-right {
+  right: 13px;
+}
+
+/* arms */
+
+.chibi-arm {
+  position: absolute;
+
+  z-index: 3;
+
+  top: 57px;
+
+  width: 10px;
+  height: 23px;
+
+  border-radius:
+    6px;
+
+  background:
+    #ffd2bc;
+
+  transform-origin:
+    top center;
+
+  transition:
+    transform
+    0.25s;
+}
+
+.arm-left {
+  left: 8px;
+}
+
+.arm-right {
+  right: 8px;
+}
+
+/* legs */
+
+.chibi-leg {
+  position: absolute;
+
+  z-index: 2;
+
+  top: 77px;
+
+  width: 11px;
+  height: 13px;
+
+  border-radius:
+    0 0 5px 5px;
+
+  background:
+    #30313f;
+
+  transform-origin:
+    top center;
+}
+
+.leg-left {
+  left: 18px;
+}
+
+.leg-right {
+  right: 17px;
+}
+
+/* phone */
+
+.phone-item {
+  position: absolute;
+
+  z-index: 16;
+
+  left: 4px;
+  top: 54px;
+
+  width: 13px;
+  height: 20px;
+
+  border:
+    2px solid
+    #30323e;
+
+  border-radius:
+    3px;
+
+  background:
+    #4f739a;
+
+  transform:
+    rotate(-8deg);
+}
+
+.phone-item
+> span {
+  position: absolute;
+
+  left: 3px;
+  top: 3px;
+
+  width: 5px;
+  height: 7px;
+
+  border-radius:
+    2px;
+
+  background:
+    #c5edff;
+}
+
+/* food bag */
+
+.food-bag {
+  position: absolute;
+
+  z-index: 17;
+
+  right: -9px;
+  top: 53px;
+
+  width: 26px;
+  height: 31px;
+
+  border:
+    2px solid
+    #ad7741;
+
+  border-radius:
+    4px 4px 8px 8px;
+
+  background:
+    #f2c779;
+
+  animation:
+    foodBagMove
+    0.5s
+    infinite
+    alternate;
+}
+
+.bag-handle {
+  position: absolute;
+
+  left: 5px;
+  top: -10px;
+
+  width: 11px;
+  height: 10px;
+
+  border:
+    2px solid
+    #ad7741;
+
+  border-bottom: 0;
+
+  border-radius:
+    9px 9px 0 0;
+}
+
+.food-bag-name {
+  position: absolute;
+
+  left: 50%;
+  top: 6px;
+
+  transform:
+    translateX(-50%);
+
+  color:
+    #c95047;
+
+  font-size: 6px;
+
+  font-weight: bold;
+
+  white-space:
+    nowrap;
+}
+
+.food-bag-heart {
+  position: absolute;
+
+  left: 50%;
+  bottom: 4px;
+
+  transform:
+    translateX(-50%);
+
+  color:
+    #d75f67;
+}
+
+@keyframes foodBagMove {
+  to {
+    transform:
+      translateY(-3px)
+      rotate(4deg);
+  }
+}
+
+.personal-noodles {
+  position: absolute;
+
+  z-index: 20;
+
+  right: -9px;
+  top: 59px;
+
+  transform:
+    scale(0.72);
+}
+
+/* =========================================================
+   POSES
+========================================================= */
+
+.texting {
+  animation:
+    textingPose
+    1s
+    infinite
+    alternate;
+}
+
+.texting
+.chibi-head {
+  transform:
+    rotate(4deg);
+}
+
+.texting
+.arm-left {
+  transform:
+    rotate(36deg)
+    translateY(-2px);
+}
+
+.texting
+.arm-right {
+  transform:
+    rotate(-32deg)
+    translateY(-2px);
+}
+
+.texting
+.chibi-blush {
+  opacity: 0.3;
+}
+
+@keyframes textingPose {
+  to {
+    transform:
+      translateY(2px);
+  }
+}
+
+.reading-text {
+  animation:
+    readingPose
+    1.05s
+    infinite
+    alternate;
+}
+
+.reading-text
+.chibi-head {
+  transform:
+    rotate(5deg)
+    translateY(2px);
+}
+
+@keyframes readingPose {
+  to {
+    transform:
+      translateY(2px);
+  }
+}
+
+.hungry-text {
+  animation:
+    hungryPose
+    0.9s
+    infinite
+    alternate;
+}
+
+.hungry-text
+.chibi-blush {
+  opacity: 0.75;
+}
+
+.hungry-text
+.chibi-mouth {
+  width: 7px;
+  height: 6px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    #9b5361;
+}
+
+@keyframes hungryPose {
+  to {
+    transform:
+      translateY(3px);
+  }
+}
+
+.surprised-text {
+  animation:
+    surprisedTextPose
+    0.16s
+    5
+    alternate;
+}
+
+.surprised-text
+.chibi-mouth {
+  width: 7px;
+  height: 7px;
+
+  border: 0;
+
+  border-radius: 50%;
+
+  background:
+    #9b5361;
+}
+
+@keyframes surprisedTextPose {
+  to {
+    transform:
+      translateY(-4px);
+  }
+}
+
+.confused-text {
+  animation:
+    confusedPose
+    0.8s
+    infinite
+    alternate;
+}
+
+.confused-text::after {
+  content: "?";
+
+  position: absolute;
+
+  right: -4px;
+  top: 0;
+
+  color: #eee3ff;
+
+  font-size: 14px;
+}
+
+@keyframes confusedPose {
+  to {
+    transform:
+      rotate(3deg);
+  }
+}
+
+.determined {
+  animation:
+    determinedPose
+    0.7s
+    infinite
+    alternate;
+}
+
+.determined
+.chibi-blush {
+  opacity: 0.45;
+}
+
+@keyframes determinedPose {
+  to {
+    transform:
+      translateY(-2px)
+      rotate(-2deg);
+  }
+}
+
+.happy-text {
+  animation:
+    happyTextPose
+    0.5s
+    infinite
+    alternate;
+}
+
+.happy-text
+.chibi-eye {
+  height: 3px;
+}
+
+.happy-text
+.chibi-blush {
+  opacity: 1;
+}
+
+@keyframes happyTextPose {
+  to {
+    transform:
+      translateY(-4px);
+  }
+}
+
+.wait {
+  animation:
+    waitPose
+    1.3s
+    infinite
+    alternate;
+}
+
+@keyframes waitPose {
+  to {
+    transform:
+      translateY(-2px);
+  }
+}
+
+.phone {
+  animation:
+    phonePose
+    1s
+    infinite
+    alternate;
+}
+
+.phone
+.chibi-head {
+  transform:
+    rotate(5deg);
+}
+
+@keyframes phonePose {
+  to {
+    transform:
+      translateY(2px);
+  }
+}
+
+.walk {
+  animation:
+    walkPose
+    0.38s
+    infinite
+    alternate;
+}
+
+.walk
+.leg-left {
+  transform:
+    rotate(22deg);
+}
+
+.walk
+.leg-right {
+  transform:
+    rotate(-22deg);
+}
+
+@keyframes walkPose {
+  from {
+    transform:
+      translateX(-4px)
+      translateY(0);
+  }
+
+  to {
+    transform:
+      translateX(5px)
+      translateY(-3px);
+  }
+}
+
+.run {
+  animation:
+    runPose
+    0.23s
+    infinite
+    alternate;
+}
+
+.run
+.chibi-body {
+  transform:
+    rotate(7deg);
+}
+
+.run
+.leg-left {
+  transform:
+    rotate(29deg);
+}
+
+.run
+.leg-right {
+  transform:
+    rotate(-29deg);
+}
+
+@keyframes runPose {
+  from {
+    transform:
+      translateY(0)
+      rotate(-4deg);
+  }
+
+  to {
+    transform:
+      translateY(-6px)
+      rotate(5deg);
+  }
+}
+
+.order
+.arm-right {
+  transform:
+    rotate(-72deg);
+}
+
+.ride {
+  animation:
+    ridePose
+    0.38s
+    infinite
+    alternate;
+}
+
+.ride
+.chibi-body {
+  transform:
+    rotate(7deg);
+}
+
+.ride
+.leg-left {
+  transform:
+    rotate(25deg);
+}
+
+.ride
+.leg-right {
+  transform:
+    rotate(-25deg);
+}
+
+@keyframes ridePose {
+  to {
+    transform:
+      translateX(6px)
+      translateY(-3px);
+  }
+}
+
+.peek
+.chibi-head {
+  transform:
+    translateX(-4px)
+    rotate(-3deg);
+}
+
+.arrive {
+  animation:
+    arrivePose
+    0.8s
+    ease-out;
+}
+
+@keyframes arrivePose {
+  from {
+    transform:
+      translateX(-150px);
+  }
+
+  72% {
+    transform:
+      translateX(9px);
+  }
+
+  to {
+    transform:
+      translateX(0);
+  }
+}
+
+.give {
+  transform:
+    translateX(13px);
+}
+
+.give
+.arm-right {
+  transform:
+    rotate(-72deg);
+}
+
+.surprised {
+  animation:
+    surprisedPose
+    0.16s
+    5
+    alternate;
+}
+
+.surprised
+.chibi-mouth {
+  width: 7px;
+  height: 7px;
+
+  border: 0;
+
+  border-radius:
+    50%;
+
+  background:
+    #9b5361;
+}
+
+@keyframes surprisedPose {
+  to {
+    transform:
+      translateY(-6px);
+  }
+}
+
+.happy {
+  animation:
+    happyPose
+    0.36s
+    infinite
+    alternate;
+}
+
+.happy
+.chibi-eye {
+  height: 3px;
+}
+
+.happy
+.chibi-blush {
+  opacity: 1;
+}
+
+@keyframes happyPose {
+  to {
+    transform:
+      translateY(-5px);
+  }
+}
+
+.shy {
+  animation:
+    shyPose
+    0.8s
+    infinite
+    alternate;
+}
+
+.shy
+.chibi-blush {
+  opacity: 1;
+}
+
+@keyframes shyPose {
+  to {
+    transform:
+      translateY(2px)
+      rotate(-3deg);
+  }
+}
+
+.head-pat {
+  transform:
+    translateX(-13px);
+}
+
+.head-pat
+.arm-left {
+  animation:
+    patPose
+    0.45s
+    infinite
+    alternate;
+}
+
+@keyframes patPose {
+  from {
+    transform:
+      rotate(76deg)
+      translateY(-7px);
+  }
+
+  to {
+    transform:
+      rotate(90deg)
+      translateY(-12px);
+  }
+}
+
+.eat {
+  animation:
+    eatPose
+    0.6s
+    infinite
+    alternate;
+}
+
+.eat
+.chibi-eye {
+  height: 3px;
+}
+
+.eat
+.chibi-blush {
+  opacity: 0.75;
+}
+
+@keyframes eatPose {
+  to {
+    transform:
+      translateY(-3px);
+  }
+}
+
+.lean {
+  transform:
+    translateX(-18px)
+    rotate(-5deg);
+}
+
+.lean
+.chibi-blush {
+  opacity: 1;
+}
+
+/* =========================================================
+   CHAT GẦN NHÂN VẬT
+========================================================= */
+
+.chat-bubble {
+  position: absolute;
+
+  z-index: 120;
+
+  min-width: 74px;
+  max-width: 128px;
+
+  padding:
+    7px 9px;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.17
+    );
+
+  border-radius:
+    9px;
+
+  color:
+    #f2f2f8;
+
+  background:
+    rgba(
+      15,
+      16,
+      27,
+      0.88
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  box-shadow:
+    0 4px 13px
+    rgba(
+      0,
+      0,
+      0,
+      0.16
+    );
+
+  font-size: 8px;
+
+  line-height: 1.3;
+
+  text-align: center;
+}
+
+.story-card
+.chat-bubble {
+  bottom: 147px;
+}
+
+.left-panel
+.left-chat {
+  left: 50%;
+
+  transform:
+    translateX(-56%);
+}
+
+.right-panel
+.right-chat {
+  left: 50%;
+
+  transform:
+    translateX(-44%);
+}
+
+.together-boy-chat {
+  left:
+    calc(
+      50% - 173px
+    );
+
+  bottom: 150px;
+}
+
+.together-girl-chat {
+  right:
+    calc(
+      50% - 173px
+    );
+
+  bottom: 150px;
+}
+
+.chat-tail {
+  position: absolute;
+
+  bottom: -5px;
+
+  width: 8px;
+  height: 8px;
+
+  background:
+    #151622;
+
+  transform:
+    rotate(45deg);
+}
+
+.left-chat
+.chat-tail,
+.together-boy-chat
+.chat-tail {
+  right: 20px;
+}
+
+.right-chat
+.chat-tail,
+.together-girl-chat
+.chat-tail {
+  left: 20px;
+}
+
+/* =========================================================
+   EFFECTS
+========================================================= */
+
+.tiny-heart {
+  position: absolute;
+
+  z-index: 100;
+
+  left: 50%;
+  top: 82px;
+
+  color:
+    #ff739b;
+
+  font-size: 24px;
+}
+
+.idea-effect {
+  position: absolute;
+
+  z-index: 100;
+
+  left: 50%;
+  top: 76px;
+
+  transform:
+    translateX(-50%);
+
+  font-size: 20px;
+}
+
+.speed-lines {
+  position: absolute;
+
+  z-index: 45;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.speed-lines
+> span {
+  position: absolute;
+
+  right: -120px;
+
+  width: 110px;
+  height: 2px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.2
+    );
+
+  animation:
+    speedEffect
+    0.55s
+    infinite
+    linear;
+}
+
+@keyframes speedEffect {
+  to {
+    transform:
+      translateX(-620px);
+  }
+}
+
+.center-steam {
+  position: absolute;
+
+  z-index: 100;
+
+  left: 50%;
+  top: 81px;
+
+  transform:
+    translateX(-50%);
+}
+
+.center-steam
+> span {
+  position: absolute;
+
+  width: 7px;
+  height: 20px;
+
+  border-left:
+    2px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.7
+    );
+
+  border-radius:
+    50%;
+}
+
+.center-steam
+> span:nth-child(1) {
+  left: -18px;
+}
+
+.center-steam
+> span:nth-child(2) {
+  left: 0;
+}
+
+.center-steam
+> span:nth-child(3) {
+  left: 18px;
+}
+
+.rain-effect {
+  position: absolute;
+
+  z-index: 90;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+}
+
+.rain-effect
+> span {
+  position: absolute;
+
+  top: -30px;
+
+  width: 2px;
+  height: 26px;
+
+  background:
+    rgba(
+      160,
+      191,
+      235,
+      0.52
+    );
+
+  transform:
+    rotate(15deg);
+
+  animation:
+    rainFall
+    0.58s
+    infinite
+    linear;
+}
+
+@keyframes rainFall {
+  to {
+    transform:
+      translateY(450px)
+      rotate(15deg);
+
+    opacity: 0;
+  }
+}
+
+.sparkles {
+  position: absolute;
+
+  z-index: 105;
+
+  left: 50%;
+  top: 93px;
+
+  color:
+    #fff1b9;
+}
+
+.sparkles
+> span {
+  position: absolute;
+}
+
+.sparkles
+> span:nth-child(1) {
+  left: -58px;
+}
+
+.sparkles
+> span:nth-child(2) {
+  left: -18px;
+  top: -20px;
+}
+
+.sparkles
+> span:nth-child(3) {
+  left: 35px;
+}
+
+.sparkles
+> span:nth-child(4) {
+  left: 67px;
+  top: -14px;
+}
+
+.heart-particles {
+  position: absolute;
+
+  z-index: 105;
+
+  left: 50%;
+  top: 113px;
+}
+
+.heart-particles
+> span {
+  position: absolute;
+
+  color:
+    #ff7ba4;
+
+  animation:
+    heartFly
+    1.6s
+    infinite;
+
+  animation-delay:
+    calc(
+      var(--i) *
+      0.1s
+    );
+}
+
+@keyframes heartFly {
+  from {
+    opacity: 0;
+
+    transform:
+      rotate(
+        calc(
+          var(--i) *
+          26deg
+        )
+      )
+      translateX(8px);
+  }
+
+  35% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+
+    transform:
+      rotate(
+        calc(
+          var(--i) *
+          26deg
+        )
+      )
+      translateX(77px);
+  }
+}
+
+.ending-effect {
+  position: absolute;
+
+  z-index: 110;
+
+  left: 50%;
+  top: 74px;
+
+  transform:
+    translateX(-50%);
+
+  color:
+    #ffe6ee;
+
+  font-size: 17px;
+
+  letter-spacing:
+    14px;
+}
+
+.ending-effect
+> span {
+  color:
+    #ff80a5;
+
+  font-size: 25px;
+}
+
+/* =========================================================
+   LYRICS
+========================================================= */
+
+.lyrics {
+  position: absolute;
+
+  z-index: 190;
+
+  left: 18px;
+  right: 18px;
+  bottom: 13px;
+
+  min-height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  column-gap: 4px;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  line-height: 1.5;
+
+  text-align: center;
+
+  text-shadow:
+    0 1px 4px
+    rgba(
+      0,
+      0,
+      0,
+      0.95
+    );
+}
+
+.lyrics-empty {
+  opacity: 0;
+}
+
+.karaoke-word {
+  display: inline-block;
+
+  background:
+    linear-gradient(
+      90deg,
+
+      #ff82aa 0%,
+
+      #ff82aa
+      var(--progress),
+
+      #e6e6ee
+      var(--progress),
+
+      #e6e6ee 100%
+    );
+
+  -webkit-background-clip:
+    text;
+
+  background-clip:
+    text;
+
+  color: transparent;
+}
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.music-progress {
+  position: absolute;
+
+  z-index: 200;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 3px;
+
+  background:
+    #242530;
+}
+
+.music-progress
+> div {
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      #836fff,
+      #ff7aa4
+    );
+}
+
+/* =========================================================
+   MINI CONTROLS
+========================================================= */
+
+.mini-control {
+  position: absolute;
+
+  z-index: 260;
+
+  top: 8px;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  border-radius:
+    50%;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.8
+    );
+
+  background:
+    rgba(
+      7,
+      8,
+      15,
+      0.58
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  cursor: pointer;
+
+  opacity: 0.68;
+
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.mini-control:hover {
+  opacity: 1;
+
+  transform:
+    scale(1.08);
+}
+
+.mini-play {
+  left: 8px;
+
+  font-size: 8px;
+}
+
+.mini-restart {
+  left: 42px;
+
+  font-size: 12px;
+}
+
+/* =========================================================
+   CODE PANEL
+========================================================= */
+
+.code-panel {
+  position: absolute;
+
+  z-index: 130;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 48%;
+
+  overflow: hidden;
+
+  border-top:
+    1px solid
+    #181a22;
+
+  background:
+    #090a0e;
+
+  font-family:
+    Consolas,
+    "Courier New",
+    monospace;
+}
+
+.editor-header {
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding:
+    0 10px;
+
+  border-bottom:
+    1px solid
+    #181a22;
+
+  background:
+    #08090c;
+}
+
+.editor-dots {
+  display: flex;
+
+  gap: 5px;
+}
+
+.editor-dots
+> span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+}
+
+.editor-dots
+> span:nth-child(1) {
+  background:
+    #ff5f57;
+}
+
+.editor-dots
+> span:nth-child(2) {
+  background:
+    #febc2e;
+}
+
+.editor-dots
+> span:nth-child(3) {
+  background:
+    #28c840;
+}
+
+.editor-name {
+  flex: 1;
+
+  color:
+    #6d707c;
+
+  font-size: 8px;
+}
+
+.editor-live {
+  color:
+    #ff789f;
+
+  font-size: 7px;
+}
+
+.code-content {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: 32px;
+  bottom: 0;
+
+  overflow-y: auto;
+
+  padding:
+    8px 0 80px;
+
+  scroll-behavior:
+    smooth;
+
+  scrollbar-width:
+    none;
+}
+
+.code-content::-webkit-scrollbar {
+  display: none;
+}
+
+.code-line {
+  position: relative;
+
+  min-height: 23px;
+
+  display: flex;
+
+  align-items: center;
+
+  color:
+    #5f626d;
+
+  font-size: 9px;
+
+  white-space: pre;
+}
+
+.line-number {
+  flex-shrink: 0;
+
+  width: 32px;
+
+  margin-right: 8px;
+
+  color:
+    #30323a;
+
+  text-align: right;
+}
+
+.code-line
+code {
+  font-family:
+    inherit;
+}
+
+.passed-code {
+  opacity: 0.68;
+}
+
+.active-code {
+  color:
+    #e1e2eb;
+
+  border-left:
+    2px solid
+    #ff759e;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(
+        255,
+        100,
+        150,
+        0.15
+      ),
+      transparent
+    );
+}
+
+.active-code
+.line-number {
+  color:
+    #bc8294;
+}
+
+.syntax-keyword {
+  color:
+    #c678dd;
+}
+
+.syntax-string {
+  color:
+    #98c379;
+}
+
+.syntax-boolean {
+  color:
+    #d19a66;
+}
+
+.syntax-class {
+  color:
+    #e5c07b;
+}
+
+.code-space {
+  height: 110px;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (
+  max-width: 500px
+) {
+  .phone-frame {
+    width: 100vw;
+    height: 100vh;
+
+    box-shadow: none;
+  }
+
+  .split-layout {
+    gap: 6px;
+
+    padding: 7px;
+  }
+
+  .story-card
+  .chat-bubble {
+    max-width: 105px;
+
+    font-size: 7px;
+  }
+
+  .together-boy-chat,
+  .together-girl-chat {
+    max-width: 115px;
+
+    font-size: 7px;
+  }
+
+  .lyrics {
+    font-size: 9px;
+  }
+
+  .code-line {
+    font-size: 8px;
+  }
+}
