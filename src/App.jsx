@@ -107,385 +107,286 @@ const LYRICS_TIMELINE = [
 const STORY_TIMELINE = [
   {
     from: 0,
-    to: 2.6,
+    to: 8.64,
     layout: "split",
     effect: "tiny-heart",
-
     boy: {
-      scene: "room",
+      scene: "room-night",
       pose: "texting",
       talk: "Bà đang làm gì đó? 👀",
       phone: true,
     },
-
     girl: {
-      scene: "room",
+      scene: "room-night",
       pose: "texting",
       talk: "ông ơi...",
       phone: true,
     },
+    beats: [
+      {
+        at: 2.6,
+        effect: "steam",
+        boy: { pose: "reading-text", talk: "sao vậy bà?", phone: true },
+        girl: {
+          pose: "hungry-text",
+          talk: "tui thèm mỳ cay Tâm Giao quá 🍜🥹",
+          phone: true,
+          thoughtNoodles: true,
+        },
+      },
+      {
+        at: 4.96,
+        effect: "idea",
+        boy: { pose: "surprised-text", talk: "mỳ cay á? 👀", phone: true },
+        girl: {
+          pose: "hungry-text",
+          talk: "ừ... thèm dữ lắm luôn 🥹",
+          phone: true,
+          thoughtNoodles: true,
+        },
+      },
+      {
+        at: 6.15,
+        effect: "tiny-heart",
+        boy: { pose: "determined", talk: "đợi tui xíu nha bà 😌", phone: false },
+        girl: { pose: "confused-text", talk: "ủa ông đi đâu?", phone: true },
+      },
+      {
+        at: 7.35,
+        effect: "none",
+        boy: { pose: "walk", talk: "bí mật 😌", phone: false },
+        girl: { pose: "reading-text", talk: "???", phone: true },
+      },
+    ],
   },
-
-  {
-    from: 2.6,
-    to: 4.96,
-    layout: "split",
-    effect: "steam",
-
-    boy: {
-      scene: "room",
-      pose: "reading-text",
-      talk: "sao vậy bà?",
-      phone: true,
-    },
-
-    girl: {
-      scene: "room",
-      pose: "hungry-text",
-      talk: "tui thèm mỳ cay Tâm Giao quá 🍜🥹",
-      phone: true,
-      thoughtNoodles: true,
-    },
-  },
-
-  {
-    from: 4.96,
-    to: 6.8,
-    layout: "split",
-    effect: "idea",
-
-    boy: {
-      scene: "room",
-      pose: "surprised-text",
-      talk: "mỳ cay á? 👀",
-      phone: true,
-    },
-
-    girl: {
-      scene: "room",
-      pose: "hungry-text",
-      talk: "ừ... thèm dữ lắm luôn 🥹",
-      phone: true,
-      thoughtNoodles: true,
-    },
-  },
-
-  {
-    from: 6.8,
-    to: 8.64,
-    layout: "split",
-    effect: "tiny-heart",
-
-    boy: {
-      scene: "room",
-      pose: "determined",
-      talk: "đợi tui xíu nha bà 😌",
-      phone: true,
-    },
-
-    girl: {
-      scene: "room",
-      pose: "confused-text",
-      talk: "ủa ông đi đâu?",
-      phone: true,
-    },
-  },
-
   {
     from: 8.64,
-    to: 11.86,
+    to: 14.2,
     layout: "split",
     effect: "speed",
-
     boy: {
-      scene: "road",
+      scene: "city-trip",
       pose: "walk",
       talk: "đi mua mỳ cay cho bà chứ đâu 😌",
     },
-
     girl: {
-      scene: "wait",
+      scene: "room-night",
       pose: "reading-text",
       talk: "hả??? thiệt hả ông 😳",
       phone: true,
       thoughtNoodles: true,
     },
+    beats: [
+      {
+        at: 1.51,
+        boy: { pose: "run", talk: "đi hơi xa xíu thôi 😭" },
+        girl: { pose: "happy-text", talk: "hehe... 🥹", phone: true },
+      },
+      {
+        at: 3.22,
+        effect: "none",
+        boy: { pose: "walk", talk: "qua cầu cái đã" },
+        girl: { pose: "wait", talk: "ổng đi xa thiệt...", phone: false, thoughtNoodles: true },
+      },
+      {
+        at: 4.41,
+        boy: { pose: "run", talk: "thấy bảng Tâm Giao rồi!" },
+        girl: { pose: "wait", talk: "tui chờ nha 🍜", thoughtNoodles: true },
+      },
+    ],
   },
-
-  {
-    from: 11.86,
-    to: 14.2,
-    layout: "split",
-    effect: "speed",
-
-    boy: {
-      scene: "road",
-      pose: "run",
-      talk: "đúng rồi á",
-    },
-
-    girl: {
-      scene: "wait",
-      pose: "happy-text",
-      talk: "hehe... 🥹",
-      phone: true,
-      thoughtNoodles: true,
-    },
-  },
-
   {
     from: 14.2,
-    to: 17.55,
-    layout: "split",
-    effect: "steam",
-
-    boy: {
-      scene: "shop",
-      pose: "order",
-      talk: "cho một phần mỳ cay thập cẩm cấp 2 không lấy chả cho thêm nhiều sốt chấm nha!",
-    },
-
-    girl: {
-      scene: "wait",
-      pose: "wait",
-      talk: "không biết ông tới đâu rồi...",
-      thoughtNoodles: true,
-    },
-  },
-
-  {
-    from: 17.55,
     to: 20.65,
     layout: "split",
     effect: "steam",
-
     boy: {
-      scene: "shop",
-      pose: "reading-text",
-      talk: "giờ tui chạy xuống đưa cho bà nha",
-      phone: true,
+      scene: "noodle-shop",
+      pose: "arrive",
+      talk: "tới quán rồi nha bà 🍜",
     },
-
     girl: {
-      scene: "wait",
-      pose: "texting",
-      talk: "đã vá",
+      scene: "room-night",
+      pose: "happy-text",
+      talk: "thiệt hả 😳",
       phone: true,
+      thoughtNoodles: true,
     },
+    beats: [
+      {
+        at: 1.25,
+        boy: {
+          pose: "order",
+          talk: "cho một phần thập cẩm cấp 2, không chả, nhiều sốt chấm nha!",
+        },
+        girl: { pose: "wait", talk: "tui chờ nha...", phone: false, thoughtNoodles: true },
+      },
+      {
+        at: 3.35,
+        effect: "tiny-heart",
+        boy: { pose: "reading-text", talk: "giờ tui chạy xuống đưa cho bà nha", phone: true },
+        girl: { pose: "texting", talk: "đã vá 🥹", phone: true },
+      },
+      {
+        at: 4.65,
+        effect: "steam",
+        boy: { pose: "wait", talk: "đang chờ đóng hộp nè 🍜", phone: false },
+        girl: {
+          pose: "hungry-text",
+          talk: "nhớ nhiều sốt chấm nha 👉👈",
+          phone: true,
+          thoughtNoodles: true,
+        },
+      },
+    ],
   },
-
   {
     from: 20.65,
-    to: 23.44,
+    to: 28.1,
     layout: "split",
     effect: "rain",
-
     boy: {
-      scene: "ship",
+      scene: "rain-delivery",
       pose: "ride",
       talk: "mỳ cay tới đây bà ơiii 🍜",
       carryFood: true,
       helmet: true,
     },
-
     girl: {
-      scene: "wait",
+      scene: "room-night",
       pose: "phone",
       talk: "ông chạy từ từ thôi nha!",
       phone: true,
     },
+    beats: [
+      {
+        at: 1.4,
+        boy: { pose: "ride", talk: "biết rồi bà 😭", carryFood: true, helmet: true },
+        girl: { pose: "phone", talk: "trời mưa nữa kìa...", phone: true },
+      },
+      {
+        at: 2.79,
+        boy: { pose: "ride", talk: "tui che túi mỳ kỹ lắm 😭", carryFood: true, helmet: true },
+        girl: {
+          pose: "hungry-text",
+          talk: "mỳ đừng nguội nha 👉👈",
+          phone: true,
+          thoughtNoodles: true,
+        },
+      },
+      {
+        at: 4.55,
+        effect: "none",
+        boy: { pose: "wait", talk: "đèn đỏ xíu nha bà", carryFood: true, helmet: true },
+        girl: { pose: "phone", talk: "ông tới đâu rồi á ??", phone: true },
+      },
+      {
+        at: 6.45,
+        effect: "speed",
+        boy: { pose: "ride", talk: "gần tới rồi!", carryFood: true, helmet: true },
+        girl: { pose: "happy-text", talk: "okee tới nhắn tui nha 🤭", phone: true },
+      },
+    ],
   },
-
-  {
-    from: 23.44,
-    to: 27.86,
-    layout: "split",
-    effect: "rain",
-
-    boy: {
-      scene: "ship",
-      pose: "ride",
-      talk: "biết rồi bà 😭",
-      carryFood: true,
-      helmet: true,
-    },
-
-    girl: {
-      scene: "wait",
-      pose: "hungry-text",
-      talk: "nhưng mỳ đừng nguội nha 👉👈",
-      phone: true,
-      thoughtNoodles: true,
-    },
-  },
-
   {
     from: 28.1,
-    to: 31.18,
-    layout: "split",
-    effect: "speed",
-
-    boy: {
-      scene: "ship",
-      pose: "run",
-      talk: "sắp tới rồi",
-      carryFood: true,
-    },
-
-    girl: {
-      scene: "wait",
-      pose: "happy-text",
-      talk: "hihi 🤭",
-      phone: true,
-    },
-  },
-
-  {
-    from: 31.18,
     to: 34.84,
     layout: "split",
-    effect: "speed",
-
+    effect: "none",
     boy: {
-      scene: "ship",
-      pose: "run",
-      talk: "tới rồi nè!",
+      scene: "apartment-arrival",
+      pose: "walk",
+      talk: "tới khu bà rồi nè",
       carryFood: true,
     },
-
     girl: {
-      scene: "wait",
-      pose: "peek",
-      talk: "tui thấy ông rồi 👀",
+      scene: "apartment-wait",
+      pose: "happy-text",
+      talk: "hihi tui ra đây 🤭",
+      phone: true,
     },
+    beats: [
+      {
+        at: 1.5,
+        boy: { pose: "walk", talk: "cổng ở đây đúng hong", carryFood: true },
+        girl: { pose: "run", talk: "đợi tui xíu!", phone: false },
+      },
+      {
+        at: 3.08,
+        boy: { pose: "walk", talk: "Tâm Giao của bà nè 🍜", carryFood: true },
+        girl: { pose: "surprised", talk: "tr ưi dì mà nhìu vậy 😳", phone: false },
+      },
+      {
+        at: 4.55,
+        effect: "tiny-heart",
+        boy: { pose: "wait", talk: "có nhiêu đâu 👀", carryFood: true },
+        girl: { pose: "peek", talk: "Còn dì nữa hong ?", phone: false },
+      },
+    ],
   },
-
   {
     from: 34.84,
-    to: 37.52,
-    layout: "together",
-    sharedScene: "arrive",
-    effect: "sparkles",
-
-    boy: {
-      pose: "arrive",
-      talk: "shipper mỳ cay tới rồi đây 😎",
-      carryFood: true,
-    },
-
-    girl: {
-      pose: "surprised",
-      talk: "ông đi thiệt luôn hả 😳",
-    },
-  },
-
-  {
-    from: 37.52,
     to: 40.65,
     layout: "together",
-    sharedScene: "gift",
-    effect: "hearts",
-
-    boy: {
-      pose: "give",
-      talk: "mỳ cay của bà nè 🍜",
-      carryFood: true,
-    },
-
-    girl: {
-      pose: "happy",
-      talk: "trời ơi... cảm ơn ông 🥹",
-    },
+    sharedScene: "arrival-cute",
+    effect: "none",
+    boy: { pose: "shy", talk: "", carryFood: true },
+    girl: { pose: "peek", talk: "" },
   },
-
   {
     from: 40.65,
-    to: 43.42,
-    layout: "together",
-    sharedScene: "gift",
-    effect: "hearts",
-
-    boy: {
-      pose: "shy",
-      talk: "có gì đâu bà 😳",
-    },
-
-    girl: {
-      pose: "head-pat",
-      talk: "ông ngốc ghê á ♡",
-    },
-  },
-
-  {
-    from: 43.42,
     to: 46.64,
     layout: "together",
-    sharedScene: "eat",
+    sharedScene: "dinner-cute",
     effect: "steam-hearts",
-
-    boy: {
-      pose: "eat",
-      talk: "cay không bà?",
-    },
-
-    girl: {
-      pose: "eat",
-      talk: "cay... mà ngon 😭🍜",
-    },
+    boy: { pose: "shy", talk: "ăn thử đi bà" },
+    girl: { pose: "happy", talk: "được rồi ông 😌" },
+    beats: [
+      {
+        at: 1.4,
+        effect: "hearts",
+        boy: { pose: "shy", talk: "có gì đâu bà 😳" },
+        girl: { pose: "head-pat", talk: "ông ngốc ghê á ♡" },
+      },
+      {
+        at: 2.77,
+        effect: "steam-hearts",
+        boy: { pose: "eat", talk: "cay không bà?" },
+        girl: { pose: "eat", talk: "cay... 😭🍜" },
+      },
+      {
+        at: 4.45,
+        effect: "steam",
+        boy: { pose: "eat", talk: "cấp 2 thôi mà 😭" },
+        girl: { pose: "eat", talk: "mà ngon lắm 😌" },
+      },
+    ],
   },
-
   {
     from: 46.64,
     to: 49.96,
     layout: "together",
-    sharedScene: "eat",
-    effect: "steam-hearts",
-
-    boy: {
-      pose: "eat",
-      talk: "ăn từ từ coi 😭",
-    },
-
-    girl: {
-      pose: "happy",
-      talk: "ông mua thì tui ăn hết 😌",
-    },
+    sharedScene: "cozy-room",
+    effect: "tiny-heart",
+    boy: { pose: "happy", talk: "ăn từ từ coi 😭" },
+    girl: { pose: "happy", talk: "no quá rồi..." },
+    beats: [
+      {
+        at: 1.56,
+        effect: "hearts",
+        boy: { pose: "happy", talk: "vậy là đáng công tui đi rồi" },
+        girl: { pose: "lean", talk: "ông mua thì tui ăn hết 😌" },
+      },
+    ],
   },
-
   {
     from: 49.96,
-    to: 52.55,
-    layout: "together",
-    sharedScene: "ending",
-    effect: "ending",
-
-    boy: {
-      pose: "happy",
-      talk: "lần sau tui dẫn bà đi ăn luôn",
-    },
-
-    girl: {
-      pose: "lean",
-      talk: "nhớ đó nha ông ♡",
-    },
-  },
-
-  {
-    from: 52.55,
     to: 9999,
     layout: "together",
-    sharedScene: "ending",
+    sharedScene: "ending-cute",
     effect: "ending",
-
-    boy: {
-      pose: "happy",
-      talk: "",
-    },
-
-    girl: {
-      pose: "lean",
-      talk: "cảm ơn ông vì tô mỳ cay 🍜♡",
-    },
+    boy: { pose: "happy", talk: "lần sau tui dẫn bà đi ăn luôn" },
+    girl: { pose: "lean", talk: "nhớ đó nha ông ♡" },
   },
 ];
 
@@ -494,86 +395,29 @@ const STORY_TIMELINE = [
 ========================================================= */
 
 const CODE_LINES = [
-  {
-    time: 0,
-    code: "async function spicyNoodleMission() {",
-  },
-  {
-    time: 1.1,
-    code: "  const message = await her.textMe();",
-  },
-  {
-    time: 2.6,
-    code: "  const craving = message.includes('mỳ cay');",
-  },
-  {
-    time: 4.96,
-    code: "  if (craving) me.makeDecision();",
-  },
-  {
-    time: 6.8,
-    code: '  me.text("đợi tui xíu nha bà");',
-  },
-  {
-    time: 8.64,
-    code: "  const shop = city.findBestSpicyNoodles();",
-  },
-  {
-    time: 11.86,
-    code: "  await me.go(shop);",
-  },
-  {
-    time: 14.2,
-    code: "  const bowl = await shop.order({ level: 2 });",
-  },
-  {
-    time: 17.55,
-    code: "  bowl.add(['egg', 'chili', 'noodles']);",
-  },
-  {
-    time: 20.65,
-    code: "  weather.startRain();",
-  },
-  {
-    time: 23.44,
-    code: "  me.protect(bowl);",
-  },
-  {
-    time: 28.1,
-    code: "  await me.shipTo(her.location);",
-  },
-  {
-    time: 31.18,
-    code: "  const home = maps.almostThere();",
-  },
-  {
-    time: 34.84,
-    code: "  me.arrive(home);",
-  },
-  {
-    time: 37.52,
-    code: "  me.give(bowl).to(her);",
-  },
-  {
-    time: 40.65,
-    code: "  her.heart.melt();",
-  },
-  {
-    time: 43.42,
-    code: "  const dinner = table.prepare(bowl);",
-  },
-  {
-    time: 46.64,
-    code: "  await Promise.all([me.eat(), her.eat()]);",
-  },
-  {
-    time: 49.96,
-    code: '  return "worth every step ♡";',
-  },
-  {
-    time: 52.55,
-    code: "}",
-  },
+  { time: 0, code: "async function spicyNoodleMission() {" },
+  { time: 1.1, code: "  const message = await her.textMe();" },
+  { time: 2.6, code: "  const craving = message.includes('mỳ cay');" },
+  { time: 4.96, code: "  if (craving) me.makeDecision();" },
+  { time: 6.15, code: "  me.grab(['jacket', 'keys']);" },
+  { time: 8.64, code: "  await me.walkThroughTheNight();" },
+  { time: 11.86, code: "  const shop = city.find('Tâm Giao');" },
+  { time: 14.2, code: "  me.arrive(shop);" },
+  { time: 15.45, code: "  const bowl = await shop.order({ level: 2 });" },
+  { time: 18.85, code: "  await shop.packWarm(bowl);" },
+  { time: 20.65, code: "  weather.startRain();" },
+  { time: 23.44, code: "  me.protect(bowl);" },
+  { time: 25.2, code: "  await traffic.waitForGreen();" },
+  { time: 28.1, code: "  await me.enterHerApartment();" },
+  { time: 34.84, code: "  const door = await me.findHerDoor();" },
+  { time: 36.2, code: '  me.text("shipper mỳ cay tới rồi đây 😎");' },
+  { time: 37.6, code: "  me.give(bowl).to(her);" },
+  { time: 39.1, code: "  her.hugTheWarmBag();" },
+  { time: 40.65, code: "  table.prepareCuteDinner(bowl);" },
+  { time: 43.42, code: "  await Promise.all([me.eat(), her.eat()]);" },
+  { time: 46.64, code: "  both.restWithCat();" },
+  { time: 49.96, code: '  return "worth every step ♡";' },
+  { time: 52.55, code: "}" },
 ];
 
 /* =========================================================
@@ -595,14 +439,114 @@ const STAR_DATA = Array.from(
    HELPERS
 ========================================================= */
 
-function getStoryScene(time) {
-  return (
-    STORY_TIMELINE.find(
-      (item) =>
-        time >= item.from &&
-        time < item.to
-    ) || STORY_TIMELINE[0]
+function getStoryIndex(time) {
+  let activeIndex = 0;
+
+  for (
+    let index = 0;
+    index < STORY_TIMELINE.length;
+    index += 1
+  ) {
+    if (
+      time >=
+      STORY_TIMELINE[index].from
+    ) {
+      activeIndex = index;
+    } else {
+      break;
+    }
+  }
+
+  return activeIndex;
+}
+
+function clamp(
+  value,
+  min = 0,
+  max = 1
+) {
+  return Math.min(
+    Math.max(
+      value,
+      min
+    ),
+    max
   );
+}
+
+function smootherStep(
+  value
+) {
+  const progress =
+    clamp(value);
+
+  /*
+    Mềm hơn ease thường:
+    - đầu fade rất chậm
+    - giữa chuyển đều
+    - cuối fade chậm lại
+  */
+  return (
+    progress *
+    progress *
+    progress *
+    (
+      progress *
+      (
+        progress * 6 - 15
+      ) + 10
+    )
+  );
+}
+
+function getTransitionDuration(
+  currentScene,
+  nextScene
+) {
+  // Với ít cảnh hơn, 1.7s đủ mềm mà không bị ì.
+  // Cảnh dài giữ lâu, chỉ đoạn giao nhau mới crossfade.
+  return 1.7;
+}
+
+function resolveStoryBeat(
+  story,
+  currentTime
+) {
+  if (!story.beats?.length) {
+    return story;
+  }
+
+  let activeBeat = null;
+
+  for (const beat of story.beats) {
+    if (
+      currentTime >=
+      story.from + beat.at
+    ) {
+      activeBeat = beat;
+    } else {
+      break;
+    }
+  }
+
+  if (!activeBeat) {
+    return story;
+  }
+
+  return {
+    ...story,
+    effect:
+      activeBeat.effect ??
+      story.effect,
+    boy: {
+      ...story.boy,
+      ...(activeBeat.boy || {}),
+    },
+    girl: {
+      ...story.girl,
+      ...(activeBeat.girl || {}),
+    },
+  };
 }
 
 function createWordTimings(line) {
@@ -816,173 +760,166 @@ function PanelDecor({
   scene,
   thoughtNoodles,
 }) {
+  const renderCity = (
+    count = 12,
+    className = "cute-city-buildings"
+  ) => (
+    <div className={className}>
+      {Array.from({ length: count }).map((_, index) => (
+        <i
+          key={index}
+          style={{
+            height: `${28 + ((index * 19) % 52)}px`,
+          }}
+        />
+      ))}
+    </div>
+  );
+
   return (
-    <div
-      className={`
-        panel-decor
-        ${role}-${scene}
-      `}
-    >
+    <div className={`panel-decor ${role}-${scene}`}>
       <Stars />
 
-      {[
-        "room",
-        "wait",
-      ].includes(
-        scene
-      ) && (
-        <>
-          <div className="panel-moon">
-            <span />
+      {scene === "room-night" && (
+        <div className={`detail-room detail-room-${role}`}>
+          <div className="detail-moon"><span /></div>
+          <div className="detail-window">
+            <span className="detail-window-v" />
+            <span className="detail-window-h" />
+            <i className="detail-window-star">✦</i>
           </div>
 
-          <div className="window-box">
-            <span className="window-line window-vertical" />
-            <span className="window-line window-horizontal" />
+          <div className="detail-fairy-lights">
+            {Array.from({ length: 7 }).map((_, index) => <i key={index} />)}
           </div>
 
-          <div className="room-floor" />
+          <div className="detail-shelf">
+            <span>📚</span>
+            <span>🌱</span>
+            <span>♡</span>
+          </div>
 
-          {role ===
-            "boy" && (
+          {role === "boy" ? (
             <>
-              <div className="boy-desk">
-                <span className="desk-leg desk-left" />
-                <span className="desk-leg desk-right" />
-              </div>
-
-              <div className="laptop">
-                <span />
-              </div>
+              <div className="detail-desk" />
+              <div className="detail-laptop">♡</div>
+              <div className="detail-jacket">🧥</div>
+              <div className="detail-keys">🔑</div>
+              <div className="detail-note boy-note">MỲ CAY?</div>
+            </>
+          ) : (
+            <>
+              <div className="detail-sofa"><span>♡</span></div>
+              <div className="detail-bunny">૮ ˶ᵔ ᵕ ᵔ˶ ა</div>
+              <div className="detail-cushion">♡</div>
+              <div className="detail-mini-table">🍵</div>
+              <div className="detail-note girl-note">TÂM GIAO ♡</div>
             </>
           )}
 
-          {role ===
-            "girl" && (
-            <>
-              <div className="girl-sofa">
-                <span />
-              </div>
+          <div className="detail-rug">♡</div>
+          <div className="detail-room-floor" />
 
-              <div className="plant">
-                <span />
-              </div>
-            </>
-          )}
-
-          {thoughtNoodles && (
-            <ThoughtNoodles />
-          )}
-        </>
-      )}
-
-      {scene ===
-        "road" && (
-        <>
-          <div className="mini-city">
-            {Array.from({
-              length: 12,
-            }).map(
-              (
-                _,
-                index
-              ) => (
-                <span
-                  key={
-                    index
-                  }
-                  style={{
-                    height:
-                      `${
-                        24 +
-                        ((index *
-                          17) %
-                          38)
-                      }px`,
-                  }}
-                />
-              )
-            )}
-          </div>
-
-          <div className="mini-road">
-            <span />
-            <span />
-            <span />
-          </div>
-
-          <div className="street-lamp">
-            <span />
-          </div>
-        </>
-      )}
-
-      {scene ===
-        "shop" && (
-        <div className="shop">
-          <div className="shop-roof" />
-
-          <div className="shop-title">
-            MỲ CAY
-          </div>
-
-          <div className="shop-subtitle">
-            CẤP 1 • 2 • 3
-          </div>
-
-          <div className="shop-food-window">
-            <SpicyNoodleBowl
-              small
-            />
-          </div>
-
-          <div className="shop-counter" />
-          <div className="shop-door" />
+          {thoughtNoodles && <ThoughtNoodles />}
         </div>
       )}
 
-      {scene ===
-        "ship" && (
-        <>
-          <div className="mini-city shipping-city">
-            {Array.from({
-              length: 11,
-            }).map(
-              (
-                _,
-                index
-              ) => (
-                <span
-                  key={
-                    index
-                  }
-                  style={{
-                    height:
-                      `${
-                        20 +
-                        ((index *
-                          19) %
-                          38)
-                      }px`,
-                  }}
-                />
-              )
-            )}
+      {scene === "city-trip" && (
+        <div className="city-trip-scene">
+          <div className="trip-moon"><span /></div>
+          <div className="trip-cloud cloud-one" />
+          <div className="trip-cloud cloud-two" />
+          {renderCity(14)}
+          <div className="trip-sign">TÂM GIAO →</div>
+          <div className="trip-bus">🚌</div>
+          <div className="trip-lamp lamp-one"><span /></div>
+          <div className="trip-lamp lamp-two"><span /></div>
+          <div className="trip-road">
+            <i /><i /><i />
           </div>
+          <div className="trip-sidewalk" />
+          <div className="trip-tiny-heart">♡</div>
+        </div>
+      )}
 
-          <div className="mini-road shipping-road">
-            <span />
-            <span />
-            <span />
+      {scene === "noodle-shop" && (
+        <div className="cute-shop-scene">
+          <div className="cute-shop-header">
+            <b>TÂM GIAO</b>
+            <small>MỲ CAY • CẤP 1 2 3</small>
           </div>
+          <div className="cute-shop-lantern lantern-left">●</div>
+          <div className="cute-shop-lantern lantern-right">●</div>
+          <div className="cute-menu-board">
+            <span>THẬP CẨM</span>
+            <span>CẤP 2 🌶🌶</span>
+            <span>+ NHIỀU SỐT ♡</span>
+          </div>
+          <div className="cute-chef">👩‍🍳</div>
+          <div className="cute-kitchen-steam">♨ ♨ ♨</div>
+          <div className="cute-shop-bowl">
+            <SpicyNoodleBowl small />
+          </div>
+          <div className="cute-order-ticket">#02 ♡</div>
+          <div className="cute-shop-counter" />
+          <div className="cute-takeaway-bag">TAKE<br />AWAY ♡</div>
+        </div>
+      )}
 
-          <div className="ship-badge">
-            SHIP
-            <small>
-              MỲ CAY
-            </small>
+      {scene === "rain-delivery" && (
+        <div className="rain-delivery-scene">
+          <div className="rain-night-moon"><span /></div>
+          {renderCity(13, "rain-city-buildings")}
+          <div className="rain-shop-sign">24H</div>
+          <div className="rain-traffic-light">
+            <i className="r-light" />
+            <i className="y-light" />
+            <i className="g-light" />
           </div>
-        </>
+          <div className="rain-poster">🍜<small>GIỮ NÓNG ♡</small></div>
+          <div className="rain-road-detail">
+            <span /><span /><span />
+          </div>
+          <div className="rain-reflection reflect-one" />
+          <div className="rain-reflection reflect-two" />
+          <div className="rain-puddle-detail puddle-a" />
+          <div className="rain-puddle-detail puddle-b" />
+          <div className="rain-distance">CÒN 7 PHÚT ♡</div>
+        </div>
+      )}
+
+      {scene === "apartment-arrival" && (
+        <div className="cute-apartment-outside">
+          <div className="apartment-night-moon"><span /></div>
+          <div className="cute-apartment-building">
+            <div className="apt-title">HOME ♡</div>
+            {Array.from({ length: 12 }).map((_, index) => <i key={index} />)}
+            <div className="apt-door">WELCOME</div>
+          </div>
+          <div className="apt-tree tree-left"><span /></div>
+          <div className="apt-tree tree-right"><span /></div>
+          <div className="apt-bench">♡</div>
+          <div className="apt-mailbox">✉</div>
+          <div className="apt-path"><span /><span /><span /></div>
+          <div className="apt-lamp"><span /></div>
+        </div>
+      )}
+
+      {scene === "apartment-wait" && (
+        <div className="cute-apartment-inside">
+          <div className="apt-inside-title">TẦNG 08 ♡</div>
+          <div className="cute-elevator">
+            <span className="elevator-left-panel" />
+            <span className="elevator-right-panel" />
+          </div>
+          <div className="cute-elevator-screen">08</div>
+          <div className="cute-elevator-button">●</div>
+          <div className="hallway-door-mini">BÀ ♡</div>
+          <div className="hallway-plant-mini"><span /></div>
+          <div className="hallway-picture">🍜 ♡</div>
+          <div className="hallway-rug-mini">HELLO</div>
+          <div className="apt-inside-floor" />
+        </div>
       )}
     </div>
   );
@@ -996,45 +933,84 @@ function SharedSceneDecor({
   scene,
 }) {
   return (
-    <div
-      className={`
-        shared-decor
-        shared-${scene}
-      `}
-    >
+    <div className={`shared-decor shared-${scene}`}>
       <Stars />
 
-      <div className="shared-moon">
-        <span />
-      </div>
+      {scene === "dinner-cute" && (
+        <>
+          <div className="dinner-wall-glow" />
+          <div className="dinner-fairy-lights">
+            {Array.from({ length: 10 }).map((_, index) => <i key={index} />)}
+          </div>
+          <div className="dinner-window">
+            <span />
+            <i>☾</i>
+          </div>
+          <div className="dinner-picture">🍜 + ♡</div>
+          <div className="dinner-plant"><span /></div>
+          <div className="dinner-table-cute">
+            <div className="dinner-cloth" />
+            <div className="dinner-side side-left">🥬</div>
+            <div className="dinner-side side-right">🥚</div>
+            <div className="dinner-water water-left">💧</div>
+            <div className="dinner-water water-right">💧</div>
+            <div className="dinner-tissue">♡</div>
+          </div>
+          <div className="dinner-bowl-cute">
+            <SpicyNoodleBowl />
+          </div>
+          <div className="dinner-cat-peek">=^･ω･^=</div>
+          <div className="dinner-floor" />
+        </>
+      )}
 
-      <div className="shared-window">
-        <span className="window-line window-vertical" />
-        <span className="window-line window-horizontal" />
-      </div>
+      {scene === "cozy-room" && (
+        <>
+          <div className="cozy-window">
+            <div className="cozy-moon"><span /></div>
+            <div className="cozy-city">
+              {Array.from({ length: 12 }).map((_, index) => (
+                <i key={index} style={{ height: `${18 + ((index * 11) % 36)}px` }} />
+              ))}
+            </div>
+          </div>
+          <div className="cozy-lamp"><span /></div>
+          <div className="cozy-sofa">
+            <span className="cozy-cushion-one">♡</span>
+            <span className="cozy-cushion-two">☁</span>
+            <div className="cozy-blanket" />
+          </div>
+          <div className="cozy-cat">=^ᴗ^=</div>
+          <div className="cozy-cup cup-a">☕</div>
+          <div className="cozy-cup cup-b">☕</div>
+          <div className="cozy-empty-bowl">🍜</div>
+          <div className="cozy-floor" />
+        </>
+      )}
 
-      <div className="shared-lamp">
-        <span className="shared-lamp-light" />
-      </div>
-
-      <div className="shared-floor" />
-
-      <div className="shared-table">
-        <span className="table-leg table-leg-left" />
-        <span className="table-leg table-leg-right" />
-      </div>
-
-      {[
-        "arrive",
-        "gift",
-        "eat",
-        "ending",
-      ].includes(
-        scene
-      ) && (
-        <div className="shared-noodles">
-          <SpicyNoodleBowl />
-        </div>
+      {scene === "ending-cute" && (
+        <>
+          <div className="ending-moon-big"><span /></div>
+          <div className="ending-cloud ending-cloud-one" />
+          <div className="ending-cloud ending-cloud-two" />
+          <div className="ending-city-cute">
+            {Array.from({ length: 16 }).map((_, index) => (
+              <i key={index} style={{ height: `${20 + ((index * 17) % 48)}px` }} />
+            ))}
+          </div>
+          <div className="ending-string-lights">
+            {Array.from({ length: 11 }).map((_, index) => <i key={index} />)}
+          </div>
+          <div className="ending-balcony-rail">
+            <span /><span /><span /><span /><span />
+          </div>
+          <div className="ending-little-table">
+            <span>🍜</span>
+            <b>worth every step ♡</b>
+          </div>
+          <div className="ending-cat-silhouette">=^･^=</div>
+          <div className="ending-floor" />
+        </>
       )}
     </div>
   );
@@ -1245,12 +1221,217 @@ function SplitPanel({
 }
 
 /* =========================================================
+   CUTE ARRIVAL AT HER DOOR
+========================================================= */
+
+function ArrivalCuteScene({
+  currentTime,
+}) {
+  const elapsed =
+    currentTime - 34.84;
+
+  let phase = 0;
+
+  if (elapsed >= 4.26) {
+    phase = 3;
+  } else if (elapsed >= 2.76) {
+    phase = 2;
+  } else if (elapsed >= 1.36) {
+    phase = 1;
+  }
+
+  const phaseData = [
+    {
+      boyPose: "shy",
+      girlPose: "peek",
+      boyTalk: "shipper mỳ cay tới rồi đây 😎",
+      girlTalk: "ông tới thiệt luôn hả 😳",
+      boyFood: true,
+      girlFood: false,
+    },
+    {
+      boyPose: "shy",
+      girlPose: "happy",
+      boyTalk: "tui giữ nóng dữ lắm đó 😳",
+      girlTalk: "trời ơi dễ thương vậy 🥹",
+      boyFood: true,
+      girlFood: false,
+    },
+    {
+      boyPose: "give",
+      girlPose: "receive",
+      boyTalk: "mỳ cay của bà nè 🍜",
+      girlTalk: "cảm ơn ông nha ♡",
+      boyFood: true,
+      girlFood: true,
+    },
+    {
+      boyPose: "happy",
+      girlPose: "hug-bag",
+      boyTalk: "mở ra coi còn nóng không bà",
+      girlTalk: "vẫn nóng luôn á 🥹🍜",
+      boyFood: false,
+      girlFood: true,
+    },
+  ][phase];
+
+  return (
+    <div
+      className={`
+        together-scene
+        arrival-cute-scene
+        arrival-phase-${phase}
+      `}
+    >
+      <div className="arrival-cute-background">
+        <Stars />
+
+        <div className="arrival-wall-stars">
+          <i>✦</i>
+          <i>♡</i>
+          <i>✦</i>
+        </div>
+
+        <div className="cute-door-frame">
+          <div className="cute-door">
+            <span className="cute-door-handle" />
+
+            <div className="cute-door-plaque">
+              BÀ ♡
+            </div>
+
+            <div className="cute-door-sticker">🐰</div>
+            <div className="cute-door-note">mỳ cay tới! ♡</div>
+
+            <div className="cute-door-heart">
+              ♡
+            </div>
+          </div>
+
+          <div className="cute-door-light">
+            <span />
+          </div>
+        </div>
+
+        <div className="cute-fairy-string">
+          {Array.from({
+            length: 9,
+          }).map(
+            (
+              _,
+              index
+            ) => (
+              <i
+                key={
+                  index
+                }
+              />
+            )
+          )}
+        </div>
+
+        <div className="arrival-plant">
+          <span />
+        </div>
+
+        <div className="arrival-slippers">
+          ♡ ♡
+        </div>
+
+        <div className="arrival-paw-trail">
+          <i>•</i><i>•</i><i>•</i><i>•</i>
+        </div>
+
+        <div className="arrival-mini-flowers">🌷 ♡ 🌷</div>
+
+        <div className="arrival-cat">
+          <span className="cat-ear cat-ear-left" />
+          <span className="cat-ear cat-ear-right" />
+          <b>•ᴗ•</b>
+          <i />
+        </div>
+
+        <div className="cute-doormat">
+          HELLO ♡
+        </div>
+
+        <div className="arrival-floor" />
+
+        <div className="arrival-soft-hearts">
+          <span>♡</span>
+          <span>♡</span>
+          <span>♡</span>
+          <span>♡</span>
+          <span>♡</span>
+        </div>
+
+        {phase >= 3 && (
+          <div className="arrival-noodle-peek">
+            <SpicyNoodleBowl />
+          </div>
+        )}
+      </div>
+
+      <ChatBubble
+        className="arrival-boy-chat"
+        text={
+          phaseData.boyTalk
+        }
+      />
+
+      <ChatBubble
+        className="arrival-girl-chat"
+        text={
+          phaseData.girlTalk
+        }
+      />
+
+      <ChibiCharacter
+        role="boy"
+        pose={
+          phaseData.boyPose
+        }
+        carryFood={
+          phaseData.boyFood
+        }
+        className="arrival-boy"
+      />
+
+      <ChibiCharacter
+        role="girl"
+        pose={
+          phaseData.girlPose
+        }
+        carryFood={
+          phaseData.girlFood
+        }
+        className="arrival-girl"
+      />
+    </div>
+  );
+}
+
+/* =========================================================
    TOGETHER SCENE
 ========================================================= */
 
 function TogetherScene({
   story,
+  currentTime,
 }) {
+  if (
+    story.sharedScene ===
+    "arrival-cute"
+  ) {
+    return (
+      <ArrivalCuteScene
+        currentTime={
+          currentTime
+        }
+      />
+    );
+  }
+
   return (
     <div
       className={`
@@ -1472,6 +1653,149 @@ function Effects({
   }
 
   return null;
+}
+
+/* =========================================================
+   STORY TRANSITION
+
+   Chuyển cảnh thuần opacity:
+   - không flash trắng
+   - không brightness
+   - không blur
+   - không zoom
+   - pause nhạc thì transition cũng pause
+========================================================= */
+
+function StoryScene({
+  story,
+  currentTime,
+  effectOpacity = 1,
+}) {
+  const resolvedStory =
+    resolveStoryBeat(
+      story,
+      currentTime
+    );
+
+  return (
+    <>
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          opacity: effectOpacity,
+          pointerEvents: "none",
+        }}
+      >
+        <Effects
+          type={
+            resolvedStory.effect
+          }
+        />
+      </div>
+
+      {resolvedStory.layout === "split" ? (
+        <div className="split-layout">
+          <SplitPanel
+            side="left-panel"
+            title="ÔNG"
+            role="boy"
+            data={resolvedStory.boy}
+          />
+
+          <SplitPanel
+            side="right-panel"
+            title="BÀ"
+            role="girl"
+            data={resolvedStory.girl}
+          />
+        </div>
+      ) : (
+        <TogetherScene
+          story={resolvedStory}
+          currentTime={currentTime}
+        />
+      )}
+    </>
+  );
+}
+
+function StoryTransition({
+  currentTime,
+}) {
+  const currentIndex = getStoryIndex(currentTime);
+  const currentStory = STORY_TIMELINE[currentIndex];
+  const nextStory = STORY_TIMELINE[currentIndex + 1] || null;
+
+  if (!nextStory) {
+    return (
+      <div className="story-transition-shell">
+        <div key={currentStory.from} className="story-crossfade-layer" style={{ opacity: 1 }}>
+          <StoryScene story={currentStory} currentTime={currentTime} />
+        </div>
+      </div>
+    );
+  }
+
+  /*
+    Fade bắt đầu TRƯỚC mốc đổi cảnh.
+    Cảnh mới được mount sớm và giữ nguyên key,
+    nên tới mốc đổi cảnh sẽ không replay animation.
+  */
+  const transitionDuration =
+    getTransitionDuration(
+      currentStory,
+      nextStory
+    );
+
+  const transitionStart =
+    currentStory.to -
+    transitionDuration;
+
+  const rawProgress =
+    clamp(
+      (
+        currentTime -
+        transitionStart
+      ) /
+        transitionDuration
+    );
+
+  const progress =
+    smootherStep(
+      rawProgress
+    );
+  const isTransitioning = currentTime >= transitionStart;
+
+  if (!isTransitioning) {
+    return (
+      <div className="story-transition-shell">
+        <div key={currentStory.from} className="story-crossfade-layer" style={{ opacity: 1 }}>
+          <StoryScene story={currentStory} currentTime={currentTime} />
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="story-transition-shell">
+      <div
+        key={currentStory.from}
+        className="story-crossfade-layer story-crossfade-old"
+        style={{ opacity: 1 - progress }}
+      >
+        <StoryScene story={currentStory} currentTime={currentTime} effectOpacity={1 - progress} />
+      </div>
+
+      <div
+        key={nextStory.from}
+        className="story-crossfade-layer story-crossfade-new"
+        style={{ opacity: progress }}
+      >
+        <StoryScene story={nextStory} currentTime={currentTime} effectOpacity={progress} />
+      </div>
+    </div>
+  );
 }
 
 /* =========================================================
@@ -1817,11 +2141,6 @@ export default function App() {
   ] =
     useState(0);
 
-  const story =
-    getStoryScene(
-      currentTime
-    );
-
   /* =====================================================
      SYNC TIME
   ===================================================== */
@@ -2111,44 +2430,11 @@ export default function App() {
             <section className="story-stage">
               <div className="stage-background" />
 
-              <Effects
-                type={
-                  story.effect
+              <StoryTransition
+                currentTime={
+                  currentTime
                 }
               />
-
-              {story.layout ===
-              "split" ? (
-                <div
-                  key={`split-${story.from}`}
-                  className="split-layout"
-                >
-                  <SplitPanel
-                    side="left-panel"
-                    title="ÔNG"
-                    role="boy"
-                    data={
-                      story.boy
-                    }
-                  />
-
-                  <SplitPanel
-                    side="right-panel"
-                    title="BÀ"
-                    role="girl"
-                    data={
-                      story.girl
-                    }
-                  />
-                </div>
-              ) : (
-                <TogetherScene
-                  key={`together-${story.from}`}
-                  story={
-                    story
-                  }
-                />
-              )}
 
               <Lyrics
                 currentTime={
