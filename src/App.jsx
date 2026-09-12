@@ -140,7 +140,7 @@ const STORY_TIMELINE = [
         boy: { pose: "surprised-text", talk: "mỳ cay á? 👀", phone: true },
         girl: {
           pose: "hungry-text",
-          talk: "ừ... thèm dữ lắm luôn 🥹",
+          talk: "ùa... thèm dữ lắm luôn 🥹",
           phone: true,
           thoughtNoodles: true,
         },
@@ -148,7 +148,7 @@ const STORY_TIMELINE = [
       {
         at: 6.15,
         effect: "tiny-heart",
-        boy: { pose: "determined", talk: "đợi tui xíu nha bà 😌", phone: false },
+        boy: { pose: "determined", talk: "đợi tui xíu nha bà, đừng đi đâu đó 😌", phone: false },
         girl: { pose: "confused-text", talk: "ủa ông đi đâu?", phone: true },
       },
       {
@@ -167,7 +167,7 @@ const STORY_TIMELINE = [
     boy: {
       scene: "city-trip",
       pose: "walk",
-      talk: "đi mua mỳ cay cho bà chứ đâu 😌",
+      talk: "đi mua mỳ cay cho bà chứ đâu, bà thèm mà 😌",
     },
     girl: {
       scene: "room-night",
@@ -203,7 +203,7 @@ const STORY_TIMELINE = [
     boy: {
       scene: "noodle-shop",
       pose: "arrive",
-      talk: "tới quán rồi nha bà 🍜",
+      talk: "tới quán rồi nha bà, chờ tui xíu 🍜",
     },
     girl: {
       scene: "room-night",
@@ -248,14 +248,14 @@ const STORY_TIMELINE = [
     boy: {
       scene: "rain-delivery",
       pose: "ride",
-      talk: "mỳ cay tới đây bà ơiii 🍜",
+      talk: "mỳ cay với tui đang chạy về phía bà nè 🍜♡",
       carryFood: true,
       helmet: true,
     },
     girl: {
       scene: "room-night",
       pose: "phone",
-      talk: "ông chạy từ từ thôi nha!",
+      talk: "ông chạy từ từ thôi nha, tui chờ mà 🥺",
       phone: true,
     },
     beats: [
@@ -284,7 +284,7 @@ const STORY_TIMELINE = [
         at: 6.45,
         effect: "speed",
         boy: { pose: "ride", talk: "gần tới rồi!", carryFood: true, helmet: true },
-        girl: { pose: "happy-text", talk: "okee tới nhắn tui nha 🤭", phone: true },
+        girl: { pose: "happy-text", talk: "okee, tới thì nhắn tui ra nha 🤭♡", phone: true },
       },
     ],
   },
@@ -296,13 +296,13 @@ const STORY_TIMELINE = [
     boy: {
       scene: "apartment-arrival",
       pose: "walk",
-      talk: "tới khu bà rồi nè",
+      talk: "tui tới khu bà rồi nè ♡",
       carryFood: true,
     },
     girl: {
       scene: "apartment-wait",
       pose: "happy-text",
-      talk: "hihi tui ra đây 🤭",
+      talk: "hihi tui ra đây, ông đợi xíu nha 🤭",
       phone: true,
     },
     beats: [
@@ -313,7 +313,7 @@ const STORY_TIMELINE = [
       },
       {
         at: 3.08,
-        boy: { pose: "walk", talk: "Tâm Giao của bà nè 🍜", carryFood: true },
+        boy: { pose: "walk", talk: "Tâm Giao của bà tới cửa rồi nè 🍜♡", carryFood: true },
         girl: { pose: "surprised", talk: "tr ưi dì mà nhìu vậy 😳", phone: false },
       },
       {
@@ -339,8 +339,8 @@ const STORY_TIMELINE = [
     layout: "together",
     sharedScene: "dinner-cute",
     effect: "steam-hearts",
-    boy: { pose: "shy", talk: "ăn thử đi bà" },
-    girl: { pose: "happy", talk: "được rồi ông 😌" },
+    boy: { pose: "shy", talk: "ăn thử đi bà, coi còn nóng hong ♡" },
+    girl: { pose: "happy", talk: "ngon á... cảm ơn ông nha 🥹" },
     beats: [
       {
         at: 1.4,
@@ -351,7 +351,7 @@ const STORY_TIMELINE = [
       {
         at: 2.77,
         effect: "steam-hearts",
-        boy: { pose: "eat", talk: "cay không bà?" },
+        boy: { pose: "eat", talk: "cay không bà? cay thì uống nước nè" },
         girl: { pose: "eat", talk: "cay... 😭🍜" },
       },
       {
@@ -374,8 +374,8 @@ const STORY_TIMELINE = [
       {
         at: 1.56,
         effect: "hearts",
-        boy: { pose: "happy", talk: "vậy là đáng công tui đi rồi" },
-        girl: { pose: "lean", talk: "ông mua thì tui ăn hết 😌" },
+        boy: { pose: "happy", talk: "bà vui là tui thấy đáng công rồi ♡" },
+        girl: { pose: "lean", talk: "ông mua thì tui ăn hết, thiệt đó 😌♡" },
       },
     ],
   },
@@ -385,9 +385,67 @@ const STORY_TIMELINE = [
     layout: "together",
     sharedScene: "ending-cute",
     effect: "ending",
-    boy: { pose: "happy", talk: "lần sau tui dẫn bà đi ăn luôn" },
-    girl: { pose: "lean", talk: "nhớ đó nha ông ♡" },
+    boy: { pose: "happy", talk: "lần sau tui dẫn bà đi ăn, không để bà thèm một mình nữa" },
+    girl: { pose: "lean", talk: "nhớ đó nha ông... tui chờ đó ♡" },
   },
+
+];
+
+/* =========================================================
+   CHAT TIMELINE - CHẬM HƠN, DỄ ĐỌC HƠN
+
+   Không còn nhồi 2 câu vào mỗi beat ngắn.
+   Mỗi note giữ khoảng 1.2 - 2.0 giây và có khoảng nghỉ
+   0.25 - 0.40 giây trước note tiếp theo.
+========================================================= */
+
+const CHAT_TIMELINE = [
+  // 0s -> 8.64s: trong phòng
+  { from: 0.35, to: 2.05, speaker: "boy", text: "Bà đang làm gì đó? 👀" },
+  { from: 2.22, to: 3.62, speaker: "girl", text: "ông ơi..." },
+  { from: 3.80, to: 5.80, speaker: "girl", text: "tui thèm mỳ cay Tâm Giao quá 🍜🥹" },
+  { from: 6.00, to: 8.15, speaker: "boy", text: "đợi tui xíu nha bà, đừng đi đâu đó 😌" },
+
+  // 8.64s -> 14.2s: đi tới quán
+  { from: 8.78, to: 10.25, speaker: "girl", text: "ủa ông đi đâu vậy?" },
+  { from: 10.42, to: 12.55, speaker: "boy", text: "đi mua mỳ cay cho bà chứ đâu, bà thèm mà 😌" },
+  { from: 12.72, to: 14.05, speaker: "girl", text: "hehe... tui chờ nha, đi từ từ thôi 🥹🍜" },
+
+  // 14.2s -> 20.65s: ở quán
+  { from: 14.35, to: 15.90, speaker: "boy", text: "tới quán rồi nha bà, chờ tui xíu 🍜" },
+  { from: 16.07, to: 18.60, speaker: "boy", text: "cho một phần thập cẩm cấp 2, không chả, nhiều sốt chấm nha!" },
+  { from: 18.78, to: 20.48, speaker: "girl", text: "nhớ nhiều sốt chấm nha 👉👈" },
+
+  // 20.65s -> 28.1s: ship dưới mưa
+  { from: 20.80, to: 22.40, speaker: "boy", text: "mỳ cay với tui đang chạy về phía bà nè 🍜♡" },
+  { from: 22.58, to: 24.18, speaker: "girl", text: "ông chạy từ từ thôi nha, tui chờ mà 🥺" },
+  { from: 24.36, to: 26.30, speaker: "boy", text: "tui che kỹ lắm rồi, bà nhận là còn ấm á 😭♡" },
+  { from: 26.48, to: 27.92, speaker: "girl", text: "okee, tới thì nhắn tui ra nha 🤭♡" },
+
+  // 28.1s -> 34.84s: tới chung cư
+  { from: 28.25, to: 29.90, speaker: "boy", text: "tui tới khu bà rồi nè ♡" },
+  { from: 30.08, to: 31.73, speaker: "girl", text: "hihi tui ra đây, ông đợi xíu nha 🤭" },
+  { from: 31.91, to: 34.65, speaker: "boy", text: "Tâm Giao của bà tới cửa rồi nè 🍜♡" },
+
+  // 34.84s -> 40.65s: trước cửa nhà
+  { from: 34.95, to: 36.25, speaker: "boy", text: "shipper riêng của bà tới rồi nè 😎🍜" },
+  { from: 36.40, to: 37.70, speaker: "girl", text: "ông tới thiệt luôn hả... dễ thương quá 🥹♡" },
+  { from: 37.85, to: 39.10, speaker: "boy", text: "mỳ cay của bà nè, tui giữ nóng kỹ lắm á 🍜♡" },
+  { from: 39.25, to: 40.52, speaker: "girl", text: "cảm ơn ông nha... tự nhiên thấy được cưng ghê 🥹💗" },
+
+  // 40.65s -> 46.64s: ăn mỳ
+  { from: 40.78, to: 42.08, speaker: "boy", text: "ăn thử đi bà, coi còn nóng hong ♡" },
+  { from: 42.24, to: 43.54, speaker: "girl", text: "ngon á... cảm ơn ông nha 🥹" },
+  { from: 43.70, to: 44.98, speaker: "boy", text: "cay không bà? cay thì uống nước nè" },
+  { from: 45.14, to: 46.48, speaker: "girl", text: "cay... mà ông mua nên ngon hơn á 😌🍜♡" },
+
+  // 46.64s -> 49.96s: nghỉ trên sofa
+  { from: 46.78, to: 48.20, speaker: "boy", text: "bà vui là tui thấy đáng công rồi ♡" },
+  { from: 48.38, to: 49.78, speaker: "girl", text: "ông mua thì tui ăn hết, thiệt đó 😌♡" },
+
+  // ending
+  { from: 50.05, to: 51.40, speaker: "boy", text: "lần sau tui dẫn bà đi ăn, không để bà thèm một mình nữa" },
+  { from: 51.58, to: 52.95, speaker: "girl", text: "nhớ đó nha ông... tui chờ đó ♡" },
 ];
 
 /* =========================================================
@@ -410,7 +468,7 @@ const CODE_LINES = [
   { time: 25.2, code: "  await traffic.waitForGreen();" },
   { time: 28.1, code: "  await me.enterHerApartment();" },
   { time: 34.84, code: "  const door = await me.findHerDoor();" },
-  { time: 36.2, code: '  me.text("shipper mỳ cay tới rồi đây 😎");' },
+  { time: 36.2, code: '  me.text("shipper riêng của bà tới rồi nè 😎🍜");' },
   { time: 37.6, code: "  me.give(bowl).to(her);" },
   { time: 39.1, code: "  her.hugTheWarmBag();" },
   { time: 40.65, code: "  table.prepareCuteDinner(bowl);" },
@@ -545,6 +603,138 @@ function resolveStoryBeat(
     girl: {
       ...story.girl,
       ...(activeBeat.girl || {}),
+    },
+  };
+}
+
+
+/* =========================================================
+   SEQUENTIAL CHAT
+
+   Mỗi thời điểm chỉ hiện note của MỘT người:
+   ÔNG -> nghỉ nhẹ -> BÀ.
+   Cảnh kế tiếp được pre-mount để crossfade nhưng note của
+   cảnh đó sẽ chưa hiện cho tới đúng thời gian bắt đầu.
+========================================================= */
+
+function getStoryBeatWindow(
+  story,
+  currentTime
+) {
+  const beats =
+    story.beats || [];
+
+  let segmentStart =
+    story.from;
+
+  let segmentEnd =
+    story.to;
+
+  for (
+    let index = 0;
+    index < beats.length;
+    index += 1
+  ) {
+    const beatStart =
+      story.from +
+      beats[index].at;
+
+    if (
+      currentTime >=
+      beatStart
+    ) {
+      segmentStart =
+        beatStart;
+
+      segmentEnd =
+        index + 1 < beats.length
+          ? story.from +
+            beats[index + 1].at
+          : story.to;
+    } else {
+      segmentEnd =
+        beatStart;
+      break;
+    }
+  }
+
+  return {
+    start: segmentStart,
+    end: Math.max(
+      segmentEnd,
+      segmentStart + 0.01
+    ),
+  };
+}
+
+function getActiveChat(currentTime) {
+  return (
+    CHAT_TIMELINE.find(
+      (chat) =>
+        currentTime >= chat.from &&
+        currentTime < chat.to
+    ) || null
+  );
+}
+
+function applySequentialChat(
+  story,
+  resolvedStory,
+  currentTime
+) {
+  /*
+    Cảnh kế tiếp được mount sớm để crossfade.
+    Chỉ cảnh đang thật sự chạy mới được phép hiện note.
+  */
+  if (
+    currentTime < story.from ||
+    currentTime >= story.to
+  ) {
+    return {
+      ...resolvedStory,
+      boy: {
+        ...resolvedStory.boy,
+        talk: "",
+      },
+      girl: {
+        ...resolvedStory.girl,
+        talk: "",
+      },
+    };
+  }
+
+  const activeChat =
+    getActiveChat(currentTime);
+
+  if (!activeChat) {
+    return {
+      ...resolvedStory,
+      boy: {
+        ...resolvedStory.boy,
+        talk: "",
+      },
+      girl: {
+        ...resolvedStory.girl,
+        talk: "",
+      },
+    };
+  }
+
+  return {
+    ...resolvedStory,
+    boy: {
+      ...resolvedStory.boy,
+      talk:
+        activeChat.speaker === "boy"
+          ? activeChat.text
+          : "",
+    },
+    girl: {
+      ...resolvedStory.girl,
+      talk:
+        activeChat.speaker === "girl"
+          ? activeChat.text
+          : "",
     },
   };
 }
@@ -1043,6 +1233,49 @@ function ChatBubble({
   );
 }
 
+
+/* =========================================================
+   GLOBAL CHAT OVERLAY
+
+   Chat được render NGOÀI lớp crossfade của scene.
+   Vì vậy note không bị mờ/mất khi cảnh bắt đầu chuyển sớm.
+========================================================= */
+
+function ChatOverlay({
+  currentTime,
+}) {
+  const activeChat =
+    getActiveChat(currentTime);
+
+  if (!activeChat) {
+    return null;
+  }
+
+  const story =
+    STORY_TIMELINE[
+      getStoryIndex(currentTime)
+    ];
+
+  const isTogether =
+    story.layout === "together";
+
+  const sideClass = isTogether
+    ? activeChat.speaker === "boy"
+      ? "global-together-boy"
+      : "global-together-girl"
+    : activeChat.speaker === "boy"
+      ? "global-split-boy"
+      : "global-split-girl";
+
+  return (
+    <ChatBubble
+      key={`${activeChat.from}-${activeChat.speaker}`}
+      className={`global-chat ${sideClass}`}
+      text={activeChat.text}
+    />
+  );
+}
+
 /* =========================================================
    CHARACTER
 ========================================================= */
@@ -1069,7 +1302,7 @@ function ChibiCharacter({
     >
       <div className="chibi-shadow" />
 
-      {!isGirl && (
+      {!isGirl && (helmet || carryFood) && (
         <div className="backpack" />
       )}
 
@@ -1091,6 +1324,19 @@ function ChibiCharacter({
       >
         <span />
         <span />
+
+        {isGirl ? (
+          <div className="photo-hair-flower">
+            <i className="flower-petal petal-one" />
+            <i className="flower-petal petal-two" />
+            <i className="flower-petal petal-three" />
+            <i className="flower-petal petal-four" />
+            <i className="flower-petal petal-five" />
+            <b />
+          </div>
+        ) : (
+          <div className="photo-boy-hair-highlight" />
+        )}
       </div>
 
       <div className="chibi-head">
@@ -1107,6 +1353,12 @@ function ChibiCharacter({
 
         <div className="chibi-mouth" />
       </div>
+      {isGirl && (
+  <>
+    <div className="girl-front-hair girl-front-left" />
+    <div className="girl-front-hair girl-front-right" />
+  </>
+)}
 
       <div
         className={`
@@ -1118,8 +1370,22 @@ function ChibiCharacter({
           }
         `}
       >
-        <span className="hood-string hood-left" />
-        <span className="hood-string hood-right" />
+        {isGirl ? (
+          <>
+            <span className="photo-girl-neckline" />
+            <span className="photo-girl-dress-line dress-line-one" />
+            <span className="photo-girl-dress-line dress-line-two" />
+            <span className="photo-girl-dress-line dress-line-three" />
+          </>
+        ) : (
+          <>
+            <span className="photo-boy-inner-shirt" />
+            <span className="photo-plaid-line plaid-v-one" />
+            <span className="photo-plaid-line plaid-v-two" />
+            <span className="photo-plaid-line plaid-h-one" />
+            <span className="photo-plaid-line plaid-h-two" />
+          </>
+        )}
       </div>
 
       <div className="chibi-arm arm-left" />
@@ -1127,6 +1393,16 @@ function ChibiCharacter({
 
       <div className="chibi-leg leg-left" />
       <div className="chibi-leg leg-right" />
+
+      {isGirl ? (
+        <div className="photo-girl-bracelet">
+          <span />
+        </div>
+      ) : (
+        <div className="photo-boy-watch">
+          <span />
+        </div>
+      )}
 
       {phone && (
         <div className="phone-item">
@@ -1197,6 +1473,7 @@ function SplitPanel({
       />
 
       <ChatBubble
+        key={`${role}-${data.talk || "empty"}`}
         className={
           side ===
           "left-panel"
@@ -1226,6 +1503,7 @@ function SplitPanel({
 
 function ArrivalCuteScene({
   currentTime,
+  story,
 }) {
   const elapsed =
     currentTime - 34.84;
@@ -1244,32 +1522,32 @@ function ArrivalCuteScene({
     {
       boyPose: "shy",
       girlPose: "peek",
-      boyTalk: "shipper mỳ cay tới rồi đây 😎",
-      girlTalk: "ông tới thiệt luôn hả 😳",
+      boyTalk: "shipper riêng của bà tới rồi nè 😎🍜",
+      girlTalk: "",
       boyFood: true,
       girlFood: false,
     },
     {
       boyPose: "shy",
       girlPose: "happy",
-      boyTalk: "tui giữ nóng dữ lắm đó 😳",
-      girlTalk: "trời ơi dễ thương vậy 🥹",
+      boyTalk: "",
+      girlTalk: "ông tới thiệt luôn hả... dễ thương quá 🥹♡",
       boyFood: true,
       girlFood: false,
     },
     {
       boyPose: "give",
       girlPose: "receive",
-      boyTalk: "mỳ cay của bà nè 🍜",
-      girlTalk: "cảm ơn ông nha ♡",
+      boyTalk: "mỳ cay của bà nè, tui giữ nóng kỹ lắm á 🍜♡",
+      girlTalk: "",
       boyFood: true,
       girlFood: true,
     },
     {
       boyPose: "happy",
       girlPose: "hug-bag",
-      boyTalk: "mở ra coi còn nóng không bà",
-      girlTalk: "vẫn nóng luôn á 🥹🍜",
+      boyTalk: "",
+      girlTalk: "cảm ơn ông nha... tự nhiên thấy được cưng ghê 🥹💗",
       boyFood: false,
       girlFood: true,
     },
@@ -1373,17 +1651,15 @@ function ArrivalCuteScene({
       </div>
 
       <ChatBubble
+        key={`arrival-boy-${story.boy.talk || "empty"}`}
         className="arrival-boy-chat"
-        text={
-          phaseData.boyTalk
-        }
+        text={story.boy.talk}
       />
 
       <ChatBubble
+        key={`arrival-girl-${story.girl.talk || "empty"}`}
         className="arrival-girl-chat"
-        text={
-          phaseData.girlTalk
-        }
+        text={story.girl.talk}
       />
 
       <ChibiCharacter
@@ -1425,9 +1701,8 @@ function TogetherScene({
   ) {
     return (
       <ArrivalCuteScene
-        currentTime={
-          currentTime
-        }
+        currentTime={currentTime}
+        story={story}
       />
     );
   }
@@ -1446,6 +1721,7 @@ function TogetherScene({
       />
 
       <ChatBubble
+        key={`together-boy-${story.boy.talk || "empty"}`}
         className="together-boy-chat"
         text={
           story.boy.talk
@@ -1453,6 +1729,7 @@ function TogetherScene({
       />
 
       <ChatBubble
+        key={`together-girl-${story.girl.talk || "empty"}`}
         className="together-girl-chat"
         text={
           story.girl.talk
@@ -1656,6 +1933,216 @@ function Effects({
 }
 
 /* =========================================================
+   POETIC AMBIENT
+
+   Lớp trang trí "tình và thơ" dùng chung cho các cảnh.
+   Không đụng vào timeline chat, không ảnh hưởng crossfade.
+========================================================= */
+
+const POETIC_CAPTIONS = {
+  "room-night": "một tin nhắn nhỏ, làm tim ai đó mềm đi một chút ♡",
+  "city-trip": "đường có xa một chút, miễn người chờ còn đang cười ♡",
+  "noodle-shop": "giữa mùi mỳ cay, có một người đang nhớ lời bà dặn",
+  "rain-delivery": "mưa một chút thôi, thương thì nhiều hơn rất nhiều",
+  "apartment-arrival": "gần tới rồi, hình như tim cũng đi nhanh hơn",
+  "apartment-wait": "cuối hành lang có một người đang mong cửa mở",
+  "arrival-cute": "có người mang cả một tối ấm áp tới trước cửa ♡",
+  "dinner-cute": "một tô mỳ cay, hai ánh mắt cứ lén cười với nhau",
+  "cozy-room": "ngồi gần nhau một chút, cả thế giới tự nhiên yên hơn",
+  "ending-cute": "đêm nay, thế giới vừa đủ bằng một người bên cạnh ♡",
+};
+
+const POETIC_PARTICLES = Array.from(
+  { length: 12 },
+  (_, index) => ({
+    id: index,
+    left: 5 + ((index * 23) % 90),
+    delay: ((index * 17) % 26) / 10,
+    duration: 5.6 + ((index * 7) % 28) / 10,
+    drift: -18 + ((index * 19) % 38),
+  })
+);
+
+const POETIC_FIREFLIES = Array.from(
+  { length: 10 },
+  (_, index) => ({
+    id: index,
+    left: 8 + ((index * 31) % 84),
+    top: 18 + ((index * 27) % 58),
+    delay: ((index * 11) % 24) / 10,
+  })
+);
+
+function PoeticAmbient({
+  story,
+}) {
+  const sceneName =
+    story.layout === "together"
+      ? story.sharedScene
+      : story.boy?.scene || "";
+
+  const caption =
+    POETIC_CAPTIONS[sceneName] || "";
+
+  const isRain =
+    sceneName === "rain-delivery";
+
+  const isArrival =
+    sceneName === "arrival-cute";
+
+  const isDinner =
+    sceneName === "dinner-cute";
+
+  const isEnding =
+    sceneName === "ending-cute";
+
+  const isRoom =
+    sceneName === "room-night";
+
+  const isCity =
+    sceneName === "city-trip";
+
+  const isShop =
+    sceneName === "noodle-shop";
+
+  const isApartment =
+    sceneName === "apartment-arrival" ||
+    sceneName === "apartment-wait";
+
+  const isCozy =
+    sceneName === "cozy-room";
+
+  return (
+    <div
+      className={`poetic-ambient poetic-${sceneName}`}
+      aria-hidden="true"
+    >
+      <div className="poetic-haze poetic-haze-one" />
+      <div className="poetic-haze poetic-haze-two" />
+
+      <div className="poetic-light-dust">
+        {POETIC_FIREFLIES.map((item) => (
+          <i
+            key={`firefly-${item.id}`}
+            style={{
+              left: `${item.left}%`,
+              top: `${item.top}%`,
+              animationDelay: `${item.delay}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {!isRain && (
+        <div className="poetic-petals">
+          {POETIC_PARTICLES.map((item) => (
+            <i
+              key={`petal-${item.id}`}
+              style={{
+                left: `${item.left}%`,
+                "--petal-delay": `${item.delay}s`,
+                "--petal-duration": `${item.duration}s`,
+                "--petal-drift": `${item.drift}px`,
+              }}
+            />
+          ))}
+        </div>
+      )}
+
+      {isRoom && (
+        <>
+          <div className="romance-window-heart">♡</div>
+          <div className="romance-note-glow">for you ♡</div>
+        </>
+      )}
+
+      {isCity && (
+        <>
+          <div className="romance-lamp-pool lamp-pool-one" />
+          <div className="romance-lamp-pool lamp-pool-two" />
+          <div className="romance-walk-heart">♡</div>
+        </>
+      )}
+
+      {isShop && (
+        <>
+          <div className="romance-steam-heart shop-steam-heart">♡</div>
+          <div className="romance-warm-ring" />
+        </>
+      )}
+
+      {isApartment && (
+        <>
+          <div className="romance-path-glow" />
+          <div className="romance-path-heart">♡</div>
+        </>
+      )}
+
+      {isRain && (
+        <>
+          <div className="poetic-rain-bokeh bokeh-one" />
+          <div className="poetic-rain-bokeh bokeh-two" />
+          <div className="poetic-rain-bokeh bokeh-three" />
+          <div className="poetic-rain-reflection" />
+        </>
+      )}
+
+      {isArrival && (
+        <>
+          <div className="poetic-door-glow" />
+          <div className="poetic-heart-orbit orbit-one">♡</div>
+          <div className="poetic-heart-orbit orbit-two">♡</div>
+          <div className="poetic-heart-orbit orbit-three">♡</div>
+          <div className="romance-love-thread" />
+          <div className="romance-heart-beat">♡</div>
+          <div className="romance-door-note">đợi bà mở cửa ♡</div>
+        </>
+      )}
+
+      {isDinner && (
+        <>
+          <div className="poetic-candle candle-left"><i /></div>
+          <div className="poetic-candle candle-right"><i /></div>
+          <div className="poetic-table-glow" />
+          <div className="romance-steam-heart dinner-steam-heart">♡</div>
+          <div className="romance-dinner-sparkle sparkle-left">✦</div>
+          <div className="romance-dinner-sparkle sparkle-right">✦</div>
+        </>
+      )}
+
+      {isCozy && (
+        <>
+          <div className="romance-sofa-glow" />
+          <div className="romance-sofa-heart heart-left">♡</div>
+          <div className="romance-sofa-heart heart-right">♡</div>
+          <div className="romance-cozy-note">ở đây thêm một chút nữa nha ♡</div>
+        </>
+      )}
+
+      {isEnding && (
+        <>
+          <div className="poetic-shooting-star star-one" />
+          <div className="poetic-shooting-star star-two" />
+          <div className="poetic-constellation">
+            <i /><i /><i /><i />
+          </div>
+          <div className="romance-ending-heart">♡</div>
+          <div className="romance-ending-line">hai người, một đêm, và một lời hẹn nhỏ</div>
+        </>
+      )}
+
+      {caption && (
+        <div className="poetic-caption">
+          <span>✦</span>
+          <em>{caption}</em>
+          <span>✦</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* =========================================================
    STORY TRANSITION
 
    Chuyển cảnh thuần opacity:
@@ -1677,6 +2164,21 @@ function StoryScene({
       currentTime
     );
 
+  // Note chat được render riêng ở ChatOverlay, ngoài crossfade.
+  // Ở trong scene chỉ giữ pose/effect, luôn tắt talk để không bị
+  // trùng note hoặc bị fade mất khi chuyển cảnh.
+  const dialogueStory = {
+    ...resolvedStory,
+    boy: {
+      ...resolvedStory.boy,
+      talk: "",
+    },
+    girl: {
+      ...resolvedStory.girl,
+      talk: "",
+    },
+  };
+
   return (
     <>
       <div
@@ -1689,33 +2191,37 @@ function StoryScene({
       >
         <Effects
           type={
-            resolvedStory.effect
+            dialogueStory.effect
           }
         />
       </div>
 
-      {resolvedStory.layout === "split" ? (
+      {dialogueStory.layout === "split" ? (
         <div className="split-layout">
           <SplitPanel
             side="left-panel"
             title="ÔNG"
             role="boy"
-            data={resolvedStory.boy}
+            data={dialogueStory.boy}
           />
 
           <SplitPanel
             side="right-panel"
             title="BÀ"
             role="girl"
-            data={resolvedStory.girl}
+            data={dialogueStory.girl}
           />
         </div>
       ) : (
         <TogetherScene
-          story={resolvedStory}
+          story={dialogueStory}
           currentTime={currentTime}
         />
       )}
+
+      <PoeticAmbient
+        story={dialogueStory}
+      />
     </>
   );
 }
@@ -2398,11 +2904,12 @@ export default function App() {
 
               
 
+              <div className="start-love-kicker">dựa trên một câu chuyện có thật ♡</div>
+
               <h1>
-                Mỳ Cay
+                Spicy Noodle Story
               </h1>
 
-              
 
               <button
                 type="button"
@@ -2431,6 +2938,12 @@ export default function App() {
               <div className="stage-background" />
 
               <StoryTransition
+                currentTime={
+                  currentTime
+                }
+              />
+
+              <ChatOverlay
                 currentTime={
                   currentTime
                 }

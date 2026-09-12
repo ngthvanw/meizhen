@@ -720,3 +720,1681 @@
 @media(max-width:500px){
   .detail-note{font-size:4px}.trip-sign{font-size:5px}.cute-menu-board{font-size:5px}.dinner-picture{font-size:9px}
 }
+
+
+/* =========================================================
+   CHAT - TỪNG NGƯỜI MỘT
+   Chỉ fade note, không scale/zoom để không làm giật vị trí.
+========================================================= */
+
+.chat-bubble {
+  animation: chat-note-in .48s ease-out both;
+}
+
+@keyframes chat-note-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* =========================================================
+   PHOTO-INSPIRED CHARACTER LOOK
+   Giữ nguyên toàn bộ story/timing/layout của code gốc.
+
+   ÔNG: tóc nâu, áo caro đỏ-nâu + áo đen, đồng hồ bạc.
+   BÀ : tóc đen dài, váy trắng, hoa cài tóc, vòng tay bạc.
+========================================================= */
+
+/* ---------- tóc / khuôn mặt ---------- */
+.boy-hair {
+  height: 29px;
+  background:
+    linear-gradient(
+      145deg,
+      #b97858 0%,
+      #86513c 48%,
+      #4e3129 100%
+    );
+  box-shadow:
+    inset 0 -3px 0 rgba(52, 29, 26, .18);
+}
+
+.photo-boy-hair-highlight {
+  position: absolute;
+  z-index: 2;
+  left: 8px;
+  top: -4px;
+  width: 27px;
+  height: 11px;
+  border-radius: 70% 30% 70% 30%;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(222, 151, 111, .86),
+      rgba(130, 74, 54, .15)
+    );
+  transform: rotate(-10deg);
+  pointer-events: none;
+}
+
+.boy-hair > span:nth-child(1) {
+  left: 2px;
+  bottom: -6px;
+  height: 14px;
+  transform: rotate(8deg);
+}
+
+.boy-hair > span:nth-child(2) {
+  right: 3px;
+  bottom: -5px;
+  height: 13px;
+  transform: rotate(-6deg);
+}
+
+/* =========================================================
+   TÓC BÀ - DÀI, RẼ NGÔI GIỮA
+========================================================= */
+
+.girl-hair {
+  position: absolute;
+  z-index: 6;
+
+  left: 5px;
+  top: 5px;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius:
+    27px
+    27px
+    20px
+    20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #151a29 0%,
+      #080c16 58%,
+      #171e30 100%
+    );
+
+  box-shadow:
+    inset 5px 0 7px
+      rgba(255,255,255,.025),
+    inset -5px 0 7px
+      rgba(65,80,120,.12);
+}
+
+
+/* =========================
+   TÓC DÀI PHÍA SAU
+========================= */
+
+.girl-hair > span:nth-child(1),
+.girl-hair > span:nth-child(2) {
+  position: absolute;
+
+  bottom: -31px;
+
+  width: 17px;
+  height: 48px;
+
+  border-radius:
+    9px
+    9px
+    12px
+    12px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0b0f19,
+      #161d2d
+    );
+}
+
+
+/* bên trái */
+.girl-hair > span:nth-child(1) {
+  left: 1px;
+
+  transform:
+    rotate(5deg);
+
+  transform-origin:
+    top center;
+}
+
+
+/* bên phải */
+.girl-hair > span:nth-child(2) {
+  right: 1px;
+
+  transform:
+    rotate(-5deg);
+
+  transform-origin:
+    top center;
+}
+
+
+/* =========================
+   MẶT
+========================= */
+
+.girl .chibi-head {
+  position: absolute;
+  z-index: 7;
+
+  left: 14px;
+  top: 18px;
+
+  width: 40px;
+  height: 38px;
+
+  border-radius:
+    16px
+    16px
+    14px
+    14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffe2d2,
+      #ffd0bd
+    );
+}
+
+
+/* =========================
+   HAI LỌN TÓC ÔM MẶT
+   tạo cảm giác rẽ ngôi giữa
+========================= */
+
+.girl-front-hair {
+  position: absolute;
+  z-index: 10;
+
+  top: 14px;
+
+  width: 11px;
+  height: 31px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #0b0f19,
+      #151b29
+    );
+
+  pointer-events: none;
+}
+
+
+/* lọn bên trái */
+.girl-front-left {
+  left: 12px;
+
+  border-radius:
+    12px
+    3px
+    12px
+    10px;
+
+  transform:
+    rotate(10deg);
+}
+
+
+/* lọn bên phải */
+.girl-front-right {
+  right: 12px;
+
+  border-radius:
+    3px
+    12px
+    10px
+    12px;
+
+  transform:
+    rotate(-10deg);
+}
+
+
+/* =========================
+   PHẦN NGÔI GIỮA
+========================= */
+
+.girl-hair::before {
+  content: "";
+
+  position: absolute;
+  z-index: 9;
+
+  left: 50%;
+  top: 3px;
+
+  width: 3px;
+  height: 18px;
+
+  transform:
+    translateX(-50%);
+
+  border-radius: 50%;
+
+  background:
+    rgba(
+      70,
+      78,
+      105,
+      .42
+    );
+}
+
+
+/* =========================
+   MẮT / MÁ / MIỆNG
+========================= */
+
+.girl .chibi-eye {
+  top: 14px;
+}
+
+.girl .eye-left {
+  left: 8px;
+}
+
+.girl .eye-right {
+  right: 8px;
+}
+
+.girl .chibi-blush {
+  top: 25px;
+  opacity: .75;
+}
+
+.girl .chibi-mouth {
+  top: 28px;
+}
+
+
+/* =========================================================
+   HOA CÀI TÓC
+========================================================= */
+
+.photo-hair-flower {
+  position: absolute;
+  z-index: 30;
+
+  right: -10px;
+  top: 15px;
+
+  width: 23px;
+  height: 23px;
+
+  transform:
+    rotate(8deg);
+
+  filter:
+    drop-shadow(
+      0 2px 3px
+      rgba(0,0,0,.16)
+    );
+}
+.boy .chibi-head {
+  background:
+    linear-gradient(
+      145deg,
+      #ffdbc7,
+      #f6c4ad
+    );
+}
+
+/* Hoa trắng/hồng bên tóc của BÀ, lấy cảm hứng từ ảnh biển */
+.photo-hair-flower {
+  position: absolute;
+  z-index: 20;
+  right: -8px;
+  top: 10px;
+  width: 23px;
+  height: 23px;
+  transform: rotate(9deg);
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,.15));
+}
+
+.flower-petal {
+  position: absolute;
+  left: 7px;
+  top: 1px;
+  width: 10px;
+  height: 13px;
+  border-radius: 75% 75% 58% 58%;
+  transform-origin: 5px 11px;
+  background:
+    radial-gradient(
+      circle at 50% 80%,
+      #ff9fae 0 22%,
+      #ffd2da 40%,
+      #fff5f6 76%
+    );
+}
+
+.petal-one { transform: rotate(0deg); }
+.petal-two { transform: rotate(72deg); }
+.petal-three { transform: rotate(144deg); }
+.petal-four { transform: rotate(216deg); }
+.petal-five { transform: rotate(288deg); }
+
+.photo-hair-flower > b {
+  position: absolute;
+  z-index: 4;
+  left: 8px;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffc85f;
+  box-shadow: 0 0 4px rgba(255,200,95,.45);
+}
+
+/* ---------- áo của ÔNG ---------- */
+.boy-body {
+  overflow: hidden;
+  border: 1px solid rgba(64, 36, 34, .42);
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0 8px,
+      rgba(239, 218, 207, .82) 8px 12px,
+      transparent 12px 20px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 8px,
+      rgba(57, 34, 34, .48) 8px 11px,
+      transparent 11px 18px
+    ),
+    linear-gradient(
+      135deg,
+      #a75c59,
+      #784344 55%,
+      #56343b
+    );
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.08);
+}
+
+.photo-boy-inner-shirt {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: -1px;
+  width: 17px;
+  height: 31px;
+  transform: translateX(-50%);
+  border-radius: 2px 2px 5px 5px;
+  background: #11131a;
+}
+
+.photo-plaid-line {
+  position: absolute;
+  z-index: 3;
+  opacity: .72;
+  pointer-events: none;
+}
+
+.plaid-v-one,
+.plaid-v-two {
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: rgba(246, 225, 211, .65);
+}
+
+.plaid-v-one { left: 8px; }
+.plaid-v-two { right: 8px; }
+
+.plaid-h-one,
+.plaid-h-two {
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(53, 29, 31, .46);
+}
+
+.plaid-h-one { top: 10px; }
+.plaid-h-two { top: 20px; }
+
+/* ---------- váy/trang phục của BÀ ---------- */
+.girl-body {
+  overflow: hidden;
+  border: 1px solid rgba(205, 217, 234, .74);
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #f5f8ff 52%,
+      #e8eef9 100%
+    );
+  box-shadow:
+    inset 0 2px 0 rgba(255,255,255,.75);
+}
+
+.photo-girl-neckline {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  top: 1px;
+  width: 18px;
+  height: 8px;
+  transform: translateX(-50%);
+  border-bottom: 2px solid #dce5f2;
+  border-radius: 50%;
+}
+
+.photo-girl-dress-line {
+  position: absolute;
+  z-index: 2;
+  top: 7px;
+  width: 1px;
+  height: 22px;
+  background: rgba(180, 199, 226, .43);
+}
+
+.dress-line-one { left: 9px; }
+.dress-line-two { left: 18px; }
+.dress-line-three { right: 8px; }
+
+.girl-body::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  height: 4px;
+  border-radius: 50%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(188, 202, 225, .5) 0 2px,
+      transparent 2px 5px
+    );
+}
+
+/* Bỏ dây hoodie cũ vì trang phục giờ theo ảnh */
+.boy-body .hood-string,
+.girl-body .hood-string {
+  display: none;
+}
+
+/* ---------- đồng hồ bạc của ÔNG / vòng bạc của BÀ ---------- */
+.photo-boy-watch {
+  position: absolute;
+  z-index: 18;
+  left: 7px;
+  top: 69px;
+  width: 13px;
+  height: 7px;
+  border: 1px solid #6f7782;
+  border-radius: 4px;
+  background:
+    linear-gradient(
+      90deg,
+      #7f8790 0 18%,
+      #dbe0e5 18% 36%,
+      #929aa4 36% 55%,
+      #edf0f2 55% 73%,
+      #858d97 73%
+    );
+  box-shadow: 0 1px 2px rgba(0,0,0,.22);
+  pointer-events: none;
+}
+
+.photo-boy-watch > span {
+  position: absolute;
+  left: 4px;
+  top: -2px;
+  width: 5px;
+  height: 9px;
+  border: 1px solid #737b84;
+  border-radius: 2px;
+  background: #bcc3ca;
+}
+
+.photo-girl-bracelet {
+  position: absolute;
+  z-index: 18;
+  right: 7px;
+  top: 70px;
+  width: 12px;
+  height: 6px;
+  border-top: 2px solid #dce3ea;
+  border-radius: 50%;
+  transform: rotate(-5deg);
+  box-shadow: 0 -1px 0 rgba(113,126,144,.45);
+  pointer-events: none;
+}
+
+.photo-girl-bracelet > span {
+  position: absolute;
+  right: 1px;
+  top: -3px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #eef3f7;
+  box-shadow: 0 0 3px rgba(255,255,255,.65);
+}
+
+/* ---------- tay áo: gần trang phục trong ảnh hơn ---------- */
+.boy .chibi-arm {
+  background:
+    linear-gradient(
+      to bottom,
+      #9a5554 0 45%,
+      #f4c9b6 45% 100%
+    );
+}
+
+.girl .chibi-arm {
+  background:
+    linear-gradient(
+      to bottom,
+      #f7f9ff 0 35%,
+      #ffd5c4 35% 100%
+    );
+}
+
+/* Giữ phụ kiện nhìn đúng vị trí khi các pose xoay tay */
+.texting .photo-boy-watch,
+.reading-text .photo-boy-watch,
+.phone .photo-boy-watch {
+  transform: translateY(-1px) rotate(-7deg);
+}
+
+.texting .photo-girl-bracelet,
+.phone .photo-girl-bracelet,
+.hungry-text .photo-girl-bracelet {
+  transform: translateY(-1px) rotate(6deg);
+}
+
+/* Khi đội nón giao mỳ vẫn giữ tóc nâu ló ra tự nhiên */
+.boy .helmet {
+  background: linear-gradient(#f6d36c,#e9b84f);
+}
+
+/* màn mở đầu / cảnh chung: tăng nhẹ kích thước hoa để dễ nhận ra */
+.together-girl .photo-hair-flower,
+.arrival-girl .photo-hair-flower {
+  transform: rotate(9deg) scale(1.08);
+}
+
+@media (max-width: 500px) {
+  .photo-hair-flower {
+    right: -7px;
+    transform: rotate(9deg) scale(.96);
+  }
+}
+
+/* =========================================================
+   GLOBAL CHAT OVERLAY - KHÔNG BỊ SKIP KHI CROSSFADE
+
+   Chat nằm ngoài story-crossfade-layer, nên scene có fade 1.7s
+   cũng không kéo note cũ mờ theo. Mỗi note chỉ đổi đúng theo
+   CHAT_TIMELINE trong App.jsx.
+========================================================= */
+
+.global-chat {
+  z-index: 275 !important;
+  bottom: 147px;
+  pointer-events: none;
+  max-width: 136px;
+}
+
+.global-split-boy {
+  left: 25%;
+  transform: translateX(-50%);
+}
+
+.global-split-girl {
+  left: 75%;
+  transform: translateX(-50%);
+}
+
+.global-together-boy {
+  left: calc(50% - 112px);
+  transform: translateX(-50%);
+  bottom: 151px;
+}
+
+.global-together-girl {
+  left: calc(50% + 112px);
+  transform: translateX(-50%);
+  bottom: 151px;
+}
+
+.global-split-boy .chat-tail,
+.global-together-boy .chat-tail {
+  right: 20px;
+}
+
+.global-split-girl .chat-tail,
+.global-together-girl .chat-tail {
+  left: 20px;
+}
+
+@media (max-width: 500px) {
+  .global-chat {
+    max-width: 112px;
+    font-size: 7px;
+  }
+
+  .global-together-boy {
+    left: 25%;
+  }
+
+  .global-together-girl {
+    left: 75%;
+  }
+}
+
+
+/* =========================================================
+   POETIC ROMANCE PASS
+   Tình hơn • thơ hơn • ấm hơn
+   Giữ nguyên timing chat và transition 1.7s.
+========================================================= */
+
+/* ---------- tổng thể ---------- */
+.app{
+  background:
+    radial-gradient(circle at 50% 18%,rgba(106,84,145,.28),transparent 33%),
+    radial-gradient(circle at 18% 82%,rgba(255,126,160,.08),transparent 28%),
+    #05060b;
+}
+.phone-frame{
+  box-shadow:
+    0 34px 110px rgba(0,0,0,.92),
+    0 0 44px rgba(205,137,177,.08);
+}
+.story-stage{
+  background:
+    linear-gradient(180deg,#0b0f23 0%,#17142a 58%,#22172a 100%);
+}
+.stage-background{
+  background:
+    radial-gradient(circle at 50% 16%,rgba(255,218,193,.055),transparent 32%),
+    radial-gradient(circle at 72% 38%,rgba(241,155,188,.045),transparent 28%),
+    linear-gradient(180deg,#0a0e21,#17172f 56%,#281d31);
+}
+
+.story-card{
+  border-color:rgba(255,236,242,.105);
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.025),
+    0 8px 24px rgba(0,0,0,.10);
+}
+.story-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:72;
+  pointer-events:none;
+  border-radius:inherit;
+  background:
+    linear-gradient(180deg,rgba(255,235,227,.025),transparent 36%,rgba(255,166,193,.025));
+}
+.left-panel{
+  background:linear-gradient(180deg,#111a37 0%,#27253f 70%,#352435 100%);
+}
+.right-panel{
+  background:linear-gradient(180deg,#28182f 0%,#3b2944 70%,#43283a 100%);
+}
+.panel-name{
+  color:rgba(255,242,246,.78);
+  background:rgba(255,233,239,.065);
+  border:1px solid rgba(255,229,237,.07);
+}
+
+/* ---------- lớp ambient chung ---------- */
+.poetic-ambient{
+  position:absolute;
+  inset:0;
+  z-index:68;
+  overflow:hidden;
+  pointer-events:none;
+  isolation:isolate;
+}
+.poetic-haze{
+  position:absolute;
+  border-radius:50%;
+  pointer-events:none;
+  opacity:.38;
+  animation:poeticHaze 7.5s ease-in-out infinite alternate;
+}
+.poetic-haze-one{
+  width:220px;
+  height:150px;
+  left:-70px;
+  top:35px;
+  background:radial-gradient(circle,rgba(255,186,205,.09),transparent 68%);
+}
+.poetic-haze-two{
+  width:250px;
+  height:190px;
+  right:-90px;
+  bottom:8px;
+  background:radial-gradient(circle,rgba(255,217,158,.07),transparent 70%);
+  animation-delay:1.6s;
+}
+@keyframes poeticHaze{
+  from{transform:translate3d(-4px,2px,0) scale(.96);opacity:.24}
+  to{transform:translate3d(7px,-5px,0) scale(1.06);opacity:.48}
+}
+
+.poetic-light-dust i{
+  position:absolute;
+  width:3px;
+  height:3px;
+  border-radius:50%;
+  background:#ffeabf;
+  box-shadow:0 0 8px rgba(255,224,167,.72);
+  opacity:0;
+  animation:poeticFirefly 3.8s ease-in-out infinite;
+}
+.poetic-light-dust i:nth-child(3n){
+  width:2px;
+  height:2px;
+  background:#ffd8e6;
+  box-shadow:0 0 8px rgba(255,176,205,.62);
+}
+@keyframes poeticFirefly{
+  0%,100%{opacity:.04;transform:translate3d(0,5px,0) scale(.7)}
+  38%{opacity:.72;transform:translate3d(5px,-4px,0) scale(1.15)}
+  70%{opacity:.26;transform:translate3d(-3px,-9px,0) scale(.9)}
+}
+
+.poetic-petals i{
+  position:absolute;
+  top:-18px;
+  width:7px;
+  height:5px;
+  border-radius:80% 20% 75% 25%;
+  background:linear-gradient(135deg,rgba(255,230,236,.92),rgba(247,161,190,.72));
+  opacity:0;
+  transform:rotate(24deg);
+  animation:poeticPetalFall var(--petal-duration) linear infinite;
+  animation-delay:var(--petal-delay);
+}
+.poetic-petals i:nth-child(2n){
+  width:5px;
+  height:4px;
+  background:linear-gradient(135deg,rgba(255,244,223,.88),rgba(247,193,183,.66));
+}
+@keyframes poeticPetalFall{
+  0%{opacity:0;transform:translate3d(0,-12px,0) rotate(0deg)}
+  14%{opacity:.7}
+  72%{opacity:.42}
+  100%{opacity:0;transform:translate3d(var(--petal-drift),330px,0) rotate(250deg)}
+}
+
+.poetic-caption{
+  position:absolute;
+  z-index:12;
+  left:50%;
+  top:25px;
+  max-width:72%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  padding:4px 10px;
+  border:1px solid rgba(255,233,239,.08);
+  border-radius:18px;
+  color:rgba(255,235,241,.72);
+  background:rgba(10,12,24,.12);
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:6px;
+  letter-spacing:.25px;
+  text-align:center;
+  white-space:nowrap;
+  text-shadow:0 1px 8px rgba(0,0,0,.55);
+  opacity:.84;
+  animation:poeticCaptionBreath 4.8s ease-in-out infinite alternate;
+}
+.poetic-caption em{font-style:italic;font-weight:400}
+.poetic-caption span{color:#ffd3df;font-size:5px;opacity:.72}
+@keyframes poeticCaptionBreath{
+  from{opacity:.62;transform:translateX(-50%) translateY(1px)}
+  to{opacity:.94;transform:translateX(-50%) translateY(-1px)}
+}
+
+/* ---------- phòng: rèm, ánh trăng, đèn dây mềm hơn ---------- */
+.detail-room{
+  background:
+    radial-gradient(circle at 77% 22%,rgba(255,238,196,.08),transparent 24%),
+    linear-gradient(180deg,#111a35 0%,#29263f 64%,#392736 100%);
+}
+.detail-room-girl{
+  background:
+    radial-gradient(circle at 70% 22%,rgba(255,213,224,.085),transparent 26%),
+    linear-gradient(180deg,#261831 0%,#3b2944 64%,#4a2d3d 100%);
+}
+.detail-window{
+  box-shadow:
+    inset 0 0 20px rgba(171,195,255,.06),
+    0 0 26px rgba(138,153,225,.06);
+}
+.detail-fairy-lights i{
+  animation:poeticFairy 3.2s ease-in-out infinite alternate;
+}
+.detail-fairy-lights i:nth-child(2n){animation-delay:1.2s}
+@keyframes poeticFairy{
+  from{opacity:.34;box-shadow:0 0 4px rgba(255,215,145,.35)}
+  to{opacity:1;box-shadow:0 0 13px rgba(255,211,139,.72)}
+}
+.poetic-room-night .poetic-petals i:nth-child(n+7){display:none}
+
+/* ---------- đường đêm: thành phố lãng mạn hơn ---------- */
+.city-trip-scene{
+  background:
+    radial-gradient(circle at 74% 14%,rgba(255,239,190,.08),transparent 22%),
+    linear-gradient(180deg,#0c1329 0%,#1b2945 58%,#32283b 100%);
+}
+.trip-moon{
+  box-shadow:0 0 30px rgba(255,233,184,.22);
+}
+.trip-cloud{
+  animation:poeticCloud 8s ease-in-out infinite alternate;
+}
+.cloud-two{animation-delay:1.8s}
+@keyframes poeticCloud{
+  from{transform:translateX(-3px);opacity:.28}
+  to{transform:translateX(10px);opacity:.55}
+}
+.trip-lamp span{
+  box-shadow:0 0 26px rgba(255,207,126,.48);
+}
+.poetic-city-trip::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:49px;
+  height:45px;
+  background:linear-gradient(180deg,transparent,rgba(255,185,146,.035));
+}
+
+/* ---------- quán mỳ: ấm, vàng và có cảm giác hẹn hò ---------- */
+.cute-shop-scene{
+  background:
+    radial-gradient(circle at 50% 45%,rgba(255,218,154,.12),transparent 42%),
+    linear-gradient(180deg,#6d4648 0%,#9d6256 64%,#6d403e 100%);
+}
+.cute-shop-header{
+  box-shadow:0 0 22px rgba(255,215,145,.10);
+}
+.cute-shop-lantern{
+  box-shadow:0 0 16px rgba(255,203,117,.46);
+  animation:poeticLantern 2.8s ease-in-out infinite alternate;
+}
+.lantern-right{animation-delay:1.1s}
+@keyframes poeticLantern{
+  from{opacity:.55;transform:translateY(0)}
+  to{opacity:1;transform:translateY(-2px)}
+}
+.poetic-noodle-shop .poetic-petals i{opacity:.35}
+
+/* ---------- đường mưa: phản chiếu tím-hồng, bokeh xa ---------- */
+.rain-delivery-scene{
+  background:
+    radial-gradient(circle at 20% 18%,rgba(242,159,190,.07),transparent 23%),
+    linear-gradient(180deg,#091022 0%,#18233b 58%,#232434 100%);
+}
+.rain-road-detail{
+  background:linear-gradient(180deg,#252a36,#11151f);
+  box-shadow:inset 0 15px 28px rgba(116,160,219,.055);
+}
+.rain-reflection{
+  opacity:.72;
+}
+.poetic-rain-bokeh{
+  position:absolute;
+  border-radius:50%;
+  opacity:.26;
+  animation:poeticBokeh 3.6s ease-in-out infinite alternate;
+}
+.bokeh-one{
+  width:18px;height:18px;left:18%;top:31%;
+  background:rgba(255,182,191,.42);
+  box-shadow:0 0 22px rgba(255,151,173,.28);
+}
+.bokeh-two{
+  width:11px;height:11px;right:22%;top:25%;
+  background:rgba(255,219,141,.54);
+  box-shadow:0 0 18px rgba(255,205,121,.32);
+  animation-delay:.8s;
+}
+.bokeh-three{
+  width:8px;height:8px;left:44%;top:44%;
+  background:rgba(145,187,255,.55);
+  box-shadow:0 0 18px rgba(124,177,255,.32);
+  animation-delay:1.6s;
+}
+@keyframes poeticBokeh{to{opacity:.6;transform:translateY(-3px) scale(1.12)}}
+.poetic-rain-reflection{
+  position:absolute;
+  left:11%;right:11%;bottom:17px;height:30px;
+  border-radius:50%;
+  background:
+    radial-gradient(ellipse at 22% 50%,rgba(255,149,180,.09),transparent 25%),
+    radial-gradient(ellipse at 70% 50%,rgba(255,216,137,.08),transparent 26%);
+  transform:scaleY(.48);
+}
+
+/* ---------- chung cư: ánh cửa nhà và vườn đêm ---------- */
+.cute-apartment-outside{
+  background:
+    radial-gradient(circle at 50% 57%,rgba(255,210,151,.055),transparent 30%),
+    linear-gradient(180deg,#0d152a,#24273a 62%,#342a37);
+}
+.cute-apartment-inside{
+  background:
+    radial-gradient(circle at 76% 27%,rgba(255,211,164,.07),transparent 24%),
+    linear-gradient(180deg,#29243a,#34283f 62%,#241e2c);
+}
+.apt-lamp span{
+  box-shadow:0 0 30px rgba(255,210,132,.52);
+}
+.poetic-apartment-arrival .poetic-petals i,
+.poetic-apartment-wait .poetic-petals i{animation-duration:calc(var(--petal-duration) + 1.4s)}
+
+/* ---------- trước cửa: cảnh tình nhất ---------- */
+.arrival-cute-background{
+  background:
+    radial-gradient(circle at 50% 35%,rgba(255,206,213,.10),transparent 34%),
+    radial-gradient(circle at 68% 56%,rgba(255,218,157,.06),transparent 26%),
+    linear-gradient(180deg,#211d37 0%,#332842 58%,#241d2d 100%);
+}
+.cute-door-frame{
+  box-shadow:
+    0 12px 34px rgba(0,0,0,.20),
+    0 0 32px rgba(255,197,178,.055);
+}
+.cute-door-light{
+  box-shadow:0 0 26px rgba(255,209,143,.52);
+}
+.poetic-door-glow{
+  position:absolute;
+  z-index:2;
+  left:50%;
+  top:46px;
+  width:196px;
+  height:210px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,206,166,.11),transparent 65%);
+  animation:poeticDoorGlow 3.8s ease-in-out infinite alternate;
+}
+@keyframes poeticDoorGlow{
+  from{opacity:.46;transform:translateX(-50%) scale(.95)}
+  to{opacity:.9;transform:translateX(-50%) scale(1.05)}
+}
+.poetic-heart-orbit{
+  position:absolute;
+  color:rgba(255,181,205,.72);
+  font-family:Georgia,serif;
+  animation:poeticHeartFloat 4.5s ease-in-out infinite;
+}
+.orbit-one{left:25%;top:42%;font-size:15px}
+.orbit-two{right:22%;top:36%;font-size:11px;animation-delay:1.2s}
+.orbit-three{left:53%;top:18%;font-size:9px;animation-delay:2.1s}
+@keyframes poeticHeartFloat{
+  0%,100%{opacity:.12;transform:translateY(9px) rotate(-5deg)}
+  45%{opacity:.82;transform:translateY(-7px) rotate(7deg)}
+}
+
+/* ---------- bữa tối: ánh nến và hơi ấm ---------- */
+.shared-dinner-cute{
+  background:
+    radial-gradient(circle at 50% 66%,rgba(255,207,145,.115),transparent 34%),
+    radial-gradient(circle at 78% 20%,rgba(255,171,198,.055),transparent 24%),
+    linear-gradient(180deg,#151a31,#2d253d 64%,#3b2935);
+}
+.poetic-candle{
+  position:absolute;
+  z-index:5;
+  bottom:58px;
+  width:7px;
+  height:17px;
+  border-radius:2px;
+  background:#efe0c5;
+  box-shadow:0 0 14px rgba(255,211,136,.18);
+}
+.candle-left{left:28%}
+.candle-right{right:28%}
+.poetic-candle i{
+  position:absolute;
+  left:50%;top:-9px;
+  width:6px;height:10px;
+  transform:translateX(-50%);
+  border-radius:60% 40% 60% 40%;
+  background:#ffd074;
+  box-shadow:0 0 13px rgba(255,191,92,.72);
+  animation:poeticFlame 1.1s ease-in-out infinite alternate;
+}
+@keyframes poeticFlame{
+  from{transform:translateX(-50%) rotate(-3deg) scale(.92)}
+  to{transform:translateX(-50%) rotate(4deg) scale(1.06)}
+}
+.poetic-table-glow{
+  position:absolute;
+  left:50%;bottom:34px;
+  width:240px;height:110px;
+  transform:translateX(-50%);
+  background:radial-gradient(ellipse,rgba(255,206,145,.08),transparent 68%);
+}
+
+/* ---------- sofa: yên, gần, nhẹ ---------- */
+.shared-cozy-room{
+  background:
+    radial-gradient(circle at 72% 24%,rgba(255,216,167,.07),transparent 24%),
+    linear-gradient(180deg,#11182f,#28223b 65%,#352638);
+}
+.cozy-lamp span{
+  box-shadow:0 0 34px rgba(255,203,133,.34);
+}
+.cozy-window{
+  box-shadow:0 0 26px rgba(116,145,221,.055);
+}
+.poetic-cozy-room .poetic-petals i:nth-child(n+5){display:none}
+.poetic-cozy-room .poetic-light-dust i{animation-duration:4.8s}
+
+/* ---------- ending: trăng, sao băng, ánh thành phố ---------- */
+.shared-ending-cute{
+  background:
+    radial-gradient(circle at 73% 18%,rgba(255,237,187,.09),transparent 28%),
+    radial-gradient(circle at 30% 44%,rgba(170,152,221,.055),transparent 25%),
+    linear-gradient(180deg,#071126 0%,#14213d 62%,#17141f 100%);
+}
+.ending-moon-big{
+  box-shadow:0 0 42px rgba(255,235,180,.22);
+}
+.ending-string-lights i{
+  box-shadow:0 0 11px rgba(255,212,126,.68);
+}
+.poetic-shooting-star{
+  position:absolute;
+  top:58px;
+  width:54px;
+  height:1px;
+  border-radius:50%;
+  background:linear-gradient(90deg,transparent,rgba(255,241,221,.9));
+  transform:rotate(-22deg);
+  opacity:0;
+  animation:poeticShoot 6.5s ease-in-out infinite;
+}
+.star-one{left:12%;animation-delay:.8s}
+.star-two{right:8%;top:91px;animation-delay:3.9s;transform:rotate(-18deg) scale(.72)}
+@keyframes poeticShoot{
+  0%,72%,100%{opacity:0;transform:translate3d(-12px,7px,0) rotate(-22deg)}
+  76%{opacity:1}
+  88%{opacity:.65;transform:translate3d(72px,-24px,0) rotate(-22deg)}
+  92%{opacity:0}
+}
+.poetic-constellation{
+  position:absolute;
+  left:18%;top:26%;
+  width:74px;height:42px;
+  opacity:.36;
+}
+.poetic-constellation::before,
+.poetic-constellation::after{
+  content:"";
+  position:absolute;
+  height:1px;
+  background:rgba(255,226,235,.25);
+  transform-origin:left center;
+}
+.poetic-constellation::before{left:7px;top:11px;width:45px;transform:rotate(17deg)}
+.poetic-constellation::after{left:40px;top:24px;width:28px;transform:rotate(-28deg)}
+.poetic-constellation i{
+  position:absolute;
+  width:4px;height:4px;
+  border-radius:50%;
+  background:#ffe4ec;
+  box-shadow:0 0 8px rgba(255,207,222,.6);
+}
+.poetic-constellation i:nth-child(1){left:4px;top:7px}
+.poetic-constellation i:nth-child(2){left:34px;top:17px}
+.poetic-constellation i:nth-child(3){left:56px;top:28px}
+.poetic-constellation i:nth-child(4){left:70px;top:13px}
+.poetic-ending-cute .poetic-petals i{animation-duration:calc(var(--petal-duration) + 1.8s);opacity:.46}
+
+/* ---------- chat: giữ nhịp no-skip, chỉ làm giao diện mềm hơn ---------- */
+.global-chat{
+  border-color:rgba(255,226,236,.18);
+  background:rgba(18,17,28,.84);
+  box-shadow:
+    0 7px 20px rgba(0,0,0,.17),
+    0 0 18px rgba(255,163,191,.035);
+  color:#fff4f7;
+}
+.global-chat .chat-tail{background:#191723}
+
+/* ---------- lyrics mềm và thơ hơn một chút ---------- */
+.lyrics{
+  text-shadow:
+    0 2px 6px rgba(0,0,0,.92),
+    0 0 10px rgba(255,150,183,.07);
+}
+
+/* ---------- start screen ---------- */
+.start-screen{
+  background:
+    radial-gradient(circle at 50% 23%,rgba(105,126,190,.68),transparent 30%),
+    radial-gradient(circle at 50% 52%,rgba(255,141,177,.08),transparent 34%),
+    linear-gradient(180deg,#171c38,#0b0d19 78%);
+}
+.start-glow{
+  width:350px;
+  height:350px;
+  background:radial-gradient(circle,rgba(255,151,185,.18),rgba(157,129,206,.04) 46%,transparent 72%);
+}
+.start-content h1{
+  color:#ffe1e9;
+  text-shadow:
+    0 0 18px rgba(255,173,199,.32),
+    0 0 38px rgba(176,145,220,.12);
+}
+.main-play-button{
+  background:linear-gradient(135deg,#e77d9f,#8a75bb);
+  box-shadow:0 12px 36px rgba(231,125,159,.22);
+}
+
+@media(max-width:500px){
+  .poetic-caption{
+    top:24px;
+    max-width:69%;
+    padding:3px 7px;
+    font-size:5px;
+    gap:5px;
+  }
+  .poetic-petals i:nth-child(n+10){display:none}
+  .poetic-light-dust i:nth-child(n+8){display:none}
+  .poetic-candle{bottom:56px}
+}
+
+/* =========================================================
+   EXTRA ROMANTIC + CUTE PASS
+   Giữ nguyên timing / chat-no-skip / transition 1.7s.
+   Chỉ tăng cảm giác tình, ấm, mềm và đáng yêu hơn.
+========================================================= */
+
+/* ---------- tổng thể mềm và ấm hơn ---------- */
+.story-stage::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:4;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 18%,rgba(255,219,187,.055),transparent 31%),
+    radial-gradient(circle at 18% 72%,rgba(255,153,190,.045),transparent 28%),
+    radial-gradient(circle at 84% 66%,rgba(154,139,255,.04),transparent 30%);
+  mix-blend-mode:screen;
+}
+
+.left-panel{
+  background:linear-gradient(to bottom,#111a36,#252442 72%,#2c233b);
+}
+
+.right-panel{
+  background:linear-gradient(to bottom,#291a38,#432b49 72%,#4b2f45);
+}
+
+/* ---------- start screen ---------- */
+.start-screen{
+  background:
+    radial-gradient(circle at 50% 23%,rgba(255,192,214,.15),transparent 28%),
+    radial-gradient(circle at 50% 24%,#34466e,#17182e 48%,#080912 100%);
+}
+.start-glow{
+  width:360px;
+  height:360px;
+  background:radial-gradient(circle,rgba(255,131,170,.22),rgba(165,130,255,.07) 44%,transparent 72%);
+  animation:startLoveGlow 4.2s ease-in-out infinite alternate;
+}
+@keyframes startLoveGlow{
+  to{transform:scale(1.08);opacity:.72}
+}
+.start-love-kicker{
+  margin:2px 0 7px;
+  color:#ffd3e0;
+  font-family:Georgia,serif;
+  font-size:9px;
+  font-style:italic;
+  letter-spacing:1.6px;
+  text-shadow:0 0 12px rgba(255,158,191,.28);
+}
+.start-content h1{
+  margin:6px 0 8px;
+  font-size:45px;
+  line-height:1.05;
+  color:#ffe0e9;
+  text-shadow:0 0 16px rgba(255,165,195,.34),0 8px 28px rgba(0,0,0,.22);
+}
+.start-romance-line{
+  width:88%;
+  margin:0 auto 24px!important;
+  color:#b8b7ca!important;
+  font-family:Georgia,serif;
+  font-size:10px!important;
+  font-style:italic;
+  line-height:1.7!important;
+}
+.main-play-button{
+  background:linear-gradient(135deg,#ff83a8,#9278ff);
+  box-shadow:0 12px 38px rgba(255,103,158,.28),0 0 24px rgba(145,120,255,.08);
+}
+
+/* ---------- nhân vật: cute hơn nhưng vẫn nhận ra outfit ---------- */
+.chibi-eye{
+  width:7px;
+  height:8px;
+  border-radius:50%;
+  background:#2f2b37;
+  box-shadow:0 1px 0 rgba(255,255,255,.08);
+}
+.chibi-eye>i{
+  left:1px;
+  top:1px;
+  width:2.5px;
+  height:2.5px;
+  box-shadow:3px 3px 0 rgba(255,255,255,.18);
+}
+.chibi-blush{
+  width:9px;
+  height:5px;
+  background:radial-gradient(ellipse,#f6a0b6 0 40%,rgba(246,160,182,.35) 70%,transparent 72%);
+  filter:blur(.15px);
+}
+.chibi-mouth{
+  width:8px;
+  height:5px;
+  border-bottom:2px solid #a65d70;
+  border-radius:50%;
+}
+.boy .chibi-blush{opacity:.42}
+.girl .chibi-blush{opacity:.82}
+
+/* mắt nữ mềm hơn + tí mi */
+.girl .chibi-eye::before{
+  content:"";
+  position:absolute;
+  top:-2px;
+  width:5px;
+  height:2px;
+  border-top:1px solid #2a2831;
+  border-radius:50%;
+}
+.girl .eye-left::before{left:-2px;transform:rotate(-12deg)}
+.girl .eye-right::before{right:-2px;transform:rotate(12deg)}
+
+/* tóc nữ: rẽ ngôi giữa, dài, ôm mặt giống ảnh tham chiếu */
+.girl-hair{
+  z-index:6;
+  left:5px;
+  top:4px;
+  width:58px;
+  height:59px;
+  border-radius:28px 28px 20px 20px;
+  background:linear-gradient(145deg,#151a29 0%,#070b14 58%,#1c2438 100%);
+  box-shadow:inset 5px 0 8px rgba(255,255,255,.025),inset -6px 0 9px rgba(60,78,118,.14);
+}
+.girl-hair>span:nth-child(1),
+.girl-hair>span:nth-child(2){
+  bottom:-32px;
+  width:17px;
+  height:49px;
+  border-radius:9px 9px 13px 13px;
+  background:linear-gradient(to bottom,#090d17,#161e30);
+}
+.girl-hair>span:nth-child(1){left:1px;transform:rotate(5deg)}
+.girl-hair>span:nth-child(2){right:1px;transform:rotate(-5deg)}
+.girl-hair::before{
+  left:50%;
+  top:2px;
+  width:2px;
+  height:17px;
+  background:rgba(91,103,141,.42);
+}
+.girl-front-hair{
+  top:13px;
+  width:10px;
+  height:32px;
+  background:linear-gradient(to bottom,#090d17,#151d2d);
+  box-shadow:0 0 1px rgba(255,255,255,.04);
+}
+.girl-front-left{left:12px;transform:rotate(9deg);border-radius:13px 3px 13px 10px}
+.girl-front-right{right:12px;transform:rotate(-9deg);border-radius:3px 13px 10px 13px}
+.girl .chibi-head{
+  z-index:7;
+  left:14px;
+  top:18px;
+  width:40px;
+  height:38px;
+  background:linear-gradient(145deg,#ffe3d5,#ffd0be);
+  box-shadow:inset 0 -2px 0 rgba(233,155,145,.07);
+}
+.girl .chibi-eye{top:14px}
+.girl .eye-left{left:8px}
+.girl .eye-right{right:8px}
+.girl .chibi-blush{top:25px}
+.girl .chibi-mouth{top:28px}
+.photo-hair-flower{
+  z-index:30!important;
+  right:-10px!important;
+  top:14px!important;
+  width:24px!important;
+  height:24px!important;
+  transform:rotate(8deg) scale(1.04)!important;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.16)) drop-shadow(0 0 6px rgba(255,176,196,.12))!important;
+}
+
+/* Bob dịu hơn ở các pose tĩnh */
+.texting,.reading-text,.hungry-text,.happy-text,.wait,.phone,.happy,.shy,.eat,.lean{
+  animation-timing-function:ease-in-out!important;
+}
+
+/* ---------- chat mềm, giống note tình cảm hơn ---------- */
+.chat-bubble,.global-chat{
+  border:1px solid rgba(255,226,237,.16);
+  border-radius:12px;
+  color:#fff5f9;
+  background:linear-gradient(180deg,rgba(27,23,38,.92),rgba(18,17,29,.92));
+  box-shadow:0 8px 22px rgba(0,0,0,.2),inset 0 0 0 1px rgba(255,255,255,.025),0 0 16px rgba(255,126,169,.035);
+}
+.global-chat .chat-tail,.chat-bubble .chat-tail{background:#191723}
+
+/* ---------- ambient tình hơn ---------- */
+.poetic-ambient{
+  overflow:hidden;
+}
+.poetic-light-dust i{
+  box-shadow:0 0 7px rgba(255,222,173,.72),0 0 14px rgba(255,160,198,.15);
+}
+.poetic-petals i{
+  background:linear-gradient(135deg,#ffe0ea,#f3a8bf);
+  box-shadow:0 1px 4px rgba(255,164,194,.14);
+}
+.poetic-caption{
+  border:1px solid rgba(255,227,236,.07);
+  background:linear-gradient(90deg,transparent,rgba(25,18,31,.25),transparent);
+  text-shadow:0 1px 5px rgba(0,0,0,.7);
+}
+.poetic-caption em{color:#f9dfe8}
+
+/* phòng: một tờ note và tim nhỏ gần cửa sổ */
+.romance-window-heart{
+  position:absolute;
+  z-index:42;
+  right:25%;
+  top:22%;
+  color:rgba(255,188,210,.74);
+  font-size:12px;
+  animation:romanceFloat 4s ease-in-out infinite;
+}
+.romance-note-glow{
+  position:absolute;
+  z-index:41;
+  left:50%;
+  top:30%;
+  padding:3px 6px;
+  border-radius:10px;
+  color:rgba(255,224,234,.65);
+  background:rgba(255,255,255,.035);
+  font-family:Georgia,serif;
+  font-size:5px;
+  font-style:italic;
+  letter-spacing:.4px;
+  transform:rotate(-4deg);
+  animation:romanceNoteBreath 4.8s ease-in-out infinite alternate;
+}
+@keyframes romanceNoteBreath{to{opacity:.48;transform:rotate(-4deg) translateY(-2px)}}
+
+/* thành phố: hồ ánh đèn vàng dưới chân */
+.romance-lamp-pool{
+  position:absolute;
+  z-index:4;
+  bottom:51px;
+  width:92px;
+  height:24px;
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgba(255,211,132,.16),transparent 70%);
+  filter:blur(2px);
+}
+.lamp-pool-one{left:4%}
+.lamp-pool-two{right:4%;opacity:.72}
+.romance-walk-heart{
+  position:absolute;
+  z-index:45;
+  left:46%;
+  top:30%;
+  color:rgba(255,178,204,.66);
+  font-size:11px;
+  animation:romanceFloat 3.6s ease-in-out infinite;
+}
+
+/* quán: hơi nóng tạo hình tim */
+.romance-steam-heart{
+  position:absolute;
+  z-index:90;
+  color:rgba(255,221,229,.76);
+  font-family:Georgia,serif;
+  text-shadow:0 0 10px rgba(255,180,203,.25);
+  animation:romanceSteamHeart 2.8s ease-in-out infinite;
+}
+.shop-steam-heart{left:49%;top:35%;font-size:15px}
+.dinner-steam-heart{left:49%;bottom:30%;font-size:18px}
+@keyframes romanceSteamHeart{
+  0%{opacity:0;transform:translate(-50%,8px) scale(.72)}
+  35%{opacity:.8}
+  100%{opacity:0;transform:translate(-50%,-18px) scale(1.15)}
+}
+.romance-warm-ring{
+  position:absolute;
+  z-index:5;
+  left:50%;
+  top:44%;
+  width:150px;
+  height:110px;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,188,132,.08),transparent 68%);
+  animation:romanceWarmRing 4.4s ease-in-out infinite alternate;
+}
+@keyframes romanceWarmRing{to{transform:translate(-50%,-50%) scale(1.12);opacity:.58}}
+
+/* đường về / chung cư */
+.romance-path-glow{
+  position:absolute;
+  z-index:4;
+  left:50%;
+  bottom:8%;
+  width:150px;
+  height:65px;
+  transform:translateX(-50%);
+  background:radial-gradient(ellipse,rgba(255,214,151,.11),transparent 70%);
+  filter:blur(3px);
+}
+.romance-path-heart{
+  position:absolute;
+  z-index:41;
+  left:50%;
+  top:24%;
+  color:rgba(255,186,208,.72);
+  font-size:10px;
+  animation:romanceFloat 4.2s ease-in-out infinite;
+}
+
+/* arrival: ánh cửa ấm + sợi nối tim giữa hai người */
+.arrival-cute-background{
+  background:
+    radial-gradient(circle at 50% 49%,rgba(255,205,159,.13),transparent 27%),
+    linear-gradient(180deg,#27223d 0%,#372944 58%,#211c2c 100%);
+}
+.cute-door-light{
+  box-shadow:0 0 28px rgba(255,210,139,.5),0 0 58px rgba(255,180,161,.11);
+}
+.romance-love-thread{
+  position:absolute;
+  z-index:44;
+  left:50%;
+  bottom:105px;
+  width:72px;
+  height:24px;
+  transform:translateX(-50%);
+  border-top:1px dashed rgba(255,176,204,.36);
+  border-radius:50%;
+  animation:romanceThread 3.4s ease-in-out infinite alternate;
+}
+@keyframes romanceThread{to{opacity:.42;transform:translateX(-50%) translateY(-2px) scaleX(.92)}}
+.romance-heart-beat{
+  position:absolute;
+  z-index:45;
+  left:50%;
+  bottom:112px;
+  color:#ff9fbe;
+  font-size:14px;
+  transform:translateX(-50%);
+  text-shadow:0 0 12px rgba(255,129,174,.35);
+  animation:romanceHeartBeat 1.8s ease-in-out infinite;
+}
+@keyframes romanceHeartBeat{
+  0%,100%{transform:translateX(-50%) scale(.92);opacity:.68}
+  45%{transform:translateX(-50%) scale(1.16);opacity:1}
+  60%{transform:translateX(-50%) scale(1.02)}
+}
+.romance-door-note{
+  position:absolute;
+  z-index:43;
+  left:50%;
+  top:72px;
+  transform:translateX(-50%) rotate(-2deg);
+  padding:3px 7px;
+  border-radius:9px;
+  color:rgba(255,226,235,.72);
+  background:rgba(58,37,51,.34);
+  font-family:Georgia,serif;
+  font-size:5px;
+  font-style:italic;
+}
+.arrival-soft-hearts span{animation-duration:4.4s!important}
+
+/* dinner */
+.romance-dinner-sparkle{
+  position:absolute;
+  z-index:92;
+  bottom:37%;
+  color:rgba(255,226,169,.78);
+  font-size:9px;
+  animation:romanceSparkle 2.7s ease-in-out infinite alternate;
+}
+.sparkle-left{left:31%}
+.sparkle-right{right:31%;animation-delay:.8s}
+@keyframes romanceSparkle{to{opacity:.25;transform:translateY(-5px) scale(1.25)}}
+.dinner-fairy-lights i{box-shadow:0 0 10px rgba(255,214,138,.85),0 0 20px rgba(255,169,191,.08)}
+
+/* sofa: gần nhau và yên hơn */
+.romance-sofa-glow{
+  position:absolute;
+  z-index:5;
+  left:50%;
+  bottom:39px;
+  width:230px;
+  height:100px;
+  transform:translateX(-50%);
+  border-radius:50%;
+  background:radial-gradient(ellipse,rgba(255,181,202,.09),transparent 70%);
+  animation:romanceWarmRing 5s ease-in-out infinite alternate;
+}
+.romance-sofa-heart{
+  position:absolute;
+  z-index:45;
+  bottom:102px;
+  color:rgba(255,178,207,.68);
+  font-size:9px;
+  animation:romanceFloat 3.9s ease-in-out infinite;
+}
+.heart-left{left:40%}
+.heart-right{right:40%;animation-delay:1.2s}
+.romance-cozy-note{
+  position:absolute;
+  z-index:44;
+  left:50%;
+  top:49px;
+  transform:translateX(-50%);
+  color:rgba(255,223,234,.64);
+  font-family:Georgia,serif;
+  font-size:5px;
+  font-style:italic;
+  white-space:nowrap;
+}
+
+/* ending: lời hẹn nhỏ dưới trời đêm */
+.romance-ending-heart{
+  position:absolute;
+  z-index:45;
+  left:50%;
+  top:84px;
+  color:rgba(255,192,214,.78);
+  font-size:16px;
+  text-shadow:0 0 14px rgba(255,169,201,.25);
+  animation:romanceFloat 4.4s ease-in-out infinite;
+}
+.romance-ending-line{
+  position:absolute;
+  z-index:45;
+  left:50%;
+  top:110px;
+  transform:translateX(-50%);
+  color:rgba(232,216,228,.63);
+  font-family:Georgia,serif;
+  font-size:5px;
+  font-style:italic;
+  white-space:nowrap;
+  letter-spacing:.35px;
+}
+
+@keyframes romanceFloat{
+  0%,100%{transform:translateY(0);opacity:.48}
+  50%{transform:translateY(-7px);opacity:.92}
+}
+
+/* cùng cảnh: cho hai nhân vật gần nhau hơn chút nhưng không chồng */
+.together-dinner-cute .together-boy{left:calc(50% - 82px)}
+.together-dinner-cute .together-girl{left:calc(50% + 14px)}
+.together-cozy-room .together-boy{left:calc(50% - 78px)}
+.together-cozy-room .together-girl{left:calc(50% + 10px)}
+.together-ending-cute .together-boy{left:calc(50% - 76px)}
+.together-ending-cute .together-girl{left:calc(50% + 8px)}
+
+/* má hồng hơn khi ở gần nhau */
+.together-scene .girl .chibi-blush{opacity:.92}
+.together-scene .boy .chibi-blush{opacity:.58}
+
+@media(max-width:500px){
+  .start-content h1{font-size:39px}
+  .start-romance-line{font-size:9px!important}
+  .romance-ending-line{font-size:4.5px}
+  .romance-door-note{font-size:4.5px}
+  .romance-cozy-note{font-size:4.5px}
+}
