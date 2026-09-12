@@ -6,12 +6,60 @@ import {
 } from "react";
 
 import "./App.css";
+import seaGirlBg from "./co-gai-o-bien.jpg";
 
 /* =========================================================
    LYRICS OFFSET
 ========================================================= */
 
 const LYRIC_OFFSET = 0;
+const INTRO_PHONE_END = 6.95;
+const INTRO_PHONE_FADE_START = 6.38;
+const INTRO_IDEA_START = 6.56;
+const INTRO_SEQUENCE_END = 8.64;
+
+const INTRO_PHONE_MESSAGES = [
+  {
+    at: 0.3,
+    side: "me",
+    text: "Bà đang làm gì đó? 👀",
+  },
+  {
+    at: 1.08,
+    side: "her",
+    text: "ông ơi...",
+  },
+  {
+    at: 1.72,
+    side: "me",
+    text: "sao vậy bà?",
+  },
+  {
+    at: 2.42,
+    side: "her",
+    text: "tui thèm mỳ cay Tâm Giao quá 🍜🥹",
+  },
+  {
+    at: 3.48,
+    side: "me",
+    text: "thèm dữ lắm hả 😭",
+  },
+  {
+    at: 4.18,
+    side: "her",
+    text: "ừ... mà giờ cũng hơi xa á 🥹",
+  },
+  {
+    at: 5.0,
+    side: "me",
+    text: "bà ăn cấp mấy? có bỏ gì hong?",
+  },
+  {
+    at: 5.92,
+    side: "her",
+    text: "cấp 2, không chả, nhiều sốt chấm nha 👉👈",
+  },
+];
 
 /* =========================================================
    LYRICS
@@ -326,7 +374,7 @@ const STORY_TIMELINE = [
       scene: "apartment-arrival",
       pose: "carry-careful",
       motion: "apartment-enter",
-      talk: "tui dựng xe dưới sảnh rồi, đem mỳ lên cho bà đây ♡",
+      talk: "tui dựng xe gần nhà bà rồi, bà ra đi á ♡",
       carryFood: true,
     },
     girl: {
@@ -376,13 +424,13 @@ const STORY_TIMELINE = [
       {
         at: 1.4,
         effect: "hearts",
-        boy: { pose: "soft-smile", motion: "dinner-shy-back", talk: "có gì đâu bà 😳" },
+        boy: { pose: "soft-smile", motion: "dinner-shy-back", talk: "có gì đâu 😳" },
         girl: { pose: "head-pat", motion: "dinner-reach-over", talk: "ông ngốc ghê á ♡" },
       },
       {
         at: 2.77,
         effect: "steam-hearts",
-        boy: { pose: "offer-water", motion: "dinner-offer-water", talk: "cay không bà? cay thì uống nước nè" },
+        boy: { pose: "offer-water", motion: "dinner-offer-water", talk: "cay không bà? cay thì uống Koi Thé nè" },
         girl: { pose: "spice-shock", motion: "dinner-cute-flinch", talk: "cay... 😭🍜" },
       },
       {
@@ -416,8 +464,8 @@ const STORY_TIMELINE = [
     layout: "together",
     sharedScene: "ending-cute",
     effect: "ending",
-    boy: { pose: "pinky-promise", motion: "ending-step-close", talk: "lần sau tui dẫn bà đi ăn, không để bà thèm một mình nữa" },
-    girl: { pose: "pinky-promise", motion: "ending-step-close", talk: "nhớ đó nha ông... tui chờ đó ♡" },
+    boy: { pose: "pinky-promise", motion: "ending-step-close", talk: "lần sau cho tui qua rước bà đi ăn" },
+    girl: { pose: "pinky-promise", motion: "ending-step-close", talk: "okii ông nha ♡" },
   },
 
 ];
@@ -1128,7 +1176,7 @@ function PanelDecor({
 
       {scene === "apartment-wait" && (
         <div className="cute-apartment-inside">
-          <div className="apt-inside-title">TẦNG 08 ♡</div>
+          <div className="apt-inside-title">Duyên Hải ♡</div>
           <div className="cute-elevator">
             <span className="elevator-left-panel" />
             <span className="elevator-right-panel" />
@@ -1275,6 +1323,13 @@ function ChatBubble({
 function ChatOverlay({
   currentTime,
 }) {
+  if (
+    currentTime <
+    INTRO_SEQUENCE_END
+  ) {
+    return null;
+  }
+
   const activeChat =
     getActiveChat(currentTime);
 
@@ -1304,6 +1359,301 @@ function ChatOverlay({
       className={`global-chat ${sideClass}`}
       text={activeChat.text}
     />
+  );
+}
+
+function IntroPhoneOverlay({
+  currentTime,
+}) {
+  if (
+    currentTime >
+    INTRO_PHONE_END
+  ) {
+    return null;
+  }
+
+  const fadeProgress =
+    currentTime <=
+    INTRO_PHONE_FADE_START
+      ? 0
+      : clamp(
+          (
+            currentTime -
+            INTRO_PHONE_FADE_START
+          ) /
+            Math.max(
+              INTRO_PHONE_END -
+                INTRO_PHONE_FADE_START,
+              0.01
+            )
+        );
+
+  const overlayOpacity =
+    1 -
+    smootherStep(
+      fadeProgress
+    );
+
+  const visibleMessages =
+    INTRO_PHONE_MESSAGES.filter(
+      (item) =>
+        currentTime >=
+        item.at
+    );
+
+  const typingWindows = [
+    [0.76, 1.02],
+    [2.02, 2.34],
+    [3.86, 4.12],
+    [5.52, 5.86],
+  ];
+
+  const typingVisible =
+    typingWindows.some(
+      ([start, end]) =>
+        currentTime >= start &&
+        currentTime < end
+    );
+
+  return (
+    <div
+      className="intro-phone-overlay"
+      style={{
+        opacity: overlayOpacity,
+      }}
+    >
+      <div className="intro-phone-ambience" />
+
+      <div className="intro-phone-sparkles">
+        {[...Array(10)].map(
+          (_, index) => (
+            <span key={index} style={{ "--i": index }} />
+          )
+        )}
+      </div>
+
+      <div className="intro-phone-title">
+        đoạn mở đầu từ màn hình điện thoại của tui ♡
+      </div>
+
+      <div
+        className="intro-phone-device"
+        style={{
+          transform: `scale(${1 + smootherStep(fadeProgress) * 0.085}) translateY(${smootherStep(fadeProgress) * -3}px)`,
+        }}
+      >
+        <div className="intro-phone-notch" />
+
+        <div className="intro-chat-header">
+          <div
+            className="intro-chat-avatar intro-chat-avatar-photo"
+            style={{
+              backgroundImage: `url(${seaGirlBg})`,
+            }}
+          />
+
+          <div className="intro-chat-meta">
+            <strong>cô gái ở biển ♡</strong>
+            <small>đang hoạt động</small>
+          </div>
+
+          <div className="intro-chat-icons">
+            <span>📞</span>
+            <span>⋯</span>
+          </div>
+        </div>
+
+        <div className="intro-chat-body">
+          <div
+            className="intro-chat-wallpaper"
+            style={{
+              backgroundImage: `url(${seaGirlBg})`,
+            }}
+          />
+
+          <div className="intro-chat-stamp">
+            cô gái ở biển ✦
+          </div>
+
+          {visibleMessages.map(
+            (item, index) => (
+              <div
+                key={`${item.at}-${index}`}
+                className={`intro-msg-row intro-msg-${item.side}`}
+              >
+                <div className={`intro-msg-bubble intro-msg-bubble-${item.side}`}>
+                  {item.text}
+                </div>
+              </div>
+            )
+          )}
+
+          {typingVisible && (
+            <div className="intro-msg-row intro-msg-her intro-typing-wrap">
+              <div className="intro-typing">
+                <span />
+                <span />
+                <span />
+              </div>
+            </div>
+          )}
+        </div>
+
+        <div className="intro-compose-bar">
+          <div className="intro-compose-input">
+            nhắn cho cô gái ở biển...
+          </div>
+
+          <div className="intro-compose-actions">
+            <span>＋</span>
+            <span>♡</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function IntroIdeaOverlay({
+  currentTime,
+}) {
+  if (
+    currentTime < INTRO_IDEA_START ||
+    currentTime >= INTRO_SEQUENCE_END
+  ) {
+    return null;
+  }
+
+  const localTime =
+    currentTime - INTRO_IDEA_START;
+
+  const fadeIn =
+    smootherStep(
+      clamp(
+        localTime / 0.24
+      )
+    );
+
+  const fadeOut =
+    currentTime <= 8.34
+      ? 1
+      : 1 - smootherStep(
+          clamp(
+            (currentTime - 8.34) / 0.3
+          )
+        );
+
+  let phase = "zoom";
+
+  if (localTime >= 0.44) {
+    phase = "thinking";
+  }
+
+  if (localTime >= 0.94) {
+    phase = "spark";
+  }
+
+  if (localTime >= 1.42) {
+    phase = "grin";
+  }
+
+  const zoomProgress =
+    smootherStep(
+      clamp(
+        localTime / 0.55
+      )
+    );
+
+  return (
+    <div
+      className={`intro-idea-overlay intro-idea-${phase}`}
+      style={{
+        opacity: fadeIn * fadeOut,
+        "--face-zoom": zoomProgress,
+      }}
+    >
+      <div className="intro-idea-bg">
+        <Stars />
+        <div className="intro-idea-window">
+          <span />
+          <i>☾</i>
+        </div>
+        <div className="intro-idea-desk">
+          <div className="intro-idea-phone">♡</div>
+        </div>
+      </div>
+
+      <div className="intro-camera-focus-ring" />
+
+      <div className="intro-closeup-wrap">
+        <div className="intro-closeup-shoulders">
+          <span className="intro-plaid-line plaid-a" />
+          <span className="intro-plaid-line plaid-b" />
+          <span className="intro-plaid-line plaid-c" />
+          <span className="intro-plaid-line plaid-d" />
+          <span className="intro-black-shirt" />
+        </div>
+
+        <div className="intro-closeup-neck" />
+
+        <div className="intro-closeup-head">
+          <div className="intro-closeup-hair">
+            <span className="intro-hair-sweep sweep-one" />
+            <span className="intro-hair-sweep sweep-two" />
+            <span className="intro-hair-sweep sweep-three" />
+            <span className="intro-hair-side hair-side-left" />
+            <span className="intro-hair-side hair-side-right" />
+          </div>
+
+          <span className="intro-closeup-brow brow-left" />
+          <span className="intro-closeup-brow brow-right" />
+
+          <span className="intro-closeup-eye close-eye-left">
+            <i />
+          </span>
+          <span className="intro-closeup-eye close-eye-right">
+            <i />
+          </span>
+
+          <span className="intro-closeup-blush close-blush-left" />
+          <span className="intro-closeup-blush close-blush-right" />
+
+          <span className="intro-closeup-mouth" />
+        </div>
+
+        <div className="intro-thinking-hand">
+          <span />
+        </div>
+      </div>
+
+      <div className="intro-idea-thought-dots">
+        <span />
+        <span />
+        <span />
+      </div>
+
+      <div className="intro-idea-bulb">
+        💡
+      </div>
+
+      <div className="intro-idea-heart">♡</div>
+
+      <div className="intro-idea-caption">
+        <span className="intro-idea-caption-small">
+          đọc xong tin nhắn...
+        </span>
+
+        <strong>
+          {phase === "zoom"
+            ? "..."
+            : phase === "thinking"
+              ? "hmm..."
+              : phase === "spark"
+                ? "khoan... tui có ý này"
+                : "đi mua cho bà luôn 😌"}
+        </strong>
+      </div>
+    </div>
   );
 }
 
@@ -1586,181 +1936,97 @@ function SplitPanel({
 
 function ArrivalCuteScene({
   currentTime,
-  story,
 }) {
-  const elapsed =
-    currentTime - 34.84;
-
-  let phase = 0;
-
-  if (elapsed >= 4.42) {
-    phase = 3;
-  } else if (elapsed >= 2.96) {
-    phase = 2;
-  } else if (elapsed >= 1.48) {
-    phase = 1;
-  }
-
-  const phaseData = [
-    {
-      boyPose: "wave-soft",
-      girlPose: "peek-wave",
-      boyTalk: "shipper riêng của bà tới rồi nè 😎🍜",
-      girlTalk: "",
-      boyFood: true,
-      girlFood: false,
-    },
-    {
-      boyPose: "soft-smile",
-      girlPose: "hair-tuck",
-      boyTalk: "",
-      girlTalk: "ông tới thiệt luôn hả... dễ thương quá 🥹♡",
-      boyFood: true,
-      girlFood: false,
-    },
-    {
-      boyPose: "present-both",
-      girlPose: "receive-both",
-      boyTalk: "mỳ cay của bà nè, tui giữ nóng kỹ lắm á 🍜♡",
-      girlTalk: "",
-      boyFood: true,
-      girlFood: true,
-    },
-    {
-      boyPose: "finger-heart",
-      girlPose: "hug-bag",
-      boyTalk: "",
-      girlTalk: "cảm ơn ông nha... tự nhiên thấy được cưng ghê 🥹💗",
-      boyFood: false,
-      girlFood: true,
-    },
-  ][phase];
+  const elapsed = currentTime - 34.84;
+  const received = elapsed >= 3.25;
 
   return (
     <div
       className={`
         together-scene
         arrival-cute-scene
-        arrival-phase-${phase}
+        vintage-only-meeting
+        ${received ? "vintage-meeting-received" : "vintage-meeting-handoff"}
       `}
     >
-      <div className="arrival-cute-background">
+      <div className="pov-meeting-ambient">
         <Stars />
 
-        <div className="arrival-wall-stars">
-          <i>✦</i>
-          <i>♡</i>
-          <i>✦</i>
-        </div>
-
-        <div className="cute-door-frame">
-          <div className="cute-door">
-            <span className="cute-door-handle" />
-
-            <div className="cute-door-plaque">
-              BÀ ♡
-            </div>
-
-            <div className="cute-door-sticker">🐰</div>
-            <div className="cute-door-note">mỳ cay tới! ♡</div>
-
-            <div className="cute-door-heart">
-              ♡
-            </div>
-          </div>
-
-          <div className="cute-door-light">
-            <span />
-          </div>
-        </div>
-
-        <div className="cute-fairy-string">
-          {Array.from({
-            length: 9,
-          }).map(
-            (
-              _,
-              index
-            ) => (
-              <i
-                key={
-                  index
-                }
-              />
-            )
-          )}
-        </div>
-
-        <div className="arrival-plant">
+        <div className="pov-meeting-moon">
           <span />
         </div>
 
-        <div className="arrival-slippers">
-          ♡ ♡
+        <div className="pov-meeting-fairy-lights">
+          {Array.from({ length: 11 }).map((_, index) => (
+            <i key={index} />
+          ))}
         </div>
 
-        <div className="arrival-paw-trail">
-          <i>•</i><i>•</i><i>•</i><i>•</i>
-        </div>
+        <div className="pov-meeting-floor" />
+      </div>
 
-        <div className="arrival-mini-flowers">🌷 ♡ 🌷</div>
-
-        <div className="arrival-cat">
-          <span className="cat-ear cat-ear-left" />
-          <span className="cat-ear cat-ear-right" />
-          <b>•ᴗ•</b>
-          <i />
-        </div>
-
-        <div className="cute-doormat">
-          HELLO ♡
-        </div>
-
-        <div className="arrival-floor" />
-
-        <div className="arrival-soft-hearts">
-          <span>♡</span>
-          <span>♡</span>
-          <span>♡</span>
-          <span>♡</span>
-          <span>♡</span>
-        </div>
-
-        {phase >= 3 && (
-          <div className="arrival-noodle-peek">
-            <SpicyNoodleBowl />
+      <div className="vintage-eye-pov-handoff vintage-eye-pov-always">
+        <div className="vintage-eye-pov-scene">
+          <div className="vintage-eye-pov-door">
+            <span className="vintage-eye-pov-door-knob" />
+            <i>♡</i>
           </div>
-        )}
-      </div>
 
-      <ChatBubble
-        key={`arrival-boy-${story.boy.talk || "empty"}`}
-        className="arrival-boy-chat"
-        text={story.boy.talk}
-      />
+          <div className="vintage-eye-pov-light" />
 
-      <ChatBubble
-        key={`arrival-girl-${story.girl.talk || "empty"}`}
-        className="arrival-girl-chat"
-        text={story.girl.talk}
-      />
+          <div className="vintage-eye-pov-girl-wrap">
+            <ChibiCharacter
+              role="girl"
+              pose={received ? "hug-bag" : "receive-both"}
+              carryFood={received}
+              className="vintage-eye-pov-girl"
+            />
+          </div>
 
-      <div className={`character-track arrival-boy-track arrival-boy-motion-${phase}`}>
-        <ChibiCharacter
-          role="boy"
-          pose={phaseData.boyPose}
-          carryFood={phaseData.boyFood}
-          className="arrival-boy"
-        />
-      </div>
+          {!received && (
+            <>
+              <div className="vintage-eye-pov-girl-hands">
+                <span className="vintage-girl-receive-hand vintage-girl-receive-left" />
+                <span className="vintage-girl-receive-hand vintage-girl-receive-right" />
+              </div>
 
-      <div className={`character-track arrival-girl-track arrival-girl-motion-${phase}`}>
-        <ChibiCharacter
-          role="girl"
-          pose={phaseData.girlPose}
-          carryFood={phaseData.girlFood}
-          className="arrival-girl"
-        />
+              <div className="vintage-eye-pov-my-hands">
+                <span className="vintage-my-arm vintage-my-arm-left" />
+                <span className="vintage-my-arm vintage-my-arm-right" />
+
+                <div className="vintage-eye-pov-bag">
+                  <span className="vintage-eye-pov-bag-handle" />
+                  <b>MỲ CAY</b>
+                  <i>♡</i>
+                </div>
+              </div>
+            </>
+          )}
+
+          {received && (
+            <div className="vintage-eye-pov-after-hand">
+              <span className="vintage-after-thumb" />
+              <span className="vintage-after-heart">♡</span>
+            </div>
+          )}
+
+          <div className="vintage-eye-pov-caption">
+            <small>góc nhìn của tui</small>
+            <span>
+              {received
+                ? "bà nhận được rồi nè ♡"
+                : "mỳ của bà nè ♡"}
+            </span>
+          </div>
+        </div>
+
+        <div className="vintage-eye-lid vintage-eye-lid-top" />
+        <div className="vintage-eye-lid vintage-eye-lid-bottom" />
+        <div className="vintage-eye-side-blur vintage-eye-side-blur-left" />
+        <div className="vintage-eye-side-blur vintage-eye-side-blur-right" />
+        <div className="vintage-eye-film-grain" />
+        <div className="vintage-eye-film-scratch scratch-one" />
+        <div className="vintage-eye-film-scratch scratch-two" />
       </div>
     </div>
   );
@@ -2020,18 +2286,6 @@ function Effects({
    Không đụng vào timeline chat, không ảnh hưởng crossfade.
 ========================================================= */
 
-const POETIC_CAPTIONS = {
-  "room-night": "một tin nhắn nhỏ, làm tim ai đó mềm đi một chút ♡",
-  "city-trip": "đường có xa một chút, miễn người chờ còn đang cười ♡",
-  "noodle-shop": "giữa mùi mỳ cay, có một người đang nhớ lời bà dặn",
-  "rain-delivery": "mưa một chút thôi, thương thì nhiều hơn rất nhiều",
-  "apartment-arrival": "gần tới rồi, hình như tim cũng đi nhanh hơn",
-  "apartment-wait": "cuối hành lang có một người đang mong cửa mở",
-  "arrival-cute": "có người mang cả một tối ấm áp tới trước cửa ♡",
-  "dinner-cute": "một tô mỳ cay, hai ánh mắt cứ lén cười với nhau",
-  "cozy-room": "ngồi gần nhau một chút, cả thế giới tự nhiên yên hơn",
-  "ending-cute": "đêm nay, thế giới vừa đủ bằng một người bên cạnh ♡",
-};
 
 const POETIC_PARTICLES = Array.from(
   { length: 12 },
@@ -2061,9 +2315,6 @@ function PoeticAmbient({
     story.layout === "together"
       ? story.sharedScene
       : story.boy?.scene || "";
-
-  const caption =
-    POETIC_CAPTIONS[sceneName] || "";
 
   const isRain =
     sceneName === "rain-delivery";
@@ -2212,13 +2463,6 @@ function PoeticAmbient({
         </>
       )}
 
-      {caption && (
-        <div className="poetic-caption">
-          <span>✦</span>
-          <em>{caption}</em>
-          <span>✦</span>
-        </div>
-      )}
     </div>
   );
 }
@@ -2985,15 +3229,13 @@ export default function App() {
 
               
 
-              <div className="start-love-kicker">một câu chuyện nhỏ ♡</div>
+              <div className="start-love-kicker">Dựa trên một câu chuyện có thật ♡</div>
 
               <h1>
-                Mỳ Cay Cho Bà
+                Meizhen
               </h1>
 
-              <p className="start-romance-line">
-                đi một đoạn đường thôi, để mang về một chút ấm áp
-              </p>
+              
 
               <button
                 type="button"
@@ -3022,6 +3264,18 @@ export default function App() {
               <div className="stage-background" />
 
               <StoryTransition
+                currentTime={
+                  currentTime
+                }
+              />
+
+              <IntroPhoneOverlay
+                currentTime={
+                  currentTime
+                }
+              />
+
+              <IntroIdeaOverlay
                 currentTime={
                   currentTime
                 }
