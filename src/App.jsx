@@ -140,7 +140,7 @@ const STORY_TIMELINE = [
         boy: { pose: "surprised-text", talk: "mỳ cay á? 👀", phone: true },
         girl: {
           pose: "hungry-text",
-          talk: "ùa... thèm dữ lắm luôn 🥹",
+          talk: "ừ... thèm dữ lắm luôn 🥹",
           phone: true,
           thoughtNoodles: true,
         },
@@ -339,8 +339,8 @@ const STORY_TIMELINE = [
     layout: "together",
     sharedScene: "dinner-cute",
     effect: "steam-hearts",
-    boy: { pose: "shy", talk: "ăn thử đi bà, coi còn nóng hong ♡" },
-    girl: { pose: "happy", talk: "ngon á... cảm ơn ông nha 🥹" },
+    boy: { pose: "present-bowl", talk: "ăn thử đi bà, coi còn nóng hong ♡" },
+    girl: { pose: "heart-hands", talk: "ngon á... cảm ơn ông nha 🥹" },
     beats: [
       {
         at: 1.4,
@@ -351,7 +351,7 @@ const STORY_TIMELINE = [
       {
         at: 2.77,
         effect: "steam-hearts",
-        boy: { pose: "eat", talk: "cay không bà? cay thì uống nước nè" },
+        boy: { pose: "offer-water", talk: "cay không bà? cay thì uống nước nè" },
         girl: { pose: "eat", talk: "cay... 😭🍜" },
       },
       {
@@ -368,8 +368,8 @@ const STORY_TIMELINE = [
     layout: "together",
     sharedScene: "cozy-room",
     effect: "tiny-heart",
-    boy: { pose: "happy", talk: "ăn từ từ coi 😭" },
-    girl: { pose: "happy", talk: "no quá rồi..." },
+    boy: { pose: "thumbs-up", talk: "ăn từ từ coi 😭" },
+    girl: { pose: "tummy-happy", talk: "no quá rồi..." },
     beats: [
       {
         at: 1.56,
@@ -385,8 +385,8 @@ const STORY_TIMELINE = [
     layout: "together",
     sharedScene: "ending-cute",
     effect: "ending",
-    boy: { pose: "happy", talk: "lần sau tui dẫn bà đi ăn, không để bà thèm một mình nữa" },
-    girl: { pose: "lean", talk: "nhớ đó nha ông... tui chờ đó ♡" },
+    boy: { pose: "pinky-promise", talk: "lần sau tui dẫn bà đi ăn, không để bà thèm một mình nữa" },
+    girl: { pose: "pinky-promise", talk: "nhớ đó nha ông... tui chờ đó ♡" },
   },
 
 ];
@@ -1520,8 +1520,8 @@ function ArrivalCuteScene({
 
   const phaseData = [
     {
-      boyPose: "shy",
-      girlPose: "peek",
+      boyPose: "wave-soft",
+      girlPose: "peek-wave",
       boyTalk: "shipper riêng của bà tới rồi nè 😎🍜",
       girlTalk: "",
       boyFood: true,
@@ -1529,7 +1529,7 @@ function ArrivalCuteScene({
     },
     {
       boyPose: "shy",
-      girlPose: "happy",
+      girlPose: "hair-tuck",
       boyTalk: "",
       girlTalk: "ông tới thiệt luôn hả... dễ thương quá 🥹♡",
       boyFood: true,
@@ -1544,7 +1544,7 @@ function ArrivalCuteScene({
       girlFood: true,
     },
     {
-      boyPose: "happy",
+      boyPose: "thumbs-up",
       girlPose: "hug-bag",
       boyTalk: "",
       girlTalk: "cảm ơn ông nha... tự nhiên thấy được cưng ghê 🥹💗",
@@ -2904,12 +2904,15 @@ export default function App() {
 
               
 
-              <div className="start-love-kicker">dựa trên một câu chuyện có thật ♡</div>
+              <div className="start-love-kicker">một câu chuyện nhỏ ♡</div>
 
               <h1>
-                Spicy Noodle Story
+                Mỳ Cay Cho Bà
               </h1>
 
+              <p className="start-romance-line">
+                đi một đoạn đường thôi, để mang về một chút ấm áp
+              </p>
 
               <button
                 type="button"
