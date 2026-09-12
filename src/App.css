@@ -4026,10 +4026,8 @@
   border-radius:50%;
   background:rgba(255,220,231,.78);
   box-shadow:0 0 8px rgba(255,220,231,.55);
-
   left:calc(9% + (var(--i) * 8%));
   top:calc(18% + (var(--i) * 5%));
-
   animation:introSparkle 2.4s ease-in-out infinite;
   animation-delay:calc(var(--i) * .18s);
 }

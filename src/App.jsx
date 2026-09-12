@@ -374,7 +374,7 @@ const STORY_TIMELINE = [
       scene: "apartment-arrival",
       pose: "carry-careful",
       motion: "apartment-enter",
-      talk: "tui dựng xe gần nhà bà rồi, bà ra đi á ♡",
+      talk: "tui dựng xe dưới sảnh rồi, đem mỳ lên cho bà đây ♡",
       carryFood: true,
     },
     girl: {
@@ -424,13 +424,13 @@ const STORY_TIMELINE = [
       {
         at: 1.4,
         effect: "hearts",
-        boy: { pose: "soft-smile", motion: "dinner-shy-back", talk: "có gì đâu 😳" },
+        boy: { pose: "soft-smile", motion: "dinner-shy-back", talk: "có gì đâu bà 😳" },
         girl: { pose: "head-pat", motion: "dinner-reach-over", talk: "ông ngốc ghê á ♡" },
       },
       {
         at: 2.77,
         effect: "steam-hearts",
-        boy: { pose: "offer-water", motion: "dinner-offer-water", talk: "cay không bà? cay thì uống Koi Thé nè" },
+        boy: { pose: "offer-water", motion: "dinner-offer-water", talk: "cay không bà? cay thì uống nước nè" },
         girl: { pose: "spice-shock", motion: "dinner-cute-flinch", talk: "cay... 😭🍜" },
       },
       {
@@ -464,8 +464,8 @@ const STORY_TIMELINE = [
     layout: "together",
     sharedScene: "ending-cute",
     effect: "ending",
-    boy: { pose: "pinky-promise", motion: "ending-step-close", talk: "lần sau cho tui qua rước bà đi ăn" },
-    girl: { pose: "pinky-promise", motion: "ending-step-close", talk: "okii ông nha ♡" },
+    boy: { pose: "pinky-promise", motion: "ending-step-close", talk: "lần sau tui dẫn bà đi ăn, không để bà thèm một mình nữa" },
+    girl: { pose: "pinky-promise", motion: "ending-step-close", talk: "nhớ đó nha ông... tui chờ đó ♡" },
   },
 
 ];
@@ -488,7 +488,7 @@ const CHAT_TIMELINE = [
   // 8.64s -> 14.2s: đi tới quán
   { from: 8.78, to: 10.25, speaker: "girl", text: "ủa ông đi đâu vậy?" },
   { from: 10.42, to: 12.55, speaker: "boy", text: "tui chạy xe qua Tâm Giao mua cho bà đây nè 🛵🍜" },
-  { from: 12.72, to: 14.05, speaker: "girl", text: "hehe... chạy xe từ từ thôi nha ông, tui chờ 🥹🍜" },
+  { from: 12.72, to: 14.05, speaker: "girl", text: "hehe đã vá... chạy xe từ từ thôi nha ông 🥹🍜" },
 
   // 14.2s -> 20.65s: ở quán
   { from: 14.35, to: 15.90, speaker: "boy", text: "tới quán rồi nha bà, chờ tui xíu 🍜" },
@@ -496,35 +496,35 @@ const CHAT_TIMELINE = [
   { from: 18.78, to: 20.48, speaker: "girl", text: "nhớ nhiều sốt chấm nha 👉👈" },
 
   // 20.65s -> 28.1s: ship dưới mưa
-  { from: 20.80, to: 22.40, speaker: "boy", text: "mỳ cay với tui đang chạy về phía bà nè 🍜♡" },
+  { from: 20.80, to: 22.40, speaker: "boy", text: "bà đợi xíu nha tui chạy xuống nè  🍜♡" },
   { from: 22.58, to: 24.18, speaker: "girl", text: "ông chạy từ từ thôi nha, tui chờ mà 🥺" },
   { from: 24.36, to: 26.30, speaker: "boy", text: "tui che kỹ lắm rồi, bà nhận là còn ấm á 😭♡" },
   { from: 26.48, to: 27.92, speaker: "girl", text: "okee, tới thì nhắn tui ra nha 🤭♡" },
 
   // 28.1s -> 34.84s: tới chung cư
-  { from: 28.25, to: 29.90, speaker: "boy", text: "tui dựng xe dưới sảnh rồi, đem mỳ lên cho bà đây ♡" },
+  { from: 28.25, to: 29.90, speaker: "boy", text: "tui dựng xe gần nhà rồi, bà ra lấy mì nè ♡" },
   { from: 30.08, to: 31.73, speaker: "girl", text: "hihi tui xuống đây nè, ông đợi xíu nha 🤭" },
   { from: 31.91, to: 34.65, speaker: "boy", text: "mỳ cay của bà tui đem xuống tới cửa luôn nè 🍜♡" },
 
   // 34.84s -> 40.65s: trước cửa nhà
-  { from: 34.95, to: 36.25, speaker: "boy", text: "shipper riêng của bà tới rồi nè... giao tận tay luôn đó 😎🍜" },
-  { from: 36.40, to: 37.70, speaker: "girl", text: "ông tới thiệt luôn hả... dễ thương quá 🥹♡" },
+  { from: 34.95, to: 36.25, speaker: "boy", text: " tới rồi nè... giao tận tay luôn đó 😎🍜" },
+  { from: 36.40, to: 37.70, speaker: "girl", text: "ông tới thiệt luôn hả... 🥹♡" },
   { from: 37.85, to: 39.10, speaker: "boy", text: "mỳ cay của bà nè, tui giữ nóng kỹ lắm á 🍜♡" },
   { from: 39.25, to: 40.52, speaker: "girl", text: "cảm ơn ông nha... tự nhiên thấy được cưng ghê 🥹💗" },
 
   // 40.65s -> 46.64s: ăn mỳ
   { from: 40.78, to: 42.08, speaker: "boy", text: "ăn thử đi bà, coi còn nóng hong ♡" },
   { from: 42.24, to: 43.54, speaker: "girl", text: "ngon á... cảm ơn ông nha 🥹" },
-  { from: 43.70, to: 44.98, speaker: "boy", text: "cay không bà? cay thì uống nước nè" },
-  { from: 45.14, to: 46.48, speaker: "girl", text: "cay... mà ông mua nên ngon hơn á 😌🍜♡" },
+  { from: 43.70, to: 44.98, speaker: "boy", text: "cay không bà? cay thì uống Koi Thé nè" },
+  { from: 45.14, to: 46.48, speaker: "girl", text: "cay... mà ngon hơn á 😌🍜♡" },
 
   // 46.64s -> 49.96s: nghỉ trên sofa
   { from: 46.78, to: 48.20, speaker: "boy", text: "bà vui là tui thấy đáng công rồi ♡" },
-  { from: 48.38, to: 49.78, speaker: "girl", text: "ông mua thì tui ăn hết, thiệt đó 😌♡" },
+  { from: 48.38, to: 49.78, speaker: "girl", text: "hehe đã vá 😌♡" },
 
   // ending
-  { from: 50.05, to: 51.40, speaker: "boy", text: "lần sau tui dẫn bà đi ăn, không để bà thèm một mình nữa" },
-  { from: 51.58, to: 52.95, speaker: "girl", text: "nhớ đó nha ông... tui chờ đó ♡" },
+  { from: 50.05, to: 51.40, speaker: "boy", text: "lần sau tui với bà đi ăn chung nha" },
+  { from: 51.58, to: 52.95, speaker: "girl", text: "okiii ông nha ♡" },
 ];
 
 /* =========================================================
@@ -1176,7 +1176,7 @@ function PanelDecor({
 
       {scene === "apartment-wait" && (
         <div className="cute-apartment-inside">
-          <div className="apt-inside-title">Duyên Hải ♡</div>
+          <div className="apt-inside-title">Duyên Hải♡</div>
           <div className="cute-elevator">
             <span className="elevator-left-panel" />
             <span className="elevator-right-panel" />
@@ -3229,10 +3229,10 @@ export default function App() {
 
               
 
-              <div className="start-love-kicker">Dựa trên một câu chuyện có thật ♡</div>
+              <div className="start-love-kicker">Dựa trên một câu chuyện có thật♡</div>
 
               <h1>
-                Meizhen
+                SPICY NOODLE STORY
               </h1>
 
               
