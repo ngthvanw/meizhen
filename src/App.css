@@ -2035,18 +2035,6 @@
 .boy .chibi-blush{opacity:.42}
 .girl .chibi-blush{opacity:.82}
 
-/* mắt nữ mềm hơn + tí mi */
-.girl .chibi-eye::before{
-  content:"";
-  position:absolute;
-  top:-2px;
-  width:5px;
-  height:2px;
-  border-top:1px solid #2a2831;
-  border-radius:50%;
-}
-.girl .eye-left::before{left:-2px;transform:rotate(-12deg)}
-.girl .eye-right::before{right:-2px;transform:rotate(12deg)}
 
 /* tóc nữ: rẽ ngôi giữa, dài, ôm mặt giống ảnh tham chiếu */
 .girl-hair{
@@ -2397,4 +2385,157 @@
   .romance-ending-line{font-size:4.5px}
   .romance-door-note{font-size:4.5px}
   .romance-cozy-note{font-size:4.5px}
+}
+
+/* =========================================================
+   CUTE GIRL EXPRESSION OVERRIDE
+   Bỏ nét mặt lừ/khó ở, giữ mắt tròn long lanh + má hồng + cười nhẹ.
+   Đặt cuối file để thắng các rule pose cũ như happy-text/happy/eat.
+========================================================= */
+
+/* Không dùng nét mí/"chân mày" cũ trên mắt nữ */
+.girl .chibi-eye::before{
+  content:none!important;
+  display:none!important;
+}
+
+/* Mắt nữ luôn mở tròn dễ thương, kể cả pose happy/eat/happy-text */
+.girl .chibi-eye,
+.girl.happy-text .chibi-eye,
+.girl.happy .chibi-eye,
+.girl.eat .chibi-eye,
+.girl.shy .chibi-eye,
+.girl.lean .chibi-eye,
+.girl.texting .chibi-eye,
+.girl.reading-text .chibi-eye,
+.girl.wait .chibi-eye,
+.girl.phone .chibi-eye,
+.girl.peek .chibi-eye,
+.girl.receive .chibi-eye,
+.girl.hug-bag .chibi-eye{
+  top:14px!important;
+  width:8px!important;
+  height:9px!important;
+  border-radius:50%!important;
+  background:linear-gradient(180deg,#332c3b,#24212d)!important;
+  box-shadow:
+    inset 0 -1px 0 rgba(255,255,255,.08),
+    0 1px 1px rgba(83,47,70,.08)!important;
+  transform:none!important;
+}
+
+.girl .eye-left{left:7px!important}
+.girl .eye-right{right:7px!important}
+
+/* Hai điểm sáng trong mắt => nhìn hiền và long lanh hơn */
+.girl .chibi-eye>i{
+  display:block!important;
+  left:1px!important;
+  top:1px!important;
+  width:3px!important;
+  height:3px!important;
+  border-radius:50%!important;
+  background:#fff!important;
+  box-shadow:3px 3px 0 rgba(255,255,255,.2)!important;
+}
+
+.girl .chibi-eye::after{
+  content:"";
+  position:absolute;
+  right:1px;
+  bottom:1px;
+  width:1.6px;
+  height:1.6px;
+  border-radius:50%;
+  background:rgba(255,255,255,.78);
+}
+
+/* Má hồng tròn, mềm hơn */
+.girl .chibi-blush,
+.girl.happy-text .chibi-blush,
+.girl.happy .chibi-blush,
+.girl.shy .chibi-blush,
+.girl.lean .chibi-blush,
+.girl.eat .chibi-blush,
+.girl.receive .chibi-blush,
+.girl.hug-bag .chibi-blush{
+  top:25px!important;
+  width:10px!important;
+  height:6px!important;
+  opacity:.94!important;
+  border-radius:50%!important;
+  background:radial-gradient(ellipse,#f7a2bb 0 38%,rgba(247,162,187,.48) 62%,transparent 76%)!important;
+  filter:blur(.12px)!important;
+}
+
+.girl .blush-left{left:0!important}
+.girl .blush-right{right:0!important}
+
+/* Miệng cười nhỏ, bỏ cảm giác lạnh/lừ */
+.girl .chibi-mouth,
+.girl.happy-text .chibi-mouth,
+.girl.happy .chibi-mouth,
+.girl.shy .chibi-mouth,
+.girl.lean .chibi-mouth,
+.girl.texting .chibi-mouth,
+.girl.reading-text .chibi-mouth,
+.girl.wait .chibi-mouth,
+.girl.phone .chibi-mouth,
+.girl.peek .chibi-mouth,
+.girl.receive .chibi-mouth,
+.girl.hug-bag .chibi-mouth,
+.girl.eat .chibi-mouth{
+  left:16px!important;
+  top:28px!important;
+  width:8px!important;
+  height:5px!important;
+  border:0!important;
+  border-bottom:2px solid #b85f7a!important;
+  border-radius:0 0 10px 10px!important;
+  background:transparent!important;
+  transform:none!important;
+}
+
+/* Khi ngạc nhiên vẫn cute: miệng tròn nhỏ, không quá lớn */
+.girl.surprised .chibi-mouth,
+.girl.surprised-text .chibi-mouth{
+  left:17px!important;
+  top:27px!important;
+  width:6px!important;
+  height:6px!important;
+  border:0!important;
+  border-radius:50%!important;
+  background:#b95f79!important;
+}
+
+/* Đầu nữ mềm hơn một chút */
+.girl .chibi-head{
+  z-index:7!important;
+  left:14px!important;
+  top:18px!important;
+  width:40px!important;
+  height:38px!important;
+  border-radius:17px 17px 15px 15px!important;
+  background:linear-gradient(145deg,#ffe8dc,#ffd5c6)!important;
+  box-shadow:
+    inset 0 -2px 0 rgba(230,149,141,.055),
+    0 1px 0 rgba(255,255,255,.05)!important;
+}
+
+/* Hoa tóc sáng nhẹ hơn để khuôn mặt trông vui hơn */
+.photo-hair-flower{
+  transform:rotate(8deg) scale(1.08)!important;
+  filter:
+    drop-shadow(0 2px 4px rgba(0,0,0,.14))
+    drop-shadow(0 0 7px rgba(255,176,196,.2))!important;
+}
+
+/* Pose vui của BÀ chỉ bob nhẹ, không ép mắt thành đường ngang */
+.girl.happy-text,
+.girl.happy,
+.girl.shy,
+.girl.lean,
+.girl.receive,
+.girl.hug-bag{
+  animation-timing-function:ease-in-out!important;
 }
