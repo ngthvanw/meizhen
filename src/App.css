@@ -2891,3 +2891,1112 @@
   .thumbs-up::after,
   .pinky-promise::after{font-size:9px}
 }
+
+/* =========================================================
+   BIG CHARACTER MOVEMENT / SCENE BLOCKING
+   Nhân vật không còn đứng yên một chỗ: đi xuyên cảnh, tiến/lùi,
+   chạy tới cửa, pacing, bước gần nhau, v.v.
+========================================================= */
+
+.character-track{
+  position:absolute;
+  inset:0;
+  z-index:50;
+  pointer-events:none;
+  transform-origin:center bottom;
+  will-change:transform,opacity;
+}
+
+.split-character-track,
+.together-character-track,
+.arrival-boy-track,
+.arrival-girl-track{
+  overflow:visible;
+}
+
+/* ---------- phòng đầu ---------- */
+.motion-room-desk{
+  animation:roomDeskShift 3.2s ease-in-out infinite;
+}
+@keyframes roomDeskShift{
+  0%,100%{transform:translateX(-6px)}
+  50%{transform:translateX(4px)}
+}
+
+.motion-room-chair-shift{
+  animation:roomChairShift 1.1s ease-out both;
+}
+@keyframes roomChairShift{
+  from{transform:translateX(-7px) translateY(0)}
+  to{transform:translateX(8px) translateY(-2px)}
+}
+
+.motion-room-pop-up{
+  animation:roomPopUp .72s cubic-bezier(.18,.85,.28,1.25) both;
+}
+@keyframes roomPopUp{
+  0%{transform:translateX(5px) translateY(3px) scale(.96)}
+  60%{transform:translateX(12px) translateY(-10px) scale(1.03)}
+  100%{transform:translateX(14px) translateY(-4px)}
+}
+
+.motion-room-stand-up{
+  animation:roomStandUp 1s cubic-bezier(.2,.8,.25,1) both;
+}
+@keyframes roomStandUp{
+  from{transform:translateX(8px) translateY(3px)}
+  55%{transform:translateX(18px) translateY(-9px)}
+  to{transform:translateX(26px) translateY(-3px)}
+}
+
+.motion-room-exit-right{
+  animation:roomExitRight 1.35s cubic-bezier(.2,.72,.22,1) both;
+}
+@keyframes roomExitRight{
+  0%{transform:translateX(26px);opacity:1}
+  76%{opacity:1}
+  100%{transform:translateX(96px);opacity:.05}
+}
+
+.motion-room-sofa{
+  animation:roomSofaSway 3s ease-in-out infinite;
+}
+@keyframes roomSofaSway{
+  0%,100%{transform:translateX(4px) translateY(0)}
+  50%{transform:translateX(-3px) translateY(-2px)}
+}
+
+.motion-room-sofa-bounce{
+  animation:roomSofaBounce 1.2s ease-in-out infinite;
+}
+@keyframes roomSofaBounce{
+  0%,100%{transform:translateX(3px) translateY(0)}
+  45%{transform:translateX(-2px) translateY(-6px)}
+  70%{transform:translateX(5px) translateY(-2px)}
+}
+
+.motion-room-look-door{
+  animation:roomLookDoor 1.6s ease-in-out infinite alternate;
+}
+@keyframes roomLookDoor{
+  from{transform:translateX(5px)}
+  to{transform:translateX(20px) translateY(-2px)}
+}
+
+.motion-room-step-window{
+  animation:roomStepWindow 1.1s cubic-bezier(.2,.8,.25,1) both;
+}
+@keyframes roomStepWindow{
+  from{transform:translateX(5px)}
+  to{transform:translateX(-31px) translateY(-2px)}
+}
+
+.motion-room-window-wait{
+  animation:roomWindowWait 2.7s ease-in-out infinite;
+}
+@keyframes roomWindowWait{
+  0%,100%{transform:translateX(-30px) translateY(0)}
+  50%{transform:translateX(-23px) translateY(-3px)}
+}
+
+.motion-room-window-hop{
+  animation:roomWindowHop 1.1s ease-in-out infinite;
+}
+@keyframes roomWindowHop{
+  0%,100%{transform:translateX(-27px) translateY(0)}
+  48%{transform:translateX(-22px) translateY(-7px)}
+}
+
+.motion-room-pace{
+  animation:roomPace 3.4s ease-in-out infinite;
+}
+@keyframes roomPace{
+  0%,100%{transform:translateX(-28px)}
+  50%{transform:translateX(29px)}
+}
+
+.motion-room-door-check{
+  animation:roomDoorCheck 1.25s cubic-bezier(.2,.8,.25,1) both;
+}
+@keyframes roomDoorCheck{
+  from{transform:translateX(-8px)}
+  to{transform:translateX(33px) translateY(-2px)}
+}
+
+.motion-room-door-hop{
+  animation:roomDoorHop 1.05s ease-in-out infinite;
+}
+@keyframes roomDoorHop{
+  0%,100%{transform:translateX(31px) translateY(0)}
+  50%{transform:translateX(36px) translateY(-7px)}
+}
+
+/* ---------- đường phố ---------- */
+.motion-city-walk-through{
+  animation:cityWalkThrough 3.5s linear infinite;
+}
+@keyframes cityWalkThrough{
+  0%{transform:translateX(-72px);opacity:0}
+  8%{opacity:1}
+  92%{opacity:1}
+  100%{transform:translateX(72px);opacity:0}
+}
+
+.motion-city-run-through{
+  animation:cityRunThrough 1.75s linear infinite;
+}
+@keyframes cityRunThrough{
+  0%{transform:translateX(-78px) translateY(0);opacity:0}
+  10%{opacity:1}
+  88%{opacity:1}
+  100%{transform:translateX(80px) translateY(-2px);opacity:0}
+}
+
+.motion-city-cross-back{
+  animation:cityCrossBack 2.9s linear infinite;
+}
+@keyframes cityCrossBack{
+  0%{transform:translateX(65px);opacity:0}
+  10%{opacity:1}
+  90%{opacity:1}
+  100%{transform:translateX(-68px);opacity:0}
+}
+
+.motion-city-sprint-finish{
+  animation:citySprintFinish 1.25s cubic-bezier(.15,.7,.25,1) both;
+}
+@keyframes citySprintFinish{
+  from{transform:translateX(-62px);opacity:.25}
+  85%{opacity:1}
+  to{transform:translateX(26px);opacity:1}
+}
+
+/* ---------- quán ---------- */
+.motion-shop-enter{
+  animation:shopEnter 1.15s cubic-bezier(.18,.78,.25,1) both;
+}
+@keyframes shopEnter{
+  from{transform:translateX(-68px);opacity:.1}
+  to{transform:translateX(-8px);opacity:1}
+}
+
+.motion-shop-counter-step{
+  animation:shopCounterStep .95s cubic-bezier(.2,.8,.25,1) both;
+}
+@keyframes shopCounterStep{
+  from{transform:translateX(-8px)}
+  to{transform:translateX(30px) translateY(-2px)}
+}
+
+.motion-shop-phone-stepback{
+  animation:shopPhoneStepBack .9s ease-out both;
+}
+@keyframes shopPhoneStepBack{
+  from{transform:translateX(30px)}
+  to{transform:translateX(8px) translateY(2px)}
+}
+
+.motion-shop-pace{
+  animation:shopPace 2.5s ease-in-out infinite;
+}
+@keyframes shopPace{
+  0%,100%{transform:translateX(-10px)}
+  50%{transform:translateX(22px)}
+}
+
+/* ---------- ship dưới mưa ---------- */
+.motion-rain-ride-through{
+  animation:rainRideThrough 2.55s linear infinite;
+}
+@keyframes rainRideThrough{
+  0%{transform:translateX(-70px) translateY(2px);opacity:0}
+  8%{opacity:1}
+  92%{opacity:1}
+  100%{transform:translateX(73px) translateY(-2px);opacity:0}
+}
+
+.motion-rain-swerve{
+  animation:rainSwerve 1.8s ease-in-out infinite;
+}
+@keyframes rainSwerve{
+  0%,100%{transform:translateX(-38px) rotate(-2deg)}
+  50%{transform:translateX(42px) translateY(-4px) rotate(2deg)}
+}
+
+.motion-traffic-brake{
+  animation:trafficBrake .85s cubic-bezier(.18,.9,.3,1) both;
+}
+@keyframes trafficBrake{
+  0%{transform:translateX(44px)}
+  68%{transform:translateX(4px)}
+  82%{transform:translateX(10px)}
+  100%{transform:translateX(6px)}
+}
+
+.motion-rain-final-dash{
+  animation:rainFinalDash 1.25s cubic-bezier(.12,.7,.25,1) infinite;
+}
+@keyframes rainFinalDash{
+  0%{transform:translateX(-74px);opacity:0}
+  12%{opacity:1}
+  88%{opacity:1}
+  100%{transform:translateX(80px);opacity:0}
+}
+
+/* ---------- chung cư / hành lang ---------- */
+.motion-apartment-enter{
+  animation:apartmentEnter 1.2s ease-out both;
+}
+@keyframes apartmentEnter{
+  from{transform:translateX(-66px);opacity:.12}
+  to{transform:translateX(-12px);opacity:1}
+}
+
+.motion-apartment-cross{
+  animation:apartmentCross 2.2s ease-in-out infinite alternate;
+}
+@keyframes apartmentCross{
+  from{transform:translateX(-42px)}
+  to{transform:translateX(30px)}
+}
+
+.motion-apartment-door-approach{
+  animation:apartmentDoorApproach 1.1s cubic-bezier(.18,.8,.25,1) both;
+}
+@keyframes apartmentDoorApproach{
+  from{transform:translateX(-24px)}
+  to{transform:translateX(16px) translateY(-2px)}
+}
+
+.motion-doorstep-wait{
+  animation:doorstepWait 1.8s ease-in-out infinite;
+}
+@keyframes doorstepWait{
+  0%,100%{transform:translateX(15px)}
+  50%{transform:translateX(20px) translateY(-2px)}
+}
+
+.motion-elevator-ready{
+  animation:elevatorReady 1.8s ease-in-out infinite alternate;
+}
+@keyframes elevatorReady{
+  from{transform:translateX(24px)}
+  to{transform:translateX(8px) translateY(-2px)}
+}
+
+.motion-elevator-run{
+  animation:elevatorRun 1s cubic-bezier(.15,.75,.25,1) both;
+}
+@keyframes elevatorRun{
+  from{transform:translateX(46px)}
+  to{transform:translateX(-28px) translateY(-3px)}
+}
+
+.motion-door-pop-out{
+  animation:doorPopOut .8s cubic-bezier(.16,.88,.25,1.25) both;
+}
+@keyframes doorPopOut{
+  0%{transform:translateX(-48px) scale(.94);opacity:.15}
+  70%{transform:translateX(18px) scale(1.03);opacity:1}
+  100%{transform:translateX(10px)}
+}
+
+.motion-door-peek-side{
+  animation:doorPeekSide 1.6s ease-in-out infinite alternate;
+}
+@keyframes doorPeekSide{
+  from{transform:translateX(12px)}
+  to{transform:translateX(34px) rotate(-2deg)}
+}
+
+/* ---------- cảnh ăn: thực sự tiến gần/né/đưa nước ---------- */
+.motion-dinner-lean-in{
+  animation:dinnerLeanIn 1.05s cubic-bezier(.2,.8,.25,1) both;
+}
+@keyframes dinnerLeanIn{
+  from{transform:translateX(-8px)}
+  to{transform:translateX(20px) translateY(-2px)}
+}
+
+.motion-dinner-happy-in{
+  animation:dinnerHappyIn 1.15s ease-out both;
+}
+@keyframes dinnerHappyIn{
+  from{transform:translateX(12px)}
+  to{transform:translateX(-17px) translateY(-3px)}
+}
+
+.motion-dinner-shy-back{
+  animation:dinnerShyBack .85s ease-out both;
+}
+@keyframes dinnerShyBack{
+  from{transform:translateX(20px)}
+  to{transform:translateX(2px)}
+}
+
+.motion-dinner-reach-over{
+  animation:dinnerReachOver 1.1s ease-in-out infinite alternate;
+}
+@keyframes dinnerReachOver{
+  from{transform:translateX(-8px)}
+  to{transform:translateX(-30px) translateY(-3px)}
+}
+
+.motion-dinner-offer-water{
+  animation:dinnerOfferWater .9s cubic-bezier(.2,.8,.25,1) both;
+}
+@keyframes dinnerOfferWater{
+  from{transform:translateX(0)}
+  to{transform:translateX(27px) translateY(-2px)}
+}
+
+.motion-dinner-cute-flinch{
+  animation:dinnerCuteFlinch .55s ease-in-out 2 alternate;
+}
+@keyframes dinnerCuteFlinch{
+  from{transform:translateX(-8px) translateY(0)}
+  to{transform:translateX(-16px) translateY(-7px)}
+}
+
+.motion-dinner-eat-side{
+  animation:dinnerEatSide 2.1s ease-in-out infinite;
+}
+@keyframes dinnerEatSide{
+  0%,100%{transform:translateX(0)}
+  50%{transform:translateX(6px) translateY(-2px)}
+}
+
+/* ---------- sofa: ngồi xa rồi xích lại gần ---------- */
+.motion-sofa-settle-left{
+  animation:sofaSettleLeft 1s ease-out both;
+}
+@keyframes sofaSettleLeft{
+  from{transform:translateX(-18px) translateY(-5px)}
+  to{transform:translateX(5px)}
+}
+
+.motion-sofa-settle-right{
+  animation:sofaSettleRight 1s ease-out both;
+}
+@keyframes sofaSettleRight{
+  from{transform:translateX(18px) translateY(-5px)}
+  to{transform:translateX(-5px)}
+}
+
+.motion-sofa-scoot-close{
+  animation:sofaScootClose 1.05s cubic-bezier(.2,.8,.25,1) both;
+}
+@keyframes sofaScootClose{
+  from{transform:translateX(5px)}
+  to{transform:translateX(23px)}
+}
+
+.motion-sofa-lean-close{
+  animation:sofaLeanClose 1.15s ease-in-out infinite alternate;
+}
+@keyframes sofaLeanClose{
+  from{transform:translateX(-5px)}
+  to{transform:translateX(-27px) translateY(-2px)}
+}
+
+/* ---------- ending: cả hai bước gần nhau ---------- */
+.together-boy-track.motion-ending-step-close{
+  animation:endingBoyStepClose 1.4s cubic-bezier(.2,.8,.25,1) both;
+}
+.together-girl-track.motion-ending-step-close{
+  animation:endingGirlStepClose 1.4s cubic-bezier(.2,.8,.25,1) both;
+}
+@keyframes endingBoyStepClose{
+  from{transform:translateX(-8px)}
+  to{transform:translateX(20px)}
+}
+@keyframes endingGirlStepClose{
+  from{transform:translateX(8px)}
+  to{transform:translateX(-20px)}
+}
+
+/* ---------- arrival: có entrance + bước ra cửa + tiến lại nhận mỳ ---------- */
+.arrival-boy-track.arrival-boy-motion-0{
+  animation:arrivalBoyWalkIn 1.25s cubic-bezier(.16,.82,.24,1) both;
+}
+@keyframes arrivalBoyWalkIn{
+  from{transform:translateX(-84px);opacity:.08}
+  to{transform:translateX(0);opacity:1}
+}
+
+.arrival-girl-track.arrival-girl-motion-0{
+  animation:arrivalGirlPeek 1.4s ease-in-out infinite alternate;
+}
+@keyframes arrivalGirlPeek{
+  from{transform:translateX(28px)}
+  to{transform:translateX(11px) rotate(-1deg)}
+}
+
+.arrival-girl-track.arrival-girl-motion-1{
+  animation:arrivalGirlStepOut .95s cubic-bezier(.18,.85,.25,1.1) both;
+}
+@keyframes arrivalGirlStepOut{
+  from{transform:translateX(30px);opacity:.25}
+  to{transform:translateX(0);opacity:1}
+}
+
+.arrival-boy-track.arrival-boy-motion-2{
+  animation:arrivalBoyGiveStep .9s ease-out both;
+}
+.arrival-girl-track.arrival-girl-motion-2{
+  animation:arrivalGirlReceiveStep .9s ease-out both;
+}
+@keyframes arrivalBoyGiveStep{from{transform:translateX(0)}to{transform:translateX(18px)}}
+@keyframes arrivalGirlReceiveStep{from{transform:translateX(0)}to{transform:translateX(-18px)}}
+
+.arrival-boy-track.arrival-boy-motion-3{
+  animation:arrivalBoyStepBack .9s ease-out both;
+}
+.arrival-girl-track.arrival-girl-motion-3{
+  animation:arrivalGirlBagRock 1.8s ease-in-out infinite;
+}
+@keyframes arrivalBoyStepBack{from{transform:translateX(18px)}to{transform:translateX(-4px)}}
+@keyframes arrivalGirlBagRock{
+  0%,100%{transform:translateX(-12px) rotate(-1deg)}
+  50%{transform:translateX(-8px) translateY(-3px) rotate(1deg)}
+}
+
+/* ---------- ambient có chuyển động để scene không đứng hình ---------- */
+.cute-chef{
+  animation:chefBusy 1.8s ease-in-out infinite;
+  transform-origin:center bottom;
+}
+@keyframes chefBusy{
+  0%,100%{transform:translateX(0) rotate(0)}
+  50%{transform:translateX(-7px) rotate(-3deg)}
+}
+
+.cute-takeaway-bag{
+  animation:takeawayReady 2s ease-in-out infinite;
+}
+@keyframes takeawayReady{
+  0%,100%{transform:translateY(0) rotate(-1deg)}
+  50%{transform:translateY(-4px) rotate(2deg)}
+}
+
+.rain-reflection{
+  animation:wetReflection 1.8s ease-in-out infinite alternate;
+}
+@keyframes wetReflection{to{opacity:.32;transform:scaleX(1.12)}}
+
+.apt-door{
+  animation:aptDoorGlow 2.2s ease-in-out infinite alternate;
+}
+@keyframes aptDoorGlow{to{box-shadow:0 0 17px rgba(245,205,135,.18)}}
+
+.cute-elevator .elevator-left-panel,
+.cute-elevator .elevator-right-panel{
+  transition:transform 1s ease;
+}
+
+.together-dinner-cute .dinner-cat-peek{
+  animation:catPeekMove 2.2s ease-in-out infinite;
+}
+@keyframes catPeekMove{
+  0%,100%{transform:translateX(-50%) translateY(0)}
+  40%{transform:translateX(-58%) translateY(-5px)}
+  70%{transform:translateX(-42%) translateY(-2px)}
+}
+
+/* Mobile: giảm biên độ để không bị tràn khung */
+@media(max-width:500px){
+  .motion-city-walk-through{animation-name:cityWalkThroughMobile}
+  .motion-city-run-through{animation-name:cityRunThroughMobile}
+  .motion-rain-ride-through{animation-name:rainRideThroughMobile}
+  @keyframes cityWalkThroughMobile{0%{transform:translateX(-55px);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateX(55px);opacity:0}}
+  @keyframes cityRunThroughMobile{0%{transform:translateX(-58px);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateX(60px);opacity:0}}
+  @keyframes rainRideThroughMobile{0%{transform:translateX(-56px);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateX(58px);opacity:0}}
+}
+
+
+/* =========================================================
+   SMOOTHER BIKE TRIP + DELIVERY SCOOTER
+========================================================= */
+
+.delivery-scooter{
+  position:absolute;
+  left:-16px;
+  top:60px;
+  width:96px;
+  height:28px;
+  z-index:1;
+  pointer-events:none;
+}
+
+.scooter-wheel{
+  position:absolute;
+  bottom:0;
+  width:15px;
+  height:15px;
+  border:3px solid #2b3040;
+  border-radius:50%;
+  background:#c6d0ea;
+  box-shadow:inset 0 0 0 3px #6d7489;
+}
+
+.scooter-wheel-left{left:8px}
+.scooter-wheel-right{right:10px}
+
+.scooter-body-main{
+  position:absolute;
+  left:16px;
+  top:8px;
+  width:48px;
+  height:12px;
+  border-radius:12px 12px 8px 10px;
+  background:linear-gradient(135deg,#8ab1ff,#627ce0);
+  box-shadow:inset 0 -2px 0 rgba(0,0,0,.16);
+}
+
+.scooter-seat{
+  position:absolute;
+  left:33px;
+  top:2px;
+  width:18px;
+  height:8px;
+  border-radius:8px 8px 3px 3px;
+  background:#35384a;
+}
+
+.scooter-front{
+  position:absolute;
+  right:18px;
+  top:4px;
+  width:15px;
+  height:15px;
+  border-radius:8px 12px 4px 10px;
+  background:linear-gradient(135deg,#89e1ff,#53b7e7);
+  transform:skew(-10deg);
+}
+
+.scooter-handle{
+  position:absolute;
+  right:24px;
+  top:-1px;
+  width:12px;
+  height:3px;
+  border-radius:3px;
+  background:#2e3343;
+  transform:rotate(-15deg);
+}
+.scooter-handle::after{
+  content:"";
+  position:absolute;
+  right:-1px;
+  top:0;
+  width:3px;
+  height:8px;
+  border-radius:2px;
+  background:#2e3343;
+  transform:rotate(18deg);
+}
+
+.scooter-back-box{
+  position:absolute;
+  left:8px;
+  top:3px;
+  width:14px;
+  height:11px;
+  border-radius:4px;
+  background:linear-gradient(135deg,#ffb6cf,#ea7da3);
+  opacity:0;
+}
+.delivery-scooter-food .scooter-back-box{opacity:1}
+
+.ride .chibi-shadow{opacity:.08;transform:scale(1.25)}
+.ride .chibi-body{top:51px}
+.ride .arm-left{transform:rotate(20deg) translate(0,-2px)}
+.ride .arm-right{transform:rotate(-58deg) translate(8px,-8px)}
+.ride .leg-left{transform:rotate(62deg) translateY(-1px)}
+.ride .leg-right{transform:rotate(42deg) translateY(-1px)}
+.ride .helmet{top:0}
+.ride .phone-item{display:none}
+
+.motion-bike-start{
+  animation:bikeStart 1.9s cubic-bezier(.16,.84,.22,1) both;
+}
+@keyframes bikeStart{
+  0%{transform:translateX(-84px) translateY(2px);opacity:0}
+  30%{opacity:1}
+  65%{transform:translateX(-24px) translateY(-2px)}
+  100%{transform:translateX(-6px) translateY(0);opacity:1}
+}
+
+.motion-bike-cruise{
+  animation:bikeCruise 3.1s cubic-bezier(.42,0,.22,1) infinite;
+}
+@keyframes bikeCruise{
+  0%{transform:translateX(-78px) translateY(1px);opacity:0}
+  10%{opacity:1}
+  22%{transform:translateX(-42px) translateY(-1px)}
+  50%{transform:translateX(0) translateY(1px)}
+  78%{transform:translateX(46px) translateY(-1px)}
+  92%{opacity:1}
+  100%{transform:translateX(80px) translateY(1px);opacity:0}
+}
+
+.motion-bike-turn{
+  animation:bikeTurn 2.6s ease-in-out infinite;
+}
+@keyframes bikeTurn{
+  0%{transform:translateX(-52px) translateY(0) rotate(0deg)}
+  38%{transform:translateX(-8px) translateY(-2px) rotate(-2deg)}
+  58%{transform:translateX(18px) translateY(-4px) rotate(3deg)}
+  100%{transform:translateX(54px) translateY(0) rotate(0deg)}
+}
+
+.motion-bike-park{
+  animation:bikePark 1.6s cubic-bezier(.18,.82,.25,1) both;
+}
+@keyframes bikePark{
+  0%{transform:translateX(-76px) translateY(0);opacity:.15}
+  65%{transform:translateX(-6px) translateY(-2px);opacity:1}
+  82%{transform:translateX(6px) translateY(0)}
+  100%{transform:translateX(2px) translateY(0);opacity:1}
+}
+
+/* smooth hơn ở đoạn tới sảnh/chạy xuống */
+.motion-apartment-enter{
+  animation:apartmentEnterSmooth 1.55s cubic-bezier(.18,.82,.24,1) both;
+}
+@keyframes apartmentEnterSmooth{
+  0%{transform:translateX(-72px);opacity:.08}
+  60%{transform:translateX(-18px);opacity:1}
+  100%{transform:translateX(-8px);opacity:1}
+}
+
+.motion-elevator-run{
+  animation:elevatorRunSmooth 1.35s cubic-bezier(.18,.84,.24,1) both;
+}
+@keyframes elevatorRunSmooth{
+  0%{transform:translateX(48px);opacity:.28}
+  50%{transform:translateX(8px) translateY(-2px);opacity:1}
+  100%{transform:translateX(-24px) translateY(-4px);opacity:1}
+}
+
+.motion-apartment-door-approach{
+  animation:apartmentDoorApproachSmooth 1.45s cubic-bezier(.18,.84,.24,1) both;
+}
+@keyframes apartmentDoorApproachSmooth{
+  0%{transform:translateX(-28px)}
+  55%{transform:translateX(8px) translateY(-2px)}
+  100%{transform:translateX(18px) translateY(-2px)}
+}
+
+
+/* =========================================================
+   EXTRA DETAILED ACTING / EMOTION
+   thêm nhiều hành động - cảm xúc chi tiết hơn
+========================================================= */
+
+.soft-smile-text{
+  animation:softSmileText 1.25s ease-in-out infinite;
+}
+.soft-smile-text .chibi-head{
+  transform:rotate(3deg) translateY(1px);
+}
+.soft-smile-text .chibi-mouth{
+  width:9px;
+  left:18px;
+  border-bottom:2px solid #be6a7b;
+  border-radius:0 0 10px 10px;
+}
+.soft-smile-text .chibi-blush{
+  opacity:.75;
+}
+@keyframes softSmileText{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-2px)}
+}
+
+.hug-pillow-text{
+  animation:hugPillowText 1.5s ease-in-out infinite;
+}
+.hug-pillow-text::before{
+  content:"";
+  position:absolute;
+  z-index:5;
+  left:17px;
+  top:58px;
+  width:32px;
+  height:22px;
+  border-radius:12px;
+  background:linear-gradient(135deg,#fff0fa,#f7bfd4);
+  box-shadow:inset 0 -2px 0 rgba(214,132,166,.22);
+}
+.hug-pillow-text::after{
+  content:"♡";
+  position:absolute;
+  z-index:6;
+  left:29px;
+  top:63px;
+  color:#e683ab;
+  font-size:9px;
+}
+.hug-pillow-text .arm-left{transform:rotate(52deg) translate(7px,-1px)}
+.hug-pillow-text .arm-right{transform:rotate(-52deg) translate(-7px,-1px)}
+.hug-pillow-text .chibi-blush{opacity:1}
+.hug-pillow-text .chibi-mouth{width:8px;border-bottom:2px solid #c06a84}
+@keyframes hugPillowText{
+  0%,100%{transform:translateY(0) rotate(-1deg)}
+  50%{transform:translateY(-3px) rotate(1deg)}
+}
+
+.soft-surprised{
+  animation:softSurprised .7s ease-in-out infinite alternate;
+}
+.soft-surprised .chibi-eye{
+  width:7px;
+  height:8px;
+}
+.soft-surprised .chibi-mouth{
+  width:7px;
+  height:7px;
+  border:0;
+  border-radius:50%;
+  background:#ab6471;
+}
+.soft-surprised .chibi-blush{opacity:.65}
+@keyframes softSurprised{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+
+.helmet-adjust{
+  animation:helmetAdjust 1.1s ease-in-out infinite;
+}
+.helmet-adjust .arm-left{animation:helmetAdjustL 1.1s ease-in-out infinite}
+.helmet-adjust .arm-right{animation:helmetAdjustR 1.1s ease-in-out infinite}
+.helmet-adjust::after{
+  content:"✦";
+  position:absolute;
+  z-index:28;
+  left:50%;
+  top:8px;
+  transform:translateX(-50%);
+  color:#ffe38d;
+  font-size:8px;
+  animation:helmetSpark .9s ease-in-out infinite;
+}
+@keyframes helmetAdjust{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+@keyframes helmetAdjustL{0%,100%{transform:rotate(18deg)}50%{transform:rotate(72deg) translate(4px,-12px)}}
+@keyframes helmetAdjustR{0%,100%{transform:rotate(-18deg)}50%{transform:rotate(-72deg) translate(-4px,-12px)}}
+@keyframes helmetSpark{0%,100%{opacity:0;transform:translateX(-50%) scale(.7)}50%{opacity:1;transform:translateX(-50%) scale(1.2)}}
+
+.breathless{
+  animation:breathlessStop .95s ease-out both;
+}
+.breathless::after{
+  content:"💦";
+  position:absolute;
+  z-index:28;
+  right:-2px;
+  top:8px;
+  font-size:9px;
+  animation:breathDrop 1.2s ease-in-out infinite;
+}
+.breathless .chibi-mouth{
+  width:8px;height:6px;border:0;border-radius:50%;background:#9f5d6d;
+}
+@keyframes breathlessStop{0%{transform:translateX(-6px) translateY(0)}60%{transform:translateX(3px) translateY(-2px)}100%{transform:translateX(0) translateY(0)}}
+@keyframes breathDrop{0%,100%{transform:translateY(0)}50%{transform:translateY(2px)}}
+
+.order-cute .arm-right{animation:orderCutePoint .95s ease-in-out infinite alternate}
+.order-cute .arm-left{transform:rotate(32deg) translate(2px,-2px)}
+.order-cute .chibi-head{animation:orderCuteHead 1s ease-in-out infinite}
+.order-cute .chibi-mouth{width:8px;border-bottom:2px solid #bc6c7d}
+@keyframes orderCutePoint{from{transform:rotate(-55deg)}to{transform:rotate(-84deg) translateY(-2px)}}
+@keyframes orderCuteHead{0%,100%{transform:translateY(0)}50%{transform:translateY(2px) rotate(2deg)}}
+
+.voice-note{
+  animation:voiceNotePose 1.2s ease-in-out infinite alternate;
+}
+.voice-note .arm-left{transform:rotate(48deg) translateY(-7px)}
+.voice-note .phone-item{animation:voicePhone 1.05s ease-in-out infinite alternate}
+.voice-note::after{
+  content:"♪";
+  position:absolute;
+  z-index:29;
+  left:-3px;
+  top:15px;
+  color:#ffd782;
+  font-size:10px;
+  animation:voiceFloat 1s ease-in-out infinite;
+}
+@keyframes voiceNotePose{from{transform:translateY(0)}to{transform:translateY(-2px) rotate(-1deg)}}
+@keyframes voicePhone{from{transform:rotate(-7deg) translate(0,0)}to{transform:rotate(-2deg) translate(3px,-6px)}}
+@keyframes voiceFloat{0%,100%{opacity:.2;transform:translateY(3px)}50%{opacity:1;transform:translateY(-2px)}}
+
+.pick-up-bag{
+  animation:pickupBagWait 1.4s ease-in-out infinite;
+}
+.pick-up-bag .food-bag{animation:pickupBagLift 1.2s ease-in-out infinite alternate}
+.pick-up-bag .arm-right{transform:rotate(-58deg) translate(-2px,-4px)}
+.pick-up-bag .chibi-blush{opacity:.75}
+@keyframes pickupBagWait{0%,100%{transform:translateX(0)}50%{transform:translateX(4px) translateY(-2px)}}
+@keyframes pickupBagLift{from{transform:translateY(0) rotate(-1deg)}to{transform:translateY(-5px) rotate(3deg)}}
+
+.carry-careful{
+  animation:carryCareful 1.6s ease-in-out infinite;
+}
+.carry-careful .arm-left{transform:rotate(30deg) translate(5px,-1px)}
+.carry-careful .arm-right{transform:rotate(-30deg) translate(-5px,-1px)}
+.carry-careful .food-bag{right:-2px;top:52px;animation:carryCarefulBag 1.3s ease-in-out infinite alternate}
+@keyframes carryCareful{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px) translateX(2px)}}
+@keyframes carryCarefulBag{from{transform:rotate(-1deg)}to{transform:rotate(2deg) translateY(-2px)}}
+
+.tiptoe-text{
+  animation:tiptoeText 1s ease-in-out infinite alternate;
+}
+.tiptoe-text .leg-left{transform:rotate(18deg) translateY(-2px)}
+.tiptoe-text .leg-right{transform:rotate(-8deg) translateY(1px)}
+.tiptoe-text .chibi-blush{opacity:1}
+@keyframes tiptoeText{from{transform:translateY(0)}to{transform:translateY(-5px)}}
+
+.excited-bounce{
+  animation:excitedBounce .42s ease-in-out infinite alternate;
+}
+.excited-bounce .chibi-eye{height:4px}
+.excited-bounce .chibi-mouth{width:9px;border-bottom:2px solid #c06b84}
+.excited-bounce .chibi-blush{opacity:1}
+.excited-bounce::after{
+  content:"♡";
+  position:absolute;
+  z-index:29;
+  right:-4px;
+  top:6px;
+  color:#ff98bb;
+  font-size:10px;
+  animation:excitedHeart .9s ease-in-out infinite;
+}
+@keyframes excitedBounce{from{transform:translateY(0)}to{transform:translateY(-7px)}}
+@keyframes excitedHeart{0%,100%{opacity:0;transform:translateY(4px) scale(.8)}50%{opacity:1;transform:translateY(-4px) scale(1.1)}}
+
+.soft-smile{
+  animation:softSmile 1.35s ease-in-out infinite;
+}
+.soft-smile .chibi-blush{opacity:.95}
+.soft-smile .chibi-mouth{width:9px;border-bottom:2px solid #c06c82}
+@keyframes softSmile{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px) rotate(-1deg)}}
+
+.present-both{
+  animation:presentBoth 1.2s ease-in-out infinite alternate;
+}
+.present-both .arm-left{transform:rotate(50deg) translate(8px,-5px)}
+.present-both .arm-right{transform:rotate(-50deg) translate(-8px,-5px)}
+.present-both .food-bag{right:-1px;top:50px;transform:scale(1.03)}
+.present-both::after{
+  content:"♡";
+  position:absolute;
+  z-index:28;
+  left:50%;top:48px;
+  transform:translateX(-50%);
+  color:#ff9dbc;
+  font-size:10px;
+  animation:presentHeart 1s ease-in-out infinite;
+}
+@keyframes presentBoth{from{transform:translateX(8px)}to{transform:translateX(15px) translateY(-2px)}}
+@keyframes presentHeart{0%,100%{opacity:.2;transform:translateX(-50%) translateY(2px)}50%{opacity:1;transform:translateX(-50%) translateY(-4px)}}
+
+.receive-both{
+  animation:receiveBoth 1.2s ease-in-out infinite alternate;
+}
+.receive-both .arm-left{transform:rotate(52deg) translate(4px,-4px)}
+.receive-both .arm-right{transform:rotate(-52deg) translate(-4px,-4px)}
+.receive-both .chibi-blush{opacity:1}
+.receive-both .chibi-mouth{width:9px;border-bottom:2px solid #c56d88}
+@keyframes receiveBoth{from{transform:translateX(-3px)}to{transform:translateX(-8px) translateY(-2px)}}
+
+.spice-shock{
+  animation:spiceShock .38s ease-in-out 4 alternate;
+}
+.spice-shock .chibi-eye{width:7px;height:8px}
+.spice-shock .chibi-mouth{width:7px;height:7px;border:0;border-radius:50%;background:#a75962}
+.spice-shock .chibi-blush{opacity:1}
+.spice-shock::after{
+  content:"🔥";
+  position:absolute;
+  z-index:30;
+  right:-3px;
+  top:8px;
+  font-size:10px;
+}
+@keyframes spiceShock{from{transform:translateY(0)}to{transform:translateY(-6px) rotate(2deg)}}
+
+.eat-happy{
+  animation:eatHappy 1s ease-in-out infinite;
+}
+.eat-happy .chibi-eye{height:4px}
+.eat-happy .chibi-mouth{width:9px;border-bottom:2px solid #bf6e83}
+.eat-happy .chibi-blush{opacity:.95}
+@keyframes eatHappy{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+
+.giggle{
+  animation:gigglePose .65s ease-in-out infinite alternate;
+}
+.giggle .chibi-eye{height:3px}
+.giggle .chibi-mouth{width:10px;border-bottom:2px solid #c96e8a}
+.giggle .chibi-blush{opacity:1}
+@keyframes gigglePose{from{transform:rotate(-2deg)}to{transform:translateY(-3px) rotate(2deg)}}
+
+.cuddle-lean{
+  transform:translateX(-20px) rotate(-5deg);
+  animation:cuddleLean 1.5s ease-in-out infinite alternate;
+}
+.cuddle-lean .chibi-blush{opacity:1}
+.cuddle-lean .chibi-mouth{width:8px;border-bottom:2px solid #c77088}
+@keyframes cuddleLean{from{transform:translateX(-18px) rotate(-4deg)}to{transform:translateX(-24px) translateY(-2px) rotate(-6deg)}}
+
+.finger-heart{
+  animation:fingerHeartPose 1.25s ease-in-out infinite;
+}
+.finger-heart .arm-right{transform:rotate(-72deg) translate(-2px,-7px)}
+.finger-heart .arm-left{transform:rotate(18deg)}
+.finger-heart .chibi-mouth{width:9px;border-bottom:2px solid #bf6a80}
+.finger-heart::after{
+  content:"🫰♡";
+  position:absolute;
+  z-index:30;
+  right:-9px;
+  top:20px;
+  font-size:10px;
+  animation:fingerHeartFloat 1.2s ease-in-out infinite;
+}
+@keyframes fingerHeartPose{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px) rotate(-1deg)}}
+@keyframes fingerHeartFloat{0%,100%{opacity:.25;transform:translateY(2px)}50%{opacity:1;transform:translateY(-4px)}}
+
+/* biểu cảm nữ dễ thương hơn ở các pose mới */
+.girl.hug-pillow-text .chibi-eye,
+.girl.receive-both .chibi-eye,
+.girl.excited-bounce .chibi-eye,
+.girl.cuddle-lean .chibi-eye,
+.girl.spice-shock .chibi-eye,
+.girl.eat-happy .chibi-eye{
+  top:14px;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+}
+.girl.hug-pillow-text .chibi-eye > i,
+.girl.receive-both .chibi-eye > i,
+.girl.excited-bounce .chibi-eye > i,
+.girl.cuddle-lean .chibi-eye > i,
+.girl.spice-shock .chibi-eye > i,
+.girl.eat-happy .chibi-eye > i{
+  width:3px;
+  height:3px;
+}
+.girl.hug-pillow-text .chibi-blush,
+.girl.receive-both .chibi-blush,
+.girl.excited-bounce .chibi-blush,
+.girl.cuddle-lean .chibi-blush,
+.girl.eat-happy .chibi-blush{
+  opacity:1;
+}
+
+
+/* =========================================================
+   FINAL 14 ACTIONS - MAKE EVERY ACTION OBVIOUS ON SCREEN
+========================================================= */
+
+/* 1. BÀ ôm gối thật sự */
+.action-pillow{
+  position:absolute;
+  z-index:13;
+  left:14px;
+  top:57px;
+  width:39px;
+  height:27px;
+  border-radius:14px;
+  background:linear-gradient(145deg,#fff4fb,#f7c3d8);
+  box-shadow:inset 0 -3px 0 rgba(213,126,164,.18),0 3px 7px rgba(0,0,0,.12);
+  animation:pillowSqueeze 1.45s ease-in-out infinite;
+}
+.action-pillow span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#e37fa9;font-size:12px}
+.hug-pillow-text .arm-left,.hug-pillow-text .arm-right{z-index:14}
+@keyframes pillowSqueeze{0%,100%{transform:scale(1)}50%{transform:scale(.93) translateY(1px)}}
+
+/* 2. smile/surprise mềm hơn */
+.soft-smile-text .chibi-eye,.soft-surprised .chibi-eye{transition:all .25s ease}
+.soft-smile-text .chibi-mouth{height:5px!important;border-radius:0 0 12px 12px!important}
+.soft-surprised .chibi-head{animation:softSurpriseHead .9s ease-in-out infinite alternate}
+@keyframes softSurpriseHead{from{transform:rotate(-1deg)}to{transform:translateY(-2px) rotate(3deg)}}
+
+/* 3. chỉnh nón thấy rõ: nón nhấc lên rồi đặt xuống */
+.helmet-adjust .helmet{animation:realHelmetAdjust 1.2s ease-in-out infinite;transform-origin:center bottom}
+@keyframes realHelmetAdjust{0%,100%{transform:translateY(0) rotate(0)}38%{transform:translateY(-6px) rotate(-5deg)}68%{transform:translateY(-2px) rotate(3deg)}}
+
+/* 4. thở hổn hển có 3 puff nhỏ */
+.action-breath{position:absolute;z-index:31;right:-12px;top:27px;width:24px;height:18px}
+.action-breath i{position:absolute;left:0;top:8px;width:7px;height:4px;border-radius:50%;border-top:2px solid rgba(240,246,255,.8);animation:breathPuff 1.1s ease-out infinite}
+.action-breath i:nth-child(2){top:3px;left:6px;animation-delay:.22s}.action-breath i:nth-child(3){top:10px;left:10px;animation-delay:.44s}
+@keyframes breathPuff{0%{opacity:0;transform:translateX(0) scale(.6)}35%{opacity:1}100%{opacity:0;transform:translateX(13px) scale(1.15)}}
+
+/* 5. gọi món: chỉ tay + gật đầu rõ */
+.order-cute .arm-right{z-index:18;animation:orderPointClearly .8s ease-in-out infinite alternate!important}
+.order-cute .chibi-head{animation:orderNodClearly .85s ease-in-out infinite!important}
+@keyframes orderPointClearly{from{transform:rotate(-45deg) translateY(0)}to{transform:rotate(-88deg) translate(5px,-5px)}}
+@keyframes orderNodClearly{0%,100%{transform:rotate(0)}50%{transform:translateY(3px) rotate(5deg)}}
+
+/* 6. voice note: sóng âm hiện rõ, cả khi dừng xe */
+.action-voice-waves{position:absolute;z-index:34;left:-13px;top:30px;width:24px;height:22px}
+.action-voice-waves i{position:absolute;bottom:3px;width:2px;border-radius:3px;background:#ffd783;animation:voiceBars .72s ease-in-out infinite alternate}
+.action-voice-waves i:nth-child(1){left:3px;height:6px}.action-voice-waves i:nth-child(2){left:9px;height:13px;animation-delay:.15s}.action-voice-waves i:nth-child(3){left:15px;height:9px;animation-delay:.3s}
+@keyframes voiceBars{to{height:18px;opacity:.35}}
+.ride-voice-note .delivery-scooter{display:block}
+.ride-voice-note .chibi-body{top:51px;transform:rotate(5deg)}
+.ride-voice-note .leg-left{transform:rotate(62deg)}.ride-voice-note .leg-right{transform:rotate(42deg)}
+.ride-voice-note .arm-right{transform:rotate(-58deg) translate(8px,-8px)}
+.ride-voice-note .arm-left{transform:rotate(62deg) translate(4px,-9px)}
+.ride-voice-note .phone-item{left:0;top:45px;display:block}
+
+/* 7. xách túi cẩn thận: hai tay giữ gần thân */
+.carry-careful .food-bag{right:8px!important;top:55px!important;animation:carefulBagHold 1.5s ease-in-out infinite!important}
+.carry-careful .arm-left{transform:rotate(42deg) translate(8px,-2px)!important}
+.carry-careful .arm-right{transform:rotate(-42deg) translate(-8px,-2px)!important}
+@keyframes carefulBagHold{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-2px) rotate(1deg)}}
+
+/* 8. nhón chân + bật lên vui mừng */
+.tiptoe-text .chibi-shadow{animation:tiptoeShadow 1s ease-in-out infinite alternate}
+.action-tiptoe-heart{position:absolute;z-index:30;right:-5px;top:10px;color:#ff9fbd;font-size:10px;animation:tiptoeHeart 1s ease-in-out infinite}
+@keyframes tiptoeShadow{to{transform:scaleX(.75);opacity:.22}}
+@keyframes tiptoeHeart{0%,100%{opacity:.25;transform:translateY(4px)}50%{opacity:1;transform:translateY(-5px) scale(1.18)}}
+.action-excited-hearts{position:absolute;z-index:32;left:50%;top:4px}
+.action-excited-hearts i{position:absolute;color:#ff93b7;font-style:normal;font-size:10px;animation:excitedFloat 1s ease-in-out infinite}
+.action-excited-hearts i:nth-child(1){left:-18px}.action-excited-hearts i:nth-child(2){left:14px;animation-delay:.28s}
+@keyframes excitedFloat{0%,100%{opacity:0;transform:translateY(4px)}50%{opacity:1;transform:translateY(-8px) scale(1.1)}}
+
+/* 9 + 10. đưa / nhận bằng hai tay, spark nằm ngay giữa */
+.present-both .food-bag{right:5px!important;top:54px!important;z-index:19!important}
+.receive-both .food-bag{right:3px!important;top:54px!important;z-index:19!important}
+.action-hand-spark{position:absolute;z-index:36;left:50%;top:51px;transform:translateX(-50%);color:#ffe29e;font-size:12px;animation:handSpark 1s ease-in-out infinite}
+@keyframes handSpark{0%,100%{opacity:.2;transform:translateX(-50%) scale(.7)}50%{opacity:1;transform:translateX(-50%) scale(1.25) rotate(10deg)}}
+
+/* 11. cay bị sốc rõ hơn */
+.action-spice-flame{position:absolute;z-index:36;right:-7px;top:4px;font-size:13px;animation:spiceFlame  .55s ease-in-out infinite alternate}
+.spice-shock .chibi-head{animation:spiceHeadShake .28s linear 5 alternate}
+@keyframes spiceFlame{to{transform:translateY(-5px) scale(1.12)}}
+@keyframes spiceHeadShake{from{transform:translateX(-2px)}to{transform:translateX(2px)}}
+
+/* 12. ăn vui: nhún, mắt cười, má hồng */
+.eat-happy .chibi-blush{opacity:1!important}
+.eat-happy .chibi-mouth{width:10px!important;height:5px!important;border-bottom:2px solid #c97087!important;border-radius:0 0 12px 12px!important}
+.eat-happy .personal-noodles{animation:happyBowlBob 1s ease-in-out infinite}
+@keyframes happyBowlBob{0%,100%{transform:scale(.72) translateY(0)}50%{transform:scale(.72) translateY(-4px) rotate(2deg)}}
+
+/* 13. finger heart thấy rõ */
+.action-finger-heart{position:absolute;z-index:38;right:-12px;top:18px;width:17px;height:17px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(255,183,207,.15);color:#ff87af;font-size:14px;animation:fingerHeartBig 1.25s ease-in-out infinite}
+@keyframes fingerHeartBig{0%,100%{opacity:.45;transform:scale(.8) translateY(2px)}50%{opacity:1;transform:scale(1.18) translateY(-4px)}}
+
+/* 14. tựa gần nhau tình hơn */
+.action-cuddle-heart{position:absolute;z-index:37;left:-4px;top:9px;color:#ff9fbd;font-size:12px;animation:cuddleHeart 1.35s ease-in-out infinite}
+.cuddle-lean .chibi-head{transform:rotate(-5deg)}
+.cuddle-lean .arm-left{transform:rotate(22deg)}
+@keyframes cuddleHeart{0%,100%{opacity:.25;transform:translateY(3px)}50%{opacity:1;transform:translateY(-5px) scale(1.15)}}
+
+/* mượt hơn: tránh giật giữa pose/action */
+.chibi-head,.chibi-arm,.chibi-leg,.phone-item,.food-bag,.helmet{
+  transition:transform .32s ease,opacity .32s ease;
+}

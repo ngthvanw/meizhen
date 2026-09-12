@@ -112,13 +112,15 @@ const STORY_TIMELINE = [
     effect: "tiny-heart",
     boy: {
       scene: "room-night",
-      pose: "texting",
+      pose: "soft-smile-text",
+      motion: "room-desk",
       talk: "Bà đang làm gì đó? 👀",
       phone: true,
     },
     girl: {
       scene: "room-night",
-      pose: "texting",
+      pose: "hug-pillow-text",
+      motion: "room-sofa",
       talk: "ông ơi...",
       phone: true,
     },
@@ -126,9 +128,10 @@ const STORY_TIMELINE = [
       {
         at: 2.6,
         effect: "steam",
-        boy: { pose: "reading-text", talk: "sao vậy bà?", phone: true },
+        boy: { pose: "soft-smile-text", motion: "room-chair-shift", talk: "sao vậy bà?", phone: true },
         girl: {
-          pose: "hungry-text",
+          pose: "hug-pillow-text",
+          motion: "room-sofa-bounce",
           talk: "tui thèm mỳ cay Tâm Giao quá 🍜🥹",
           phone: true,
           thoughtNoodles: true,
@@ -137,9 +140,10 @@ const STORY_TIMELINE = [
       {
         at: 4.96,
         effect: "idea",
-        boy: { pose: "surprised-text", talk: "mỳ cay á? 👀", phone: true },
+        boy: { pose: "soft-surprised", motion: "room-pop-up", talk: "mỳ cay á? 👀", phone: true },
         girl: {
           pose: "hungry-text",
+          motion: "room-sofa-bounce",
           talk: "ừ... thèm dữ lắm luôn 🥹",
           phone: true,
           thoughtNoodles: true,
@@ -148,14 +152,14 @@ const STORY_TIMELINE = [
       {
         at: 6.15,
         effect: "tiny-heart",
-        boy: { pose: "determined", talk: "đợi tui xíu nha bà, đừng đi đâu đó 😌", phone: false },
-        girl: { pose: "confused-text", talk: "ủa ông đi đâu?", phone: true },
+        boy: { pose: "helmet-adjust", motion: "room-stand-up", talk: "đợi tui xíu nha bà, đừng đi đâu đó 😌", phone: false, helmet: true },
+        girl: { pose: "confused-text", motion: "room-look-door", talk: "ủa ông đi đâu?", phone: true },
       },
       {
         at: 7.35,
         effect: "none",
-        boy: { pose: "walk", talk: "bí mật 😌", phone: false },
-        girl: { pose: "reading-text", talk: "???", phone: true },
+        boy: { pose: "walk", motion: "room-exit-right", talk: "bí mật 😌", phone: false, helmet: true },
+        girl: { pose: "reading-text", motion: "room-step-window", talk: "???", phone: true },
       },
     ],
   },
@@ -166,12 +170,15 @@ const STORY_TIMELINE = [
     effect: "speed",
     boy: {
       scene: "city-trip",
-      pose: "walk",
-      talk: "đi mua mỳ cay cho bà chứ đâu, bà thèm mà 😌",
+      pose: "ride",
+      motion: "bike-start",
+      talk: "tui chạy xe qua Tâm Giao mua cho bà đây nè 🛵🍜",
+      helmet: true,
     },
     girl: {
       scene: "room-night",
       pose: "reading-text",
+      motion: "room-window-wait",
       talk: "hả??? thiệt hả ông 😳",
       phone: true,
       thoughtNoodles: true,
@@ -179,19 +186,34 @@ const STORY_TIMELINE = [
     beats: [
       {
         at: 1.51,
-        boy: { pose: "run", talk: "đi hơi xa xíu thôi 😭" },
-        girl: { pose: "happy-text", talk: "hehe... 🥹", phone: true },
+        boy: {
+          pose: "ride",
+          motion: "bike-cruise",
+          talk: "đi xe cho lẹ chứ bà đang thèm dữ quá rồi 😭♡",
+          helmet: true,
+        },
+        girl: { pose: "happy-text", motion: "room-window-hop", talk: "hehe... chạy cẩn thận nha 🥹", phone: true },
       },
       {
         at: 3.22,
-        effect: "none",
-        boy: { pose: "walk", talk: "qua cầu cái đã" },
-        girl: { pose: "wait", talk: "ổng đi xa thiệt...", phone: false, thoughtNoodles: true },
+        effect: "tiny-heart",
+        boy: {
+          pose: "ride",
+          motion: "bike-turn",
+          talk: "quẹo thêm xíu nữa là tới quán rồi nè",
+          helmet: true,
+        },
+        girl: { pose: "wait", motion: "room-pace", talk: "ổng chạy xe đi mua thiệt luôn...", phone: false, thoughtNoodles: true },
       },
       {
         at: 4.41,
-        boy: { pose: "run", talk: "thấy bảng Tâm Giao rồi!" },
-        girl: { pose: "wait", talk: "tui chờ nha 🍜", thoughtNoodles: true },
+        boy: {
+          pose: "ride",
+          motion: "bike-park",
+          talk: "thấy bảng Tâm Giao rồi, tui dựng xe mua liền nha!",
+          helmet: true,
+        },
+        girl: { pose: "wait", motion: "room-window-wait", talk: "tui chờ nha 🍜", thoughtNoodles: true },
       },
     ],
   },
@@ -202,12 +224,14 @@ const STORY_TIMELINE = [
     effect: "steam",
     boy: {
       scene: "noodle-shop",
-      pose: "arrive",
+      pose: "breathless",
+      motion: "shop-enter",
       talk: "tới quán rồi nha bà, chờ tui xíu 🍜",
     },
     girl: {
       scene: "room-night",
       pose: "happy-text",
+      motion: "room-window-hop",
       talk: "thiệt hả 😳",
       phone: true,
       thoughtNoodles: true,
@@ -216,23 +240,25 @@ const STORY_TIMELINE = [
       {
         at: 1.25,
         boy: {
-          pose: "order",
+          pose: "order-cute",
+          motion: "shop-counter-step",
           talk: "cho một phần thập cẩm cấp 2, không chả, nhiều sốt chấm nha!",
         },
-        girl: { pose: "wait", talk: "tui chờ nha...", phone: false, thoughtNoodles: true },
+        girl: { pose: "wait", motion: "room-pace", talk: "tui chờ nha...", phone: false, thoughtNoodles: true },
       },
       {
         at: 3.35,
         effect: "tiny-heart",
-        boy: { pose: "reading-text", talk: "giờ tui chạy xuống đưa cho bà nha", phone: true },
-        girl: { pose: "texting", talk: "đã vá 🥹", phone: true },
+        boy: { pose: "voice-note", motion: "shop-phone-stepback", talk: "giờ tui chạy xuống đưa cho bà nha", phone: true },
+        girl: { pose: "texting", motion: "room-sofa-bounce", talk: "đã vá 🥹", phone: true },
       },
       {
         at: 4.65,
         effect: "steam",
-        boy: { pose: "wait", talk: "đang chờ đóng hộp nè 🍜", phone: false },
+        boy: { pose: "pick-up-bag", motion: "shop-pace", talk: "đang chờ đóng hộp nè 🍜", phone: false, carryFood: true },
         girl: {
           pose: "hungry-text",
+          motion: "room-window-wait",
           talk: "nhớ nhiều sốt chấm nha 👉👈",
           phone: true,
           thoughtNoodles: true,
@@ -248,6 +274,7 @@ const STORY_TIMELINE = [
     boy: {
       scene: "rain-delivery",
       pose: "ride",
+      motion: "rain-ride-through",
       talk: "mỳ cay với tui đang chạy về phía bà nè 🍜♡",
       carryFood: true,
       helmet: true,
@@ -255,20 +282,22 @@ const STORY_TIMELINE = [
     girl: {
       scene: "room-night",
       pose: "phone",
+      motion: "room-window-wait",
       talk: "ông chạy từ từ thôi nha, tui chờ mà 🥺",
       phone: true,
     },
     beats: [
       {
         at: 1.4,
-        boy: { pose: "ride", talk: "biết rồi bà 😭", carryFood: true, helmet: true },
-        girl: { pose: "phone", talk: "trời mưa nữa kìa...", phone: true },
+        boy: { pose: "ride", motion: "rain-swerve", talk: "biết rồi bà 😭", carryFood: true, helmet: true },
+        girl: { pose: "phone", motion: "room-step-window", talk: "trời mưa nữa kìa...", phone: true },
       },
       {
         at: 2.79,
-        boy: { pose: "ride", talk: "tui che túi mỳ kỹ lắm 😭", carryFood: true, helmet: true },
+        boy: { pose: "ride", motion: "rain-ride-through", talk: "tui che túi mỳ kỹ lắm 😭", carryFood: true, helmet: true },
         girl: {
           pose: "hungry-text",
+          motion: "room-pace",
           talk: "mỳ đừng nguội nha 👉👈",
           phone: true,
           thoughtNoodles: true,
@@ -277,14 +306,14 @@ const STORY_TIMELINE = [
       {
         at: 4.55,
         effect: "none",
-        boy: { pose: "wait", talk: "đèn đỏ xíu nha bà", carryFood: true, helmet: true },
-        girl: { pose: "phone", talk: "ông tới đâu rồi á ??", phone: true },
+        boy: { pose: "ride-voice-note", motion: "traffic-brake", talk: "đèn đỏ xíu nha bà", carryFood: true, helmet: true, phone: true },
+        girl: { pose: "phone", motion: "room-door-check", talk: "ông tới đâu rồi á ??", phone: true },
       },
       {
         at: 6.45,
         effect: "speed",
-        boy: { pose: "ride", talk: "gần tới rồi!", carryFood: true, helmet: true },
-        girl: { pose: "happy-text", talk: "okee, tới thì nhắn tui ra nha 🤭♡", phone: true },
+        boy: { pose: "ride", motion: "rain-final-dash", talk: "gần tới rồi!", carryFood: true, helmet: true },
+        girl: { pose: "happy-text", motion: "room-door-hop", talk: "okee, tới thì nhắn tui ra nha 🤭♡", phone: true },
       },
     ],
   },
@@ -295,32 +324,34 @@ const STORY_TIMELINE = [
     effect: "none",
     boy: {
       scene: "apartment-arrival",
-      pose: "walk",
-      talk: "tui tới khu bà rồi nè ♡",
+      pose: "carry-careful",
+      motion: "apartment-enter",
+      talk: "tui dựng xe dưới sảnh rồi, đem mỳ lên cho bà đây ♡",
       carryFood: true,
     },
     girl: {
       scene: "apartment-wait",
-      pose: "happy-text",
-      talk: "hihi tui ra đây, ông đợi xíu nha 🤭",
+      pose: "tiptoe-text",
+      motion: "elevator-ready",
+      talk: "hihi tui xuống đây nè, ông đợi xíu nha 🤭",
       phone: true,
     },
     beats: [
       {
         at: 1.5,
-        boy: { pose: "walk", talk: "cổng ở đây đúng hong", carryFood: true },
-        girl: { pose: "run", talk: "đợi tui xíu!", phone: false },
+        boy: { pose: "carry-careful", motion: "apartment-cross", talk: "tui xách xuống tận cửa cho bà luôn nè", carryFood: true },
+        girl: { pose: "run", motion: "elevator-run", talk: "đợi tui chạy xuống liền đây!", phone: false },
       },
       {
         at: 3.08,
-        boy: { pose: "walk", talk: "Tâm Giao của bà tới cửa rồi nè 🍜♡", carryFood: true },
-        girl: { pose: "surprised", talk: "tr ưi dì mà nhìu vậy 😳", phone: false },
+        boy: { pose: "carry-careful", motion: "apartment-door-approach", talk: "mỳ cay của bà tui đem xuống tới cửa luôn nè 🍜♡", carryFood: true },
+        girl: { pose: "excited-bounce", motion: "door-pop-out", talk: "tr ưi dì mà nhìu vậy 😳", phone: false },
       },
       {
         at: 4.55,
         effect: "tiny-heart",
-        boy: { pose: "wait", talk: "có nhiêu đâu 👀", carryFood: true },
-        girl: { pose: "peek", talk: "Còn dì nữa hong ?", phone: false },
+        boy: { pose: "wait", motion: "doorstep-wait", talk: "có nhiêu đâu 👀", carryFood: true },
+        girl: { pose: "peek", motion: "door-peek-side", talk: "Còn dì nữa hong ?", phone: false },
       },
     ],
   },
@@ -339,26 +370,26 @@ const STORY_TIMELINE = [
     layout: "together",
     sharedScene: "dinner-cute",
     effect: "steam-hearts",
-    boy: { pose: "present-bowl", talk: "ăn thử đi bà, coi còn nóng hong ♡" },
-    girl: { pose: "heart-hands", talk: "ngon á... cảm ơn ông nha 🥹" },
+    boy: { pose: "present-bowl", motion: "dinner-lean-in", talk: "ăn thử đi bà, coi còn nóng hong ♡" },
+    girl: { pose: "heart-hands", motion: "dinner-happy-in", talk: "ngon á... cảm ơn ông nha 🥹" },
     beats: [
       {
         at: 1.4,
         effect: "hearts",
-        boy: { pose: "shy", talk: "có gì đâu bà 😳" },
-        girl: { pose: "head-pat", talk: "ông ngốc ghê á ♡" },
+        boy: { pose: "soft-smile", motion: "dinner-shy-back", talk: "có gì đâu bà 😳" },
+        girl: { pose: "head-pat", motion: "dinner-reach-over", talk: "ông ngốc ghê á ♡" },
       },
       {
         at: 2.77,
         effect: "steam-hearts",
-        boy: { pose: "offer-water", talk: "cay không bà? cay thì uống nước nè" },
-        girl: { pose: "eat", talk: "cay... 😭🍜" },
+        boy: { pose: "offer-water", motion: "dinner-offer-water", talk: "cay không bà? cay thì uống nước nè" },
+        girl: { pose: "spice-shock", motion: "dinner-cute-flinch", talk: "cay... 😭🍜" },
       },
       {
         at: 4.45,
         effect: "steam",
-        boy: { pose: "eat", talk: "cấp 2 thôi mà 😭" },
-        girl: { pose: "eat", talk: "mà ngon lắm 😌" },
+        boy: { pose: "eat-happy", motion: "dinner-eat-side", talk: "cấp 2 thôi mà 😭" },
+        girl: { pose: "eat-happy", motion: "dinner-eat-side", talk: "mà ngon lắm 😌" },
       },
     ],
   },
@@ -368,14 +399,14 @@ const STORY_TIMELINE = [
     layout: "together",
     sharedScene: "cozy-room",
     effect: "tiny-heart",
-    boy: { pose: "thumbs-up", talk: "ăn từ từ coi 😭" },
-    girl: { pose: "tummy-happy", talk: "no quá rồi..." },
+    boy: { pose: "thumbs-up", motion: "sofa-settle-left", talk: "ăn từ từ coi 😭" },
+    girl: { pose: "tummy-happy", motion: "sofa-settle-right", talk: "no quá rồi..." },
     beats: [
       {
         at: 1.56,
         effect: "hearts",
-        boy: { pose: "happy", talk: "bà vui là tui thấy đáng công rồi ♡" },
-        girl: { pose: "lean", talk: "ông mua thì tui ăn hết, thiệt đó 😌♡" },
+        boy: { pose: "finger-heart", motion: "sofa-scoot-close", talk: "bà vui là tui thấy đáng công rồi ♡" },
+        girl: { pose: "cuddle-lean", motion: "sofa-lean-close", talk: "ông mua thì tui ăn hết, thiệt đó 😌♡" },
       },
     ],
   },
@@ -385,8 +416,8 @@ const STORY_TIMELINE = [
     layout: "together",
     sharedScene: "ending-cute",
     effect: "ending",
-    boy: { pose: "pinky-promise", talk: "lần sau tui dẫn bà đi ăn, không để bà thèm một mình nữa" },
-    girl: { pose: "pinky-promise", talk: "nhớ đó nha ông... tui chờ đó ♡" },
+    boy: { pose: "pinky-promise", motion: "ending-step-close", talk: "lần sau tui dẫn bà đi ăn, không để bà thèm một mình nữa" },
+    girl: { pose: "pinky-promise", motion: "ending-step-close", talk: "nhớ đó nha ông... tui chờ đó ♡" },
   },
 
 ];
@@ -403,13 +434,13 @@ const CHAT_TIMELINE = [
   // 0s -> 8.64s: trong phòng
   { from: 0.35, to: 2.05, speaker: "boy", text: "Bà đang làm gì đó? 👀" },
   { from: 2.22, to: 3.62, speaker: "girl", text: "ông ơi..." },
-  { from: 3.80, to: 5.80, speaker: "girl", text: "tui thèm mỳ cay Tâm Giao quá 🍜🥹" },
+  { from: 3.80, to: 5.80, speaker: "girl", text: "tui thèm mỳ cay Tâm Giao quá... kiểu thèm dễ sợ luôn 🍜🥹" },
   { from: 6.00, to: 8.15, speaker: "boy", text: "đợi tui xíu nha bà, đừng đi đâu đó 😌" },
 
   // 8.64s -> 14.2s: đi tới quán
   { from: 8.78, to: 10.25, speaker: "girl", text: "ủa ông đi đâu vậy?" },
-  { from: 10.42, to: 12.55, speaker: "boy", text: "đi mua mỳ cay cho bà chứ đâu, bà thèm mà 😌" },
-  { from: 12.72, to: 14.05, speaker: "girl", text: "hehe... tui chờ nha, đi từ từ thôi 🥹🍜" },
+  { from: 10.42, to: 12.55, speaker: "boy", text: "tui chạy xe qua Tâm Giao mua cho bà đây nè 🛵🍜" },
+  { from: 12.72, to: 14.05, speaker: "girl", text: "hehe... chạy xe từ từ thôi nha ông, tui chờ 🥹🍜" },
 
   // 14.2s -> 20.65s: ở quán
   { from: 14.35, to: 15.90, speaker: "boy", text: "tới quán rồi nha bà, chờ tui xíu 🍜" },
@@ -423,12 +454,12 @@ const CHAT_TIMELINE = [
   { from: 26.48, to: 27.92, speaker: "girl", text: "okee, tới thì nhắn tui ra nha 🤭♡" },
 
   // 28.1s -> 34.84s: tới chung cư
-  { from: 28.25, to: 29.90, speaker: "boy", text: "tui tới khu bà rồi nè ♡" },
-  { from: 30.08, to: 31.73, speaker: "girl", text: "hihi tui ra đây, ông đợi xíu nha 🤭" },
-  { from: 31.91, to: 34.65, speaker: "boy", text: "Tâm Giao của bà tới cửa rồi nè 🍜♡" },
+  { from: 28.25, to: 29.90, speaker: "boy", text: "tui dựng xe dưới sảnh rồi, đem mỳ lên cho bà đây ♡" },
+  { from: 30.08, to: 31.73, speaker: "girl", text: "hihi tui xuống đây nè, ông đợi xíu nha 🤭" },
+  { from: 31.91, to: 34.65, speaker: "boy", text: "mỳ cay của bà tui đem xuống tới cửa luôn nè 🍜♡" },
 
   // 34.84s -> 40.65s: trước cửa nhà
-  { from: 34.95, to: 36.25, speaker: "boy", text: "shipper riêng của bà tới rồi nè 😎🍜" },
+  { from: 34.95, to: 36.25, speaker: "boy", text: "shipper riêng của bà tới rồi nè... giao tận tay luôn đó 😎🍜" },
   { from: 36.40, to: 37.70, speaker: "girl", text: "ông tới thiệt luôn hả... dễ thương quá 🥹♡" },
   { from: 37.85, to: 39.10, speaker: "boy", text: "mỳ cay của bà nè, tui giữ nóng kỹ lắm á 🍜♡" },
   { from: 39.25, to: 40.52, speaker: "girl", text: "cảm ơn ông nha... tự nhiên thấy được cưng ghê 🥹💗" },
@@ -458,9 +489,9 @@ const CODE_LINES = [
   { time: 2.6, code: "  const craving = message.includes('mỳ cay');" },
   { time: 4.96, code: "  if (craving) me.makeDecision();" },
   { time: 6.15, code: "  me.grab(['jacket', 'keys']);" },
-  { time: 8.64, code: "  await me.walkThroughTheNight();" },
-  { time: 11.86, code: "  const shop = city.find('Tâm Giao');" },
-  { time: 14.2, code: "  me.arrive(shop);" },
+  { time: 8.64, code: "  await me.startMotorbike();" },
+  { time: 11.86, code: "  const shop = await me.rideTo('Tâm Giao');" },
+  { time: 14.2, code: "  me.parkBike(shop);" },
   { time: 15.45, code: "  const bowl = await shop.order({ level: 2 });" },
   { time: 18.85, code: "  await shop.packWarm(bowl);" },
   { time: 20.65, code: "  weather.startRain();" },
@@ -1302,11 +1333,23 @@ function ChibiCharacter({
     >
       <div className="chibi-shadow" />
 
+      {["ride", "ride-voice-note"].includes(pose) && (
+        <div className={`delivery-scooter ${carryFood ? "delivery-scooter-food" : ""}`}>
+          <span className="scooter-wheel scooter-wheel-left" />
+          <span className="scooter-wheel scooter-wheel-right" />
+          <span className="scooter-body-main" />
+          <span className="scooter-seat" />
+          <span className="scooter-front" />
+          <span className="scooter-handle" />
+          <span className="scooter-back-box" />
+        </div>
+      )}
+
       {!isGirl && (helmet || carryFood) && (
         <div className="backpack" />
       )}
 
-      {helmet && (
+      {(helmet || pose === "helmet-adjust") && (
         <div className="helmet">
           <span />
         </div>
@@ -1404,10 +1447,46 @@ function ChibiCharacter({
         </div>
       )}
 
-      {phone && (
+      {(phone || ["voice-note", "ride-voice-note"].includes(pose)) && (
         <div className="phone-item">
           <span />
         </div>
+      )}
+
+      {pose === "hug-pillow-text" && (
+        <div className="action-pillow"><span>♡</span></div>
+      )}
+
+      {pose === "breathless" && (
+        <div className="action-breath"><i /><i /><i /></div>
+      )}
+
+      {["voice-note", "ride-voice-note"].includes(pose) && (
+        <div className="action-voice-waves"><i /><i /><i /></div>
+      )}
+
+      {pose === "tiptoe-text" && (
+        <div className="action-tiptoe-heart">♡</div>
+      )}
+
+      {pose === "excited-bounce" && (
+        <div className="action-excited-hearts"><i>♡</i><i>♡</i></div>
+      )}
+
+      {["present-both", "receive-both"].includes(pose) && (
+        <div className="action-hand-spark">✦</div>
+      )}
+
+      {pose === "spice-shock" && (
+        <div className="action-spice-flame">🔥</div>
+      )}
+
+      {pose === "finger-heart" && (
+        <div className="action-finger-heart">♡</div>
+      )}
+
+      {pose === "cuddle-lean" && (
+        <div className="action-cuddle-heart">♡</div>
       )}
 
       {carryFood && (
@@ -1485,14 +1564,18 @@ function SplitPanel({
         }
       />
 
-      <ChibiCharacter
-        role={role}
-        pose={data.pose}
-        carryFood={data.carryFood}
-        phone={data.phone}
-        helmet={data.helmet}
-        className="panel-character"
-      />
+      <div
+        className={`character-track split-character-track motion-${data.motion || "idle"}`}
+      >
+        <ChibiCharacter
+          role={role}
+          pose={data.pose}
+          carryFood={data.carryFood}
+          phone={data.phone}
+          helmet={data.helmet}
+          className="panel-character"
+        />
+      </div>
     </div>
   );
 }
@@ -1510,11 +1593,11 @@ function ArrivalCuteScene({
 
   let phase = 0;
 
-  if (elapsed >= 4.26) {
+  if (elapsed >= 4.42) {
     phase = 3;
-  } else if (elapsed >= 2.76) {
+  } else if (elapsed >= 2.96) {
     phase = 2;
-  } else if (elapsed >= 1.36) {
+  } else if (elapsed >= 1.48) {
     phase = 1;
   }
 
@@ -1528,7 +1611,7 @@ function ArrivalCuteScene({
       girlFood: false,
     },
     {
-      boyPose: "shy",
+      boyPose: "soft-smile",
       girlPose: "hair-tuck",
       boyTalk: "",
       girlTalk: "ông tới thiệt luôn hả... dễ thương quá 🥹♡",
@@ -1536,15 +1619,15 @@ function ArrivalCuteScene({
       girlFood: false,
     },
     {
-      boyPose: "give",
-      girlPose: "receive",
+      boyPose: "present-both",
+      girlPose: "receive-both",
       boyTalk: "mỳ cay của bà nè, tui giữ nóng kỹ lắm á 🍜♡",
       girlTalk: "",
       boyFood: true,
       girlFood: true,
     },
     {
-      boyPose: "thumbs-up",
+      boyPose: "finger-heart",
       girlPose: "hug-bag",
       boyTalk: "",
       girlTalk: "cảm ơn ông nha... tự nhiên thấy được cưng ghê 🥹💗",
@@ -1662,27 +1745,23 @@ function ArrivalCuteScene({
         text={story.girl.talk}
       />
 
-      <ChibiCharacter
-        role="boy"
-        pose={
-          phaseData.boyPose
-        }
-        carryFood={
-          phaseData.boyFood
-        }
-        className="arrival-boy"
-      />
+      <div className={`character-track arrival-boy-track arrival-boy-motion-${phase}`}>
+        <ChibiCharacter
+          role="boy"
+          pose={phaseData.boyPose}
+          carryFood={phaseData.boyFood}
+          className="arrival-boy"
+        />
+      </div>
 
-      <ChibiCharacter
-        role="girl"
-        pose={
-          phaseData.girlPose
-        }
-        carryFood={
-          phaseData.girlFood
-        }
-        className="arrival-girl"
-      />
+      <div className={`character-track arrival-girl-track arrival-girl-motion-${phase}`}>
+        <ChibiCharacter
+          role="girl"
+          pose={phaseData.girlPose}
+          carryFood={phaseData.girlFood}
+          className="arrival-girl"
+        />
+      </div>
     </div>
   );
 }
@@ -1736,24 +1815,26 @@ function TogetherScene({
         }
       />
 
-      <ChibiCharacter
-        role="boy"
-        pose={
-          story.boy.pose
-        }
-        carryFood={
-          story.boy.carryFood
-        }
-        className="together-boy"
-      />
+      <div
+        className={`character-track together-character-track together-boy-track motion-${story.boy.motion || "together-idle"}`}
+      >
+        <ChibiCharacter
+          role="boy"
+          pose={story.boy.pose}
+          carryFood={story.boy.carryFood}
+          className="together-boy"
+        />
+      </div>
 
-      <ChibiCharacter
-        role="girl"
-        pose={
-          story.girl.pose
-        }
-        className="together-girl"
-      />
+      <div
+        className={`character-track together-character-track together-girl-track motion-${story.girl.motion || "together-idle"}`}
+      >
+        <ChibiCharacter
+          role="girl"
+          pose={story.girl.pose}
+          className="together-girl"
+        />
+      </div>
     </div>
   );
 }
